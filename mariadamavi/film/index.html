@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>MaviBag line</title>
+<!-- mariadamavi hero film: the MaviBag production line. Silent, scroll-scrubbed. No overlaid type: the only type is printed on the bag and the card.
+     ?v=m renders the 1080x1920 vertical cut (same beats, same timing). Render with scripts/render.mjs (the 3D layer is an ES module). -->
+<link rel="stylesheet" href="./runtime/fonts.css">
+<style>
+@font-face { font-family: "Anton"; src: url("./fonts/Anton-Regular.ttf") format("truetype"); font-display: block; }
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: #0A0208; }
+#main { position: absolute; left: 0; top: 0; overflow: hidden; background: #0A0208; }
+#gl { position: absolute; left: 0; top: 0; display: block; }
+/* font warmers (off-screen) so the canvas textures draw in the right faces */
+.warm { position: absolute; left: -9999px; top: 0; }
+</style>
+</head>
+<body>
+<div id="main">
+  <canvas id="gl"></canvas>
+  <span class="warm" style="font-family:Anton">MARIADAMAVI</span><span class="warm" style="font:600 20px Inter">Seu novo Apple chegou.</span>
+</div>
+<script src="./runtime/vendor/gsap.min.js"></script>
+<script src="./runtime/motion.js"></script>
+<script src="./scene.js"></script>
+<script>
+const MOBILE = /[?&]v=m/.test(location.search);
+const WIDTH = MOBILE ? 1080 : 1920, HEIGHT = MOBILE ? 1920 : 1080;
+document.documentElement.style.cssText = document.body.style.cssText = `width:${WIDTH}px;height:${HEIGHT}px`;
+const main = document.getElementById('main'); main.style.width = WIDTH + 'px'; main.style.height = HEIGHT + 'px';
+const gl = document.getElementById('gl'); gl.style.width = WIDTH + 'px'; gl.style.height = HEIGHT + 'px';
+
+const M = Motion.film({ fps: 30, duration: 10, width: WIDTH, height: HEIGHT, clock: 'smooth' });
+const S = MaviScene({ mobile: MOBILE });
+const hero = M.hero3d('#gl', {
+  width: WIDTH, height: HEIGHT,
+  envMap: MAVI_ENV(), envBoost: 3, toneMapping: 'neutral', exposure: 1.0, envIntensity: 0.55,
+  key: { position: [-6, 9, 7], intensity: 1.0, color: '#ffe9f2' }, rim: { position: [6, 5, -6], intensity: 3.2, color: '#ff4fa3' },
+  ground: { y: -0.01, opacity: 0 },
+  camera: { fov: 28, position: [5.6, 4.15, 12.2], target: [-1.3, 2.75, 0] },
+  dof: { focus: 11, aperture: 0.0009, maxblur: 0.005 },
+  bloom: { strength: 0.08, radius: 0.3, threshold: 1.2 },
+  build: S.build,
+  state: S.state,
+});
+// the film's beats, as events for look.py and for the page (see NOTE.md)
+[[0, 'beat1 establishing'], [30, 'beat2 box arrives'], [75, 'beat3 scan + lower'], [112, 'beat4 pour'], [192, 'beat5 card'], [236, 'beat6 zip'], [268, 'beat7 release']].forEach(([f, l]) => M.mark(f, 'beat', l));
+window.__ready = Motion.loaded().then(() => { if (/selftest/.test(location.search)) return Motion.selfTest(M, { samples: 10 }); });
+</script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+/* Navbar em pílula flutuante, no plástico fosco da MaviBag */
+.nav {
+  position: fixed;
+  inset: 20px var(--gutter) auto;
+  z-index: var(--z-nav);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nav__bar {
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  width: min(100%, 1320px);
+  height: 72px;
+  padding: 0 var(--space-2) 0 var(--space-8);
+  border-radius: var(--radius-pill);
+  background: var(--frost);
+  box-shadow: inset 0 0 0 1px var(--line);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  transition:
+    background-color var(--dur) var(--ease-land),
+    box-shadow var(--dur) var(--ease-land),
+    transform var(--dur) var(--ease-land);
+}
+
+.nav.is-scrolled .nav__bar {
+  background: var(--frost-strong);
+  box-shadow: inset 0 0 0 1px var(--line), var(--shadow-float);
+}
+
+/* Marca: o MARIADAMAVI condensado e pesado da impressão da bag */
+.nav__brand {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--pink-500);
+  font-size: 1.75rem;
+  font-stretch: 62%;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav__brand:hover {
+  color: var(--pink-400);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 0.8rem;
+  border-radius: var(--radius-pill);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease;
+}
+.nav__link:hover {
+  color: var(--text);
+  background: rgba(255, 236, 246, 0.06);
+}
+.nav__link[aria-current="true"] {
+  color: var(--text);
+}
+.nav__link[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--pink-500);
+}
+
+.nav__cta {
+  flex: none;
+}
+@media (min-width: 981px) {
+  .nav__cta {
+    --btn-h: 52px;
+    padding: 0 1.5rem;
+    font-size: var(--fs-sm);
+  }
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-2);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--dur-fast) ease, background-color var(--dur-fast) ease;
+}
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--frost);
+}
+.theme-toggle .icon {
+  width: 20px;
+  height: 20px;
+}
+.theme-toggle .icon--sun,
+[data-theme="light"] .theme-toggle .icon--moon {
+  display: none;
+}
+[data-theme="light"] .theme-toggle .icon--sun {
+  display: block;
+}
+.nav__sheet .theme-toggle {
+  display: none;
+}
+
+.nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-left: var(--space-1);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.nav__toggle:hover {
+  background: rgba(255, 236, 246, 0.08);
+}
+.nav__toggle .icon {
+  width: 22px;
+  height: 22px;
+}
+.nav__toggle .icon--close {
+  display: none;
+}
+.nav.is-open .nav__toggle .icon--open {
+  display: none;
+}
+.nav.is-open .nav__toggle .icon--close {
+  display: block;
+}
+
+/* Menu do celular: uma folha que desce de dentro da pílula */
+.nav__sheet {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .nav {
+    inset: 12px 12px auto;
+  }
+  .nav__bar {
+    gap: var(--space-2);
+    height: 58px;
+    padding: 0 var(--space-1) 0 1.1rem;
+  }
+  .nav__brand {
+    font-size: 1.4rem;
+    margin-right: auto;
+  }
+  .nav__links {
+    display: none;
+  }
+  .nav__toggle {
+    display: inline-flex;
+  }
+  .nav__bar > .theme-toggle {
+    display: none;
+  }
+  .nav__sheet .theme-toggle {
+    display: inline-flex;
+    gap: var(--space-2);
+    width: auto;
+    height: 48px;
+    margin-top: var(--space-4);
+    padding: 0 var(--space-4) 0 var(--space-3);
+    border-radius: var(--radius-pill);
+    box-shadow: inset 0 0 0 1px var(--line);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+
+  .nav__sheet {
+    pointer-events: auto;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    display: block;
+    padding: var(--space-4) var(--space-6) var(--space-6);
+    border-radius: var(--radius-lg);
+    background: var(--ink-900);
+    box-shadow: inset 0 0 0 1px var(--line), var(--shadow-float);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top center;
+    transition:
+      opacity var(--dur-fast) var(--ease-leave),
+      transform var(--dur-fast) var(--ease-leave),
+      visibility 0s linear var(--dur-fast);
+  }
+  .nav.is-open .nav__sheet {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity var(--dur) var(--ease-land),
+      transform var(--dur) var(--ease-land),
+      visibility 0s;
+  }
+
+  .nav__sheet-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .nav__sheet-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    font-size: 2rem;
+    font-stretch: var(--stretch-display);
+    font-weight: 850;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav__sheet-links a .icon {
+    color: var(--pink-400);
+    width: 22px;
+    height: 22px;
+  }
+  .nav__sheet-links a[aria-current="true"] {
+    color: var(--pink-400);
+  }
+  .nav__sheet .btn {
+    width: 100%;
+    margin-top: var(--space-6);
+    --btn-h: 54px;
+    font-size: var(--fs-md);
+  }
+}
+
+@media (max-width: 380px) {
+  .nav__cta .nav__cta-label-long {
+    display: none;
+  }
+}
+@media (min-width: 381px) {
+  .nav__cta .nav__cta-label-short {
+    display: none;
+  }
+}
+
+/* No claro a pílula fica sempre opaca, para ler bem por cima do vídeo escuro do hero */
+[data-theme="light"] .nav__bar {
+  background: var(--frost-strong);
+  box-shadow: inset 0 0 0 1px var(--line), var(--shadow-float);
+}

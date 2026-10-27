@@ -1,0 +1,117 @@
+:root {
+  /* ground: preto puxado pro vinho, como o fundo dos posts e das luzes rosa */
+  --ink-950: #0a0208;
+  --ink-900: #14060f;
+  --ink-850: #1b0914;
+  --ink-800: #250d1b;
+
+  /* rosa MaviBag */
+  --pink-400: #ff4fa3; /* rosa para texto pequeno sobre o fundo escuro (6.7:1) */
+  --pink-500: #e8197f; /* rosa da impressão da bag: display, luz, detalhes */
+  --pink-600: #d10f6f; /* fundo de botão com texto branco (5.2:1) */
+  --pink-700: #a80a58;
+  --blush: #ffb8da;
+
+  /* texto, tingido do rosa em vez de cinza */
+  --text: #fff6fa;
+  --text-2: #c9bbc3;
+  --text-3: #9c8a95;
+
+  /* plástico fosco da MaviBag */
+  --frost: rgba(255, 236, 246, 0.07);
+  --frost-strong: rgba(28, 8, 20, 0.72);
+  --line: rgba(255, 184, 218, 0.14);
+  --line-strong: rgba(255, 184, 218, 0.26);
+
+  /* tipografia */
+  --font: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --stretch-display: 68%; /* condensado como o MARIADAMAVI da bag */
+  --stretch-text: 100%;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-xl: clamp(2rem, 1.4rem + 2.8vw, 3.5rem);
+  --fs-2xl: clamp(3rem, 1.6rem + 6.4vw, 6rem);
+
+  /* espaço */
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --radius-pill: 999px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  /* profundidade: sombras com deslocamento, nunca halo */
+  --shadow-float: 0 12px 32px -12px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
+  --accent-text: var(--blush); /* títulos pequenos em rosa claro (rodapé) */
+  --focus: var(--blush);
+  --shadow-pink: 0 10px 28px -10px rgba(209, 15, 111, 0.65);
+
+  /* movimento: chega desacelerando, sai acelerando */
+  --ease-land: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-leave: cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-fast: 180ms;
+  --dur: 420ms;
+
+  --nav-h: 64px;
+  --z-nav: 50;
+  --z-float: 60;
+
+  color-scheme: dark;
+}
+
+/* Tema claro: papel quase branco, texto vinho. O hero fica sempre escuro (data-theme="dark" nele) por causa do vídeo. */
+[data-theme="light"] {
+  --ink-950: #fcfaf9;
+  --ink-900: #f5e9ef;
+  --ink-850: #efdfe7;
+  --ink-800: #e6d0db;
+
+  --pink-400: #c40d68; /* texto pequeno rosa no claro (5.4:1) */
+
+  --text: #1d0c15;
+  --text-2: #5b4651;
+  --text-3: #7a6570;
+
+  --frost: rgba(120, 20, 70, 0.05);
+  --frost-strong: rgba(255, 249, 252, 0.86);
+  --line: rgba(168, 10, 88, 0.14);
+  --line-strong: rgba(168, 10, 88, 0.26);
+
+  --shadow-float: 0 12px 32px -14px rgba(90, 10, 50, 0.28), 0 2px 6px rgba(90, 10, 50, 0.08);
+  --accent-text: var(--pink-700);
+  --focus: var(--pink-600);
+
+  color-scheme: light;
+}
+
+/* força o escuro dentro de blocos que dependem de fundo escuro (hero com vídeo) */
+[data-theme="light"] [data-theme="dark"] {
+  --ink-950: #0a0208;
+  --ink-900: #14060f;
+  --ink-850: #1b0914;
+  --ink-800: #250d1b;
+  --pink-400: #ff4fa3;
+  --text: #fff6fa;
+  --text-2: #c9bbc3;
+  --text-3: #9c8a95;
+  --frost: rgba(255, 236, 246, 0.07);
+  --frost-strong: rgba(28, 8, 20, 0.72);
+  --line: rgba(255, 184, 218, 0.14);
+  --line-strong: rgba(255, 184, 218, 0.26);
+  --accent-text: var(--blush);
+  --focus: var(--blush);
+  color-scheme: dark;
+  color: var(--text);
+}

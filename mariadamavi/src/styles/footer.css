@@ -1,0 +1,118 @@
+/* Rodapé: termina como a bag, com o MARIADAMAVI gigante cortado pela borda */
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-24) var(--gutter) 0;
+  background: var(--ink-900);
+  border-top: 1px solid var(--line);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-12) var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__lead h2 {
+  font-size: var(--fs-xl);
+  max-width: 11ch;
+}
+.footer__lead h2 em {
+  color: var(--pink-500);
+  font-style: normal;
+}
+.footer__lead p {
+  max-width: 34ch;
+  margin-top: var(--space-4);
+  color: var(--text-2);
+}
+.footer__lead .btn {
+  margin-top: var(--space-8);
+}
+
+.footer__col h3 {
+  margin-bottom: var(--space-4);
+  color: var(--accent-text);
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+}
+
+.footer__list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+}
+.footer__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 32px;
+  text-decoration: none;
+}
+.footer__list a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+.footer__list .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--pink-400);
+}
+.footer__list strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.footer__base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  max-width: 1200px;
+  margin: var(--space-16) auto 0;
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--line);
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.footer__wordmark {
+  margin: var(--space-6) auto 0;
+  max-width: 1600px;
+  color: var(--pink-500);
+  font-size: var(--wordmark-size, 18vw);
+  font-stretch: 62%;
+  font-weight: 900;
+  line-height: 0.74;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  transform: translateY(0.06em);
+}
+
+@media (max-width: 960px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__lead {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer {
+    padding-top: var(--space-16);
+  }
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}

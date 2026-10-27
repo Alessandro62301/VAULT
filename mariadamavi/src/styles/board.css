@@ -1,0 +1,387 @@
+/* Quem somos: um quadro de cortiça de verdade, sozinho na seção, centralizado.
+   Tudo dentro dele é medido em cqw (largura do quadro), então escala junto. */
+.about {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: clamp(5rem, 10vw, 8rem) var(--gutter);
+  overflow: hidden;
+  background:
+    radial-gradient(55% 45% at 50% 55%, rgba(232, 25, 127, 0.16), transparent 70%),
+    var(--ink-950);
+}
+
+.board-scene {
+  width: min(100%, 1240px);
+  perspective: 1800px;
+  perspective-origin: 50% 40%;
+}
+
+.board {
+  --frame: 2.1cqw;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  container-type: inline-size;
+  transform-style: preserve-3d;
+  border-radius: 1.2cqw;
+  /* moldura de madeira com espessura */
+  padding: var(--frame);
+  background: url("/quem-somos/wood.svg") center / 60cqw auto, #7a4a26;
+  box-shadow:
+    inset 0 0.25cqw 0 rgba(255, 220, 180, 0.28),
+    inset 0 -0.35cqw 0 rgba(0, 0, 0, 0.45),
+    0 3cqw 6cqw -1.5cqw rgba(0, 0, 0, 0.75),
+    0 1cqw 2cqw rgba(0, 0, 0, 0.45);
+  will-change: transform;
+}
+
+.board__cork {
+  position: relative;
+  height: 100%;
+  border-radius: 0.5cqw;
+  transform-style: preserve-3d;
+  background: url("/quem-somos/cork.svg") 0 0 / 22cqw auto, #c18e5c;
+  /* chanfro interno: a cortiça fica um pouco abaixo da moldura */
+  box-shadow:
+    inset 0 0.6cqw 1.2cqw rgba(40, 18, 4, 0.55),
+    inset 0 -0.2cqw 0.4cqw rgba(255, 230, 200, 0.18);
+}
+
+/* Cada item é posicionado em % da cortiça; rotação e profundidade ficam no JS (GSAP) */
+.pin-item {
+  position: absolute;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+  width: calc(var(--w) * 1cqw);
+  transform: rotate(calc(var(--r) * 1deg));
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 0.5cqw 0.6cqw rgba(30, 12, 2, 0.45)) drop-shadow(0 0.1cqw 0.15cqw rgba(30, 12, 2, 0.35));
+  touch-action: pan-y;
+}
+.board.is-draggable .pin-item {
+  cursor: grab;
+}
+.board.is-draggable .pin-item:active {
+  cursor: grabbing;
+}
+
+/* Tachinha: cabeça redonda com brilho, presa no topo do item */
+.pin {
+  position: absolute;
+  top: -0.5cqw;
+  left: 50%;
+  z-index: 2;
+  width: 1.7cqw;
+  height: 1.7cqw;
+  margin-left: -0.85cqw;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff9cc8 0%, var(--pink-500) 38%, #8c0746 100%);
+  box-shadow: 0 0.35cqw 0.4cqw rgba(30, 10, 2, 0.5), inset 0 -0.15cqw 0.2cqw rgba(0, 0, 0, 0.35);
+}
+.pin--white {
+  background: radial-gradient(circle at 35% 30%, #fff 0%, #e9e4df 45%, #9b928a 100%);
+}
+.pin--blue {
+  background: radial-gradient(circle at 35% 30%, #cfe0ff 0%, #5b8cff 45%, #1f3f99 100%);
+}
+
+/* Fita adesiva translúcida */
+.tape {
+  position: absolute;
+  top: -1.1cqw;
+  left: 50%;
+  z-index: 2;
+  width: 7cqw;
+  height: 2.2cqw;
+  margin-left: -3.5cqw;
+  background: rgba(255, 250, 235, 0.55);
+  box-shadow: 0 0.1cqw 0.2cqw rgba(0, 0, 0, 0.12);
+  transform: rotate(-4deg);
+  -webkit-mask: linear-gradient(90deg, transparent 0 2%, #000 4% 96%, transparent 98%);
+  mask: linear-gradient(90deg, transparent 0 2%, #000 4% 96%, transparent 98%);
+}
+
+/* Folhas de papel */
+.paper {
+  padding: 2.4cqw 2.2cqw 2.2cqw;
+  color: #1d1418;
+  background: #fbf8f2;
+  border-radius: 0.15cqw;
+}
+.paper--lined {
+  padding-left: 3.4cqw;
+  background:
+    linear-gradient(90deg, transparent 2.3cqw, rgba(232, 25, 127, 0.45) 2.3cqw 2.4cqw, transparent 2.4cqw),
+    repeating-linear-gradient(180deg, transparent 0 calc(2.05cqw - 1px), rgba(76, 118, 190, 0.32) calc(2.05cqw - 1px) 2.05cqw),
+    #fbf8f2;
+  background-position: 0 0, 0 1.6cqw, 0 0;
+}
+.paper--grid {
+  background:
+    repeating-linear-gradient(90deg, rgba(120, 100, 20, 0.16) 0 1px, transparent 1px 1.4cqw),
+    repeating-linear-gradient(180deg, rgba(120, 100, 20, 0.16) 0 1px, transparent 1px 1.4cqw),
+    #f7e26b;
+}
+
+.about__title {
+  color: #160a10;
+  font-size: 4.1cqw;
+  line-height: 0.9;
+}
+.about__title em {
+  color: var(--pink-600);
+  font-style: normal;
+}
+.about__kick {
+  margin-top: 1.4cqw;
+  color: #4a3a40;
+  font-family: "Caveat Variable", cursive;
+  font-size: 2.3cqw;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.about__bio {
+  font-size: 1.22cqw;
+  line-height: 2.05cqw;
+  color: #2a1f24;
+}
+.about__bio strong {
+  font-weight: 650;
+}
+
+/* Polaroids */
+.polaroid {
+  padding: 0.9cqw 0.9cqw 0;
+  background: #fbfaf7;
+  border-radius: 0.15cqw;
+}
+.polaroid__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #2a1820;
+  pointer-events: none;
+  user-select: none;
+}
+.polaroid figcaption {
+  padding: 0.8cqw 0.2cqw 1.1cqw;
+  color: #2b2226;
+  font-family: "Caveat Variable", cursive;
+  font-size: 1.85cqw;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+.polaroid figcaption b {
+  color: var(--pink-600);
+  font-weight: 700;
+}
+
+/* Foto que ainda vai chegar: espaço marcado, sem rosto inventado */
+.polaroid__soon {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  background:
+    repeating-linear-gradient(135deg, rgba(232, 25, 127, 0.08) 0 0.8cqw, transparent 0.8cqw 1.6cqw),
+    #f3e3ea;
+  color: var(--pink-700);
+  font-family: "Caveat Variable", cursive;
+  font-size: 1.9cqw;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+.polaroid__soon span {
+  max-width: 10ch;
+}
+
+/* Post-its */
+.note {
+  aspect-ratio: 1;
+  display: grid;
+  align-content: center;
+  padding: 1.4cqw;
+  color: #2a1f15;
+  font-family: "Caveat Variable", cursive;
+  font-size: 2.05cqw;
+  font-weight: 600;
+  line-height: 1.02;
+  border-radius: 0.1cqw 0.1cqw 1.6cqw 0.1cqw / 0.1cqw 0.1cqw 0.9cqw 0.1cqw;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.25), transparent 40%), var(--note, #f7e26b);
+}
+.note--yellow {
+  --note: #f7e26b;
+}
+.note--pink {
+  --note: #ffb3d1;
+}
+.note--blue {
+  --note: #a9c1f5;
+}
+.note strong {
+  display: block;
+  font-family: var(--font);
+  font-size: 3.4cqw;
+  font-stretch: var(--stretch-display);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+/* Cartão de contato: o único item que é um botão de verdade */
+.contact-card {
+  padding: 1.6cqw;
+  background: #160a10;
+  color: var(--text);
+  border-radius: 0.6cqw;
+}
+.contact-card p {
+  font-family: "Caveat Variable", cursive;
+  font-size: 2.1cqw;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--blush);
+}
+.contact-card .btn {
+  --btn-h: 3.6cqw;
+  width: 100%;
+  margin-top: 1.1cqw;
+  padding: 0 1cqw;
+  font-size: 1.15cqw;
+  gap: 0.6cqw;
+}
+.contact-card .avatar {
+  width: 2.4cqw;
+  height: 2.4cqw;
+}
+
+/* Avatar da Maria (cai para o ícone do WhatsApp enquanto a foto não chega) */
+.avatar {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(10, 2, 8, 0.2);
+}
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar svg {
+  width: 62%;
+  height: 62%;
+}
+
+.about__credit {
+  margin-top: var(--space-4);
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+  text-align: center;
+}
+.about__credit a {
+  color: var(--text-2);
+}
+
+/* Celular: o quadro fica em pé e os itens se reorganizam */
+@media (max-width: 720px) {
+  .about__desktop-only {
+    display: none;
+  }
+  .about {
+    padding-block: var(--space-16);
+  }
+  .board {
+    --frame: 3.2cqw;
+    aspect-ratio: 10 / 38;
+    border-radius: 2cqw;
+  }
+  .board__cork {
+    background-size: 46cqw auto;
+  }
+  .pin-item {
+    left: calc(var(--mx) * 1%);
+    top: calc(var(--my) * 1%);
+    width: calc(var(--mw) * 1cqw);
+    transform: rotate(calc(var(--mr, var(--r)) * 1deg));
+  }
+  .pin {
+    width: 4.4cqw;
+    height: 4.4cqw;
+    margin-left: -2.2cqw;
+    top: -1.4cqw;
+  }
+  .tape {
+    width: 16cqw;
+    height: 5cqw;
+    margin-left: -8cqw;
+    top: -2.6cqw;
+  }
+  .paper {
+    padding: 5cqw 4.6cqw 4.6cqw;
+  }
+  .paper--lined {
+    padding-left: 7cqw;
+    background:
+      linear-gradient(90deg, transparent 4.6cqw, rgba(232, 25, 127, 0.45) 4.6cqw 4.8cqw, transparent 4.8cqw),
+      repeating-linear-gradient(180deg, transparent 0 calc(5.2cqw - 1px), rgba(76, 118, 190, 0.32) calc(5.2cqw - 1px) 5.2cqw),
+      #fbf8f2;
+    background-position: 0 0, 0 3.8cqw, 0 0;
+  }
+  .about__title {
+    font-size: 10.5cqw;
+  }
+  .about__kick {
+    margin-top: 3cqw;
+    font-size: 6cqw;
+  }
+  .about__bio {
+    font-size: 3.55cqw;
+    line-height: 5.2cqw;
+  }
+  .polaroid {
+    padding: 2.2cqw 2.2cqw 0;
+  }
+  .polaroid figcaption {
+    padding: 2cqw 0.5cqw 2.6cqw;
+    font-size: 4.6cqw;
+  }
+  .polaroid__soon {
+    font-size: 4.8cqw;
+  }
+  .note {
+    padding: 3.4cqw;
+    font-size: 5cqw;
+  }
+  .note strong {
+    font-size: 8.6cqw;
+  }
+  .contact-card {
+    padding: 4cqw;
+    border-radius: 1.6cqw;
+  }
+  .contact-card p {
+    font-size: 5.6cqw;
+  }
+  .contact-card .btn {
+    --btn-h: 11cqw;
+    margin-top: 3cqw;
+    font-size: 3.7cqw;
+    gap: 1.6cqw;
+  }
+  .contact-card .avatar {
+    width: 7cqw;
+    height: 7cqw;
+  }
+}

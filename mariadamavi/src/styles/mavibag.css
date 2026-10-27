@@ -1,0 +1,172 @@
+/* Etapa 5: foto real, espaço em branco e detalhes que se abrem com calma. */
+.mavibag {
+  padding: clamp(4.5rem, 9vw, 8rem) var(--gutter);
+  background: var(--ink-950);
+  border-top: 1px solid var(--line);
+}
+.mavibag__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.mavibag__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  color: var(--text-2);
+  font-size: 0.75rem;
+  font-weight: 550;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.mavibag__eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--pink-500);
+}
+.mavibag__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+.mavibag__title {
+  max-width: 11ch;
+  font-size: clamp(2.8rem, 4.8vw, 4.7rem);
+  font-stretch: 95%;
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  text-transform: none;
+  text-wrap: initial;
+}
+.mavibag__title em {
+  color: var(--pink-400);
+  font-style: normal;
+}
+.mavibag__intro {
+  max-width: 36ch;
+  margin-top: 1.5rem;
+  color: var(--text-2);
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.65;
+}
+.mavibag__details {
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--line-strong);
+}
+.mavibag__detail {
+  border-bottom: 1px solid var(--line-strong);
+}
+.mavibag__detail summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 64px;
+  padding: 1rem 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 550;
+}
+.mavibag__detail summary::-webkit-details-marker { display: none; }
+.mavibag__detail summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--text-3);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.mavibag__detail[open] summary::after { content: "−"; }
+.mavibag__detail summary:hover { color: var(--pink-400); }
+.mavibag__detail summary:focus-visible { border-radius: 2px; }
+.mavibag__number {
+  color: var(--text-3);
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+.mavibag__detail[open] .mavibag__number { color: var(--pink-400); }
+.mavibag__detail p {
+  padding: 0 1.5rem 1.25rem 2rem;
+  color: var(--text-2);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+.mavibag__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 48px;
+  margin-top: 1.75rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--ink-950);
+  font-size: 0.875rem;
+  font-weight: 550;
+  text-decoration: none;
+  transition: background-color 180ms, transform 180ms;
+}
+.mavibag__cta:hover { background: var(--pink-600); color: #fff; }
+.mavibag__cta:active { transform: scale(0.98); }
+.mavibag__visual { min-width: 0; margin: 0; }
+.mavibag__photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 3px;
+  background: var(--ink-900);
+}
+.mavibag__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 47% 50%;
+}
+.mavibag__caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--text-3);
+  font-size: 0.75rem;
+}
+.mavibag__signature {
+  color: var(--pink-400);
+  font-family: "Caveat Variable", cursive;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  rotate: -3deg;
+}
+.mavibag__closing {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+}
+.mavibag__closing a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: -0.75rem;
+  text-decoration: none;
+  color: var(--text-2);
+}
+.mavibag__closing a:hover { color: var(--pink-400); }
+@media (max-width: 720px) {
+  .mavibag__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .mavibag__title { font-size: clamp(2.8rem, 11vw, 4rem); max-width: 12ch; }
+  .mavibag__intro { max-width: 40ch; }
+  .mavibag__visual { max-width: 480px; width: 100%; margin-inline: auto; }
+  .mavibag__photo { aspect-ratio: 1; }
+  .mavibag__closing { flex-direction: column; gap: 1rem; }
+}

@@ -1,0 +1,22 @@
+/* Provisório: marca o lugar das seções que ainda vão ser construídas (etapas 1 a 10).
+   Cada seção real substitui o seu bloco; este arquivo some quando a última chegar. */
+.scaffold {
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+  padding: var(--space-24) var(--gutter);
+  border-bottom: 1px dashed var(--line);
+  text-align: center;
+}
+.scaffold:nth-child(even) {
+  background: var(--ink-900);
+}
+.scaffold h2 {
+  font-size: var(--fs-xl);
+  color: var(--text-3);
+}
+.scaffold p {
+  margin-top: var(--space-3);
+  color: var(--text-3);
+  font-size: var(--fs-sm);
+}

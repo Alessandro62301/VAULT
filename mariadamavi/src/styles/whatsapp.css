@@ -1,0 +1,119 @@
+/* Botão flutuante: aparece depois do hero, some quando o rodapé (que tem o próprio CTA) entra */
+.wa-float {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: var(--z-float);
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 6px 0 6px;
+  border-radius: var(--radius-pill);
+  color: #fff;
+  text-decoration: none;
+  background:
+    radial-gradient(80% 100% at 50% 130%, rgba(255, 79, 163, 0.9) 0%, rgba(255, 79, 163, 0) 70%),
+    var(--pink-600);
+  box-shadow: var(--shadow-pink), 0 2px 8px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-fast) var(--ease-leave),
+    transform var(--dur-fast) var(--ease-leave),
+    visibility 0s linear var(--dur-fast),
+    box-shadow var(--dur) var(--ease-land);
+}
+
+.wa-float.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity var(--dur) var(--ease-land),
+    transform 600ms var(--ease-land),
+    visibility 0s,
+    box-shadow var(--dur) var(--ease-land);
+}
+
+.wa-float__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 2, 8, 0.18);
+}
+.wa-float__icon {
+  position: relative;
+}
+.wa-float__icon > svg {
+  width: 26px;
+  height: 26px;
+}
+.wa-float__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+/* Selo do WhatsApp só aparece quando a foto da Maria está no lugar */
+.wa-float__badge {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  display: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--pink-600);
+  box-shadow: 0 0 0 2px var(--ink-950);
+}
+.wa-float__badge svg {
+  width: 13px;
+  height: 13px;
+}
+.wa-float__icon.has-photo .wa-float__badge {
+  display: grid;
+}
+
+/* O rótulo abre no hover/foco no desktop; no celular fica só o ícone */
+.wa-float__label {
+  display: grid;
+  grid-template-columns: 0fr;
+  overflow: hidden;
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  white-space: nowrap;
+  transition: grid-template-columns var(--dur) var(--ease-land);
+}
+.wa-float__label > span {
+  min-width: 0;
+  padding: 0;
+  transition: padding var(--dur) var(--ease-land);
+}
+
+@media (hover: hover) and (min-width: 981px) {
+  .wa-float:hover .wa-float__label,
+  .wa-float:focus-visible .wa-float__label,
+  .wa-float.is-greeting .wa-float__label {
+    grid-template-columns: 1fr;
+  }
+  .wa-float:hover .wa-float__label > span,
+  .wa-float:focus-visible .wa-float__label > span,
+  .wa-float.is-greeting .wa-float__label > span {
+    padding: 0 1.1rem 0 0.7rem;
+  }
+}
+
+.wa-float:hover {
+  box-shadow: 0 16px 36px -10px rgba(209, 15, 111, 0.85), 0 2px 8px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.wa-float:active {
+  transform: scale(0.97);
+}

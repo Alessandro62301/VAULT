@@ -1,0 +1,408 @@
+/* Como funciona: mapa de fases em pixel art. A seção é alta; o palco fica preso enquanto
+   a MaviBag anda pelo caminho, fase por fase. */
+.journey {
+  --map-ratio: 320 / 180;
+  --pixel: "Silkscreen", ui-monospace, monospace;
+  position: relative;
+  height: 460vh;
+  background:
+    radial-gradient(50% 40% at 50% 60%, rgba(74, 168, 236, 0.14), transparent 70%),
+    var(--ink-950);
+}
+
+.journey__stage {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 2.4vh, 1.75rem);
+  height: 100svh;
+  padding: calc(var(--nav-h) + 28px) var(--gutter) clamp(1rem, 3vh, 2rem);
+}
+
+.journey__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  width: var(--map-w);
+}
+.journey__title {
+  font-size: clamp(2rem, 1rem + 2.6vw, 3.75rem);
+  line-height: 0.88;
+}
+.journey__title em {
+  color: var(--pink-500);
+  font-style: normal;
+}
+.journey__head p {
+  max-width: 34ch;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+}
+
+/* Moldura branca, como um quadro pendurado */
+.journey__frame {
+  --map-w: min(100%, 1240px, calc((100svh - var(--nav-h) - 200px) * 320 / 180));
+  width: var(--map-w);
+  padding: clamp(6px, 0.9vw, 12px);
+  border-radius: 6px;
+  background: #fbfbf8;
+  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.journey__stage {
+  --map-w: min(100%, 1240px, calc((100svh - var(--nav-h) - 200px) * 320 / 180));
+}
+
+.journey__map {
+  position: relative;
+  aspect-ratio: var(--map-ratio);
+  overflow: hidden;
+  container-type: inline-size;
+  background: #4aa8ec;
+}
+.journey__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -webkit-user-drag: none;
+}
+
+/* Rotas de avião e barco: tracejado branco andando */
+.journey__routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.journey__routes path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.4;
+  stroke-linecap: square;
+  stroke-dasharray: 2 6;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.9;
+  animation: route 1.2s linear infinite;
+}
+.journey__routes path[data-type="air"] {
+  stroke-dasharray: 6 6;
+  opacity: 0.75;
+}
+@keyframes route {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+/* Fases: o pontinho da fase + a plaquinha com o nome */
+.journey__node {
+  --s: clamp(14px, 2.2cqw, 26px);
+  position: absolute;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+  width: var(--s);
+  height: var(--s);
+  margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+.journey__node::before {
+  /* pontinho em pixel: quadrado com cantos cortados */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e8197f;
+  box-shadow:
+    inset 0 0 0 calc(var(--s) / 7) #5b0730,
+    inset calc(var(--s) / 5) calc(var(--s) / 5) 0 calc(var(--s) / -14) rgba(255, 255, 255, 0.35);
+  clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%);
+  transition: background-color 200ms steps(2);
+}
+.journey__node.is-done::before {
+  background: #ffd23f;
+  box-shadow:
+    inset 0 0 0 calc(var(--s) / 7) #7a5200,
+    inset calc(var(--s) / 5) calc(var(--s) / 5) 0 calc(var(--s) / -14) rgba(255, 255, 255, 0.45);
+}
+.journey__node.is-current::before {
+  animation: blink 0.8s steps(2) infinite;
+}
+@keyframes blink {
+  50% {
+    background: #fff;
+  }
+}
+
+.journey__sign {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + var(--s) * 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.35em 0.6em 0.3em;
+  translate: -50% 0;
+  color: #1a1446;
+  background: #fff8e7;
+  box-shadow: 0 0 0 2px #1a1446, 3px 3px 0 0 rgba(26, 20, 70, 0.45);
+  font-family: var(--pixel);
+  font-size: clamp(9px, 0.95cqw, 12px);
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.journey__sign b {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5em;
+  height: 1.5em;
+  color: #fff;
+  background: #e8197f;
+  font-weight: 700;
+}
+.journey__node:focus-visible {
+  outline: none;
+}
+.journey__node:focus-visible .journey__sign,
+.journey__node:hover .journey__sign {
+  box-shadow: 0 0 0 2px #e8197f, 3px 3px 0 0 rgba(26, 20, 70, 0.45);
+}
+
+/* Maria: personagem original com coroa, cabelo castanho e vestido rosa. */
+.journey__maria {
+  --u: calc(100cqw / 320);
+  position: absolute;
+  z-index: 2;
+  width: calc(var(--u) * 16);
+  height: calc(var(--u) * 21);
+  transform: translate(-50%, -100%);
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+/* A MaviBag que anda pelo mapa */
+.journey__hero {
+  --u: calc(100cqw / 320); /* um pixel do mapa */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.journey__sprite {
+  position: absolute;
+  display: none;
+  image-rendering: pixelated;
+  background-size: 100% 100%;
+}
+.journey__sprite--bag {
+  display: block;
+  width: calc(var(--u) * 12);
+  height: calc(var(--u) * 14);
+  left: calc(var(--u) * -6);
+  top: calc(var(--u) * -15);
+  animation: hop 0.5s steps(2) infinite;
+}
+.journey__hero.is-resting .journey__sprite--bag {
+  animation: none;
+}
+.journey__sprite--boat {
+  width: calc(var(--u) * 18);
+  height: calc(var(--u) * 7);
+  left: calc(var(--u) * -9);
+  top: calc(var(--u) * -4);
+}
+.journey__sprite--plane {
+  width: calc(var(--u) * 16);
+  height: calc(var(--u) * 9);
+  left: calc(var(--u) * -8);
+  top: calc(var(--u) * -4);
+}
+.journey__hero.is-sea .journey__sprite--boat {
+  display: block;
+}
+.journey__hero.is-sea .journey__sprite--bag {
+  top: calc(var(--u) * -14);
+  animation: bob 0.9s steps(2) infinite;
+}
+.journey__hero.is-air .journey__sprite--bag {
+  display: none;
+}
+.journey__hero.is-air .journey__sprite--plane {
+  display: block;
+  rotate: var(--heading, 0deg);
+}
+@keyframes hop {
+  50% {
+    translate: 0 calc(var(--u) * -1);
+  }
+}
+@keyframes bob {
+  50% {
+    translate: 0 calc(var(--u) * 0.6);
+  }
+}
+
+/* Caixa de diálogo de videogame */
+.journey__dialog {
+  position: absolute;
+  left: 2.5%;
+  bottom: 4%;
+  z-index: 4;
+  width: min(62%, 600px);
+  padding: 0.65em 1em;
+  color: #fff;
+  background: #1a1446;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px #1a1446,
+    6px 6px 0 6px rgba(10, 2, 8, 0.35);
+  font-size: clamp(12px, 1.25cqw, 16px);
+}
+.journey__dialog-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7em;
+  margin-bottom: 0.45em;
+  font-family: var(--pixel);
+  text-transform: uppercase;
+}
+.journey__dialog-n {
+  color: #ffd23f;
+  font-size: 0.8em;
+}
+.journey__dialog-t {
+  font-size: 1.15em;
+  font-weight: 700;
+}
+.journey__dialog-text {
+  line-height: 1.45;
+  min-height: 2.9em;
+}
+.journey__dialog-text::after {
+  content: "▾";
+  margin-left: 0.35em;
+  color: #ffd23f;
+  animation: blink 0.8s steps(2) infinite;
+}
+.journey__dialog-cta {
+  display: none;
+  width: fit-content;
+  margin-top: 0.8em;
+  padding: 0.55em 0.8em 0.5em;
+  color: #1a1446;
+  background: #ffd23f;
+  box-shadow: 0 0 0 2px #fff;
+  font-family: var(--pixel);
+  font-size: 0.85em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.journey__dialog-cta:hover {
+  background: #fff;
+}
+.journey.is-end .journey__dialog-cta {
+  display: block;
+}
+.journey.is-end .journey__dialog-text::after {
+  content: none;
+}
+
+/* Lista das fases: para leitores de tela e para quem prefere menos movimento */
+.journey__list {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 720px), (max-aspect-ratio: 4/5) {
+  .journey {
+    --map-ratio: 180 / 320;
+    height: 520vh;
+  }
+  .journey__stage,
+  .journey__frame {
+    --map-w: min(100%, calc((100svh - var(--nav-h) - 170px) * 180 / 320));
+  }
+  .journey__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    width: 100%;
+  }
+  .journey__head p {
+    display: none;
+  }
+  .journey__hero,
+  .journey__maria {
+    --u: calc(100cqw / 180);
+  }
+  .journey__node {
+    --s: clamp(14px, 4.2cqw, 22px);
+  }
+  .journey__sign {
+    font-size: clamp(8px, 2.6cqw, 11px);
+  }
+  .journey__dialog {
+    left: 3%;
+    right: 3%;
+    bottom: 2.5%;
+    width: auto;
+    font-size: clamp(12px, 3.6cqw, 15px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey {
+    height: auto;
+  }
+  .journey__stage {
+    position: relative;
+    height: auto;
+  }
+  .journey__dialog {
+    display: none;
+  }
+  .journey__list {
+    position: static;
+    width: min(100%, 760px);
+    height: auto;
+    margin: 0 auto;
+    padding: 0 var(--gutter) var(--space-16);
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+  .journey__list li + li {
+    margin-top: var(--space-3);
+  }
+  .journey__list strong {
+    color: var(--text);
+  }
+}
+
+@media (max-width: 720px), (max-aspect-ratio: 4/5) {
+  .journey__dialog.is-top {
+    top: 2.5%;
+    bottom: auto;
+  }
+}

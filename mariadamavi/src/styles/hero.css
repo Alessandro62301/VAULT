@@ -1,0 +1,164 @@
+/* Hero: o filme da linha da MaviBag tocando em loop, a tela inteira */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  background: var(--ink-950) url("/hero/poster-desktop.jpg") center / cover no-repeat;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Degradê para o texto ler bem: à esquerda no desktop, embaixo no celular */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(45% 55% at 100% 100%, rgba(10, 2, 8, 0.78) 0%, rgba(10, 2, 8, 0) 100%),
+    linear-gradient(0deg, rgba(10, 2, 8, 0.94) 0%, rgba(10, 2, 8, 0.7) 22%, rgba(10, 2, 8, 0) 50%),
+    linear-gradient(90deg, rgba(10, 2, 8, 0.55) 0%, rgba(10, 2, 8, 0) 40%),
+    linear-gradient(180deg, rgba(10, 2, 8, 0.6) 0%, rgba(10, 2, 8, 0) 18%);
+}
+
+/* Textos nos cantos de baixo: título à esquerda, convite e botões à direita */
+.hero__copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(2.5rem, 7vh, 5rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-12);
+  width: min(100% - var(--gutter) * 2, 1320px);
+  margin-inline: auto;
+}
+
+.hero__lead {
+  min-width: 0;
+}
+
+.hero__title {
+  font-size: clamp(3.5rem, 1.6rem + 5.2vw, 7.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+}
+.hero__title em {
+  color: var(--pink-500);
+  font-style: normal;
+}
+
+.hero__side {
+  flex: none;
+  width: min(38vw, 490px);
+}
+
+.hero__sub {
+  color: var(--text-2);
+  font-size: clamp(1.0625rem, 0.95rem + 0.35vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.hero__actions .btn {
+  --btn-h: 56px;
+  padding: 0 1.45rem;
+  font-size: var(--fs-md);
+}
+
+/* Legenda da etapa que o filme está mostrando agora */
+.hero__caption {
+  position: relative;
+  display: grid;
+  margin-top: var(--space-5);
+  min-height: 1.6em;
+  color: var(--blush);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.hero__caption-line {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0;
+  transform: translateY(8px);
+  filter: blur(4px);
+  transition:
+    opacity 240ms var(--ease-leave),
+    transform 240ms var(--ease-leave),
+    filter 240ms var(--ease-leave);
+}
+.hero__caption-line::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink-500);
+  box-shadow: 0 0 0 4px rgba(232, 25, 127, 0.22);
+}
+.hero__caption-line.is-current {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition:
+    opacity 520ms var(--ease-land) 120ms,
+    transform 520ms var(--ease-land) 120ms,
+    filter 520ms var(--ease-land) 120ms;
+}
+
+@media (max-width: 860px), (max-aspect-ratio: 4/5) {
+  .hero {
+    min-height: 600px;
+    background-image: url("/hero/poster-mobile.jpg");
+  }
+  .hero__scrim {
+    background:
+      linear-gradient(0deg, rgba(10, 2, 8, 0.95) 0%, rgba(10, 2, 8, 0.78) 30%, rgba(10, 2, 8, 0) 56%),
+      linear-gradient(180deg, rgba(10, 2, 8, 0.65) 0%, rgba(10, 2, 8, 0) 16%);
+  }
+  .hero__copy {
+    bottom: max(1.75rem, env(safe-area-inset-bottom));
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+  .hero__side {
+    width: auto;
+  }
+  .hero__title {
+    font-size: clamp(2.9rem, 13.5vw, 4.25rem);
+  }
+  .hero__sub {
+    font-size: var(--fs-sm);
+  }
+  .hero__actions {
+    margin-top: var(--space-4);
+  }
+  .hero__actions .btn {
+    flex: 1 1 auto;
+  }
+  .hero__caption {
+    margin-top: var(--space-4);
+    font-size: var(--fs-xs);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    display: none;
+  }
+}
