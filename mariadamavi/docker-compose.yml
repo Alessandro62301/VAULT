@@ -1,3 +1,6 @@
+# Nome próprio: na VPS já existe outro projeto "mariadamavi" (web, db, cron)
+name: mariadamavi-landing
+
 services:
   site:
     build: .
