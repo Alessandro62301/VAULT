@@ -2,3 +2,7 @@ node_modules
 dist
 .DS_Store
 .impeccable/config.local.json
+commerce/.local/
+commerce/dist/
+commerce/.env
+painel/.env

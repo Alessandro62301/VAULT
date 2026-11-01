@@ -1,91 +1,136 @@
-import { gsap } from "gsap";
-import { whatsappLink } from "./whatsapp.js";
+import { gsap } from 'gsap';
+import { whatsappLink } from './whatsapp.js';
+import { trackEvent } from './measurement.js';
+import { RULES, CHIP_LABEL, SSD_LABEL, COLOR_LABEL, normalizeConfig, configText } from './custom-config.js';
 
-// Combinações que a Apple oferece: o chip Pro vai até 48 GB e 4 TB; o Max, até 128 GB e 8 TB.
-const RULES = {
-  pro: { ram: ["24", "48"], ssd: ["512", "1", "2", "4"] },
-  max: { ram: ["36", "48", "64", "128"], ssd: ["1", "2", "4", "8"] },
-};
-const SSD_LABEL = { 512: "512 GB", 1: "1 TB", 2: "2 TB", 4: "4 TB", 8: "8 TB" };
-const COLOR_LABEL = { preto: "Preto-espacial", prata: "Prateado" };
+const GROUP = { size: 'Tela', chip: 'Chip', ram: 'Memória', ssd: 'Armazenamento', color: 'Cor' };
 
 export function initCustom() {
-  const section = document.querySelector(".custom");
+  const section = document.querySelector('.custom');
   if (!section) return;
-  const form = section.querySelector(".cfg");
-  const summary = form.querySelector(".cfg__summary");
-  const cta = form.querySelector(".cfg__cta");
-  const out = Object.fromEntries([...section.querySelectorAll("[data-out]")].map((el) => [el.dataset.out, el]));
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let ramShown = 128;
+  const form = section.querySelector('.cfg');
+  const summary = form.querySelector('.cfg__summary');
+  const cta = form.querySelector('.cfg__cta');
+  const feedback = section.querySelector('.custom__feedback');
+  const zone = section.querySelector('.custom__dropzone');
+  const prompt = section.querySelector('.custom__drop-prompt strong');
+  const outputs = Object.fromEntries([...section.querySelectorAll('[data-out]')].map(el => [el.dataset.out, el]));
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let drag = null;
+  let suppressedLabel = null;
+  let highlightTimer;
 
-  const value = (name) => form.querySelector(`input[name="${name}"]:checked`)?.value;
+  const read = () => Object.fromEntries(Object.keys(GROUP).map(name => [name, form.querySelector(`input[name="${name}"]:checked`).value]));
+  const labels = config => ({ size: `${config.size}″`, chip: CHIP_LABEL[config.chip], ram: `${config.ram} GB`, ssd: SSD_LABEL[config.ssd], color: COLOR_LABEL[config.color] });
 
-  // Desliga o que o chip escolhido não oferece e, se preciso, pula para a opção válida mais próxima
-  const applyRules = () => {
-    const rule = RULES[value("chip")];
-    ["ram", "ssd"].forEach((name) => {
-      const inputs = [...form.querySelectorAll(`input[name="${name}"]`)];
-      inputs.forEach((i) => (i.disabled = !rule[name].includes(i.value)));
-      const current = inputs.find((i) => i.checked);
-      if (current.disabled) {
-        const allowed = inputs.filter((i) => !i.disabled);
-        const target = Number(current.value);
-        const nearest = allowed.reduce((a, b) => (Math.abs(b.value - target) < Math.abs(a.value - target) ? b : a));
-        nearest.checked = true;
-      }
-    });
-  };
-
-  // Troca uma linha da leitura gigante: sai subindo, entra de baixo
-  const swap = (el, html) => {
-    if (el.dataset.target === html) return;
-    el.dataset.target = html;
-    if (reduced) {
-      el.innerHTML = html;
-      return;
+  function render(changed, dropped = false) {
+    const { config, adjusted } = normalizeConfig(read());
+    const values = labels(config);
+    for (const input of form.querySelectorAll('input[type="radio"]')) {
+      input.checked = config[input.name] === input.value;
+      if (RULES[config.chip][input.name]) input.disabled = !RULES[config.chip][input.name].includes(input.value);
+      input.closest('.cfg__opt').title = input.disabled ? `Indisponível com chip ${values.chip}` : 'Arraste pela alça ou toque para escolher';
     }
-    el._swap?.kill();
-    el._swap = gsap
-      .timeline()
-      .to(el, { yPercent: -40, autoAlpha: 0, duration: 0.18, ease: "power2.in" })
-      .call(() => (el.innerHTML = html))
-      .fromTo(el, { yPercent: 40, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 0.5, ease: "expo.out" });
-  };
-
-  const render = () => {
-    const size = value("size");
-    const chip = value("chip");
-    const ram = Number(value("ram"));
-    const ssd = value("ssd");
-    const color = value("color");
-
-    section.dataset.size = size;
-    section.dataset.color = color;
-    swap(out.size, `${size}″`);
-    swap(out.chip, `Chip ${chip === "max" ? "Max" : "Pro"}`);
-    swap(out.ssd, SSD_LABEL[ssd]);
-
-    // a memória conta até o número novo
-    const b = out.ram.querySelector("b");
-    if (reduced) b.textContent = ram;
-    else {
-      const counter = { v: ramShown };
-      gsap.to(counter, { v: ram, duration: 0.6, ease: "expo.out", onUpdate: () => (b.textContent = Math.round(counter.v)) });
+    for (const [name, el] of Object.entries(outputs)) el.textContent = values[name];
+    section.dataset.size = config.size;
+    section.dataset.color = config.color;
+    summary.textContent = configText(config);
+    cta.href = whatsappLink('sob-medida', `${configText(config)}. Pode me passar o valor e o prazo?`);
+    if (!changed) return;
+    trackEvent('configuration_change', { option: changed });
+    const adjustments = adjusted.map(key => `${GROUP[key]} ${key === 'ssd' ? 'ajustado' : 'ajustada'} para ${values[key]}.`).join(' ');
+    feedback.textContent = `${GROUP[changed]}: ${values[changed]}. ${dropped ? 'Bloco encaixado.' : 'Configuração atualizada.'}${adjustments ? ` ${adjustments}` : ''}`;
+    clearTimeout(highlightTimer);
+    section.querySelectorAll('.is-installed').forEach(el => el.classList.remove('is-installed'));
+    const slots = [changed, ...adjusted].map(name => section.querySelector(`[data-slot="${name}"]`));
+    slots.forEach(slot => slot.classList.add('is-installed'));
+    if (!reduced.matches) {
+      gsap.killTweensOf(slots);
+      gsap.fromTo(slots, { y: -3 }, { y: 0, duration: .35, ease: 'power2.out' });
     }
-    ramShown = ram;
+    highlightTimer = setTimeout(() => slots.forEach(slot => slot.classList.remove('is-installed')), 650);
+  }
 
-    const text = `MacBook Pro ${size}″ · chip ${chip === "max" ? "Max" : "Pro"} · ${ram} GB de memória · ${SSD_LABEL[ssd]} · ${COLOR_LABEL[color]}`;
-    summary.textContent = text;
-    cta.href = whatsappLink("sob-medida", `${text}. Pode me passar o valor e o prazo?`);
-  };
-
-  form.addEventListener("change", (e) => {
-    if (e.target.name === "chip") applyRules();
-    render();
+  form.addEventListener('change', event => {
+    if (event.target.matches('input[type="radio"]')) render(event.target.name);
   });
-  form.addEventListener("submit", (e) => e.preventDefault());
+  form.addEventListener('submit', event => event.preventDefault());
 
-  applyRules();
+  const inside = (x, y) => {
+    const bounds = zone.getBoundingClientRect();
+    return x >= bounds.left && x <= bounds.right && y >= bounds.top && y <= bounds.bottom;
+  };
+
+  function finish(accept = false) {
+    if (!drag) return;
+    const current = drag;
+    drag = null;
+    current.ghost?.remove();
+    current.block.classList.remove('is-drag-source');
+    section.classList.remove('is-dragging', 'is-over');
+    if (current.block.hasPointerCapture(current.id)) current.block.releasePointerCapture(current.id);
+    if (!current.started) return;
+    // Pointerup can synthesize a click on the source label, even after an invalid drop.
+    suppressedLabel = current.block;
+    if (accept && !current.input.disabled) {
+      current.input.checked = true;
+      render(current.input.name, true);
+    } else {
+      feedback.textContent = 'Bloco devolvido. Sua configuração continua a mesma.';
+    }
+  }
+
+  form.addEventListener('pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0 || drag) return;
+    suppressedLabel = null;
+    const block = event.target.closest('.cfg__opt');
+    if (!block) return;
+    const input = block.querySelector('input');
+    if (input.disabled) return;
+    // The handle reserves dragging on touch screens; the rest of each block permits scrolling.
+    if (event.pointerType === 'touch' && !event.target.closest('.cfg__handle')) return;
+    drag = { id: event.pointerId, block, input, x: event.clientX, y: event.clientY, started: false };
+    block.setPointerCapture(event.pointerId);
+  });
+  form.addEventListener('pointermove', event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    if (!drag.started && Math.hypot(event.clientX - drag.x, event.clientY - drag.y) < 7) return;
+    event.preventDefault();
+    if (!drag.started) {
+      drag.started = true;
+      drag.ghost = document.createElement('div');
+      drag.ghost.className = 'cfg__ghost';
+      drag.ghost.setAttribute('aria-hidden', 'true');
+      const label = drag.block.querySelector('span').textContent.trim();
+      drag.ghost.textContent = `${GROUP[drag.input.name]} · ${label}`;
+      document.body.appendChild(drag.ghost);
+      drag.block.classList.add('is-drag-source');
+      section.classList.add('is-dragging');
+      prompt.textContent = `Solte para usar ${label}`;
+    }
+    const width = drag.ghost.offsetWidth;
+    const x = Math.max(6, Math.min(window.innerWidth - width - 6, event.clientX - width / 2));
+    drag.ghost.style.transform = `translate3d(${x}px, ${event.clientY - 60}px, 0)`;
+    section.classList.toggle('is-over', inside(event.clientX, event.clientY));
+  }, { passive: false });
+  form.addEventListener('pointerup', event => {
+    if (drag && event.pointerId === drag.id) finish(inside(event.clientX, event.clientY));
+  });
+  form.addEventListener('pointercancel', () => finish());
+  form.addEventListener('lostpointercapture', () => finish());
+  form.addEventListener('click', event => {
+    if (suppressedLabel && event.target.closest('.cfg__opt') === suppressedLabel) {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressedLabel = null;
+    }
+  }, true);
+  form.addEventListener('dragstart', event => event.preventDefault());
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && drag) { event.preventDefault(); finish(); }
+  });
+  window.addEventListener('blur', () => finish());
+  window.addEventListener('resize', () => finish());
+  document.addEventListener('visibilitychange', () => { if (document.hidden) finish(); });
   render();
 }

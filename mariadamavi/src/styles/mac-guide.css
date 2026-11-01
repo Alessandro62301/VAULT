@@ -1,0 +1,19 @@
+.mac-guide { padding: clamp(2.5rem, 4vw, 4rem) var(--gutter); background: var(--ink-900); border-block: 1px solid var(--line); }
+.mac-guide__inner { max-width: 1240px; margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(2rem, 7vw, 7rem); }
+.mac-guide__eyebrow { color: var(--pink-500); font-size: .68rem; letter-spacing: .12em; font-weight: 650; margin-bottom: 1rem; }
+.mac-guide h2 { font-size: clamp(2rem, 3vw, 3rem); line-height: 1.08; letter-spacing: -.035em; }
+.mac-guide h2 em { color: var(--pink-500); font-style: normal; }
+.mac-guide__intro > p:last-child { color: var(--text-2); font-size: .9rem; max-width: 46ch; margin-top: 1rem; }
+.mac-guide__label { color: var(--text-2); font-size: .78rem; margin-bottom: .6rem; }
+.mac-guide__option { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 74px; padding: .8rem 1rem; border-bottom: 1px solid var(--line-strong); color: var(--text); text-decoration: none; transition: background-color 180ms, color 180ms; }
+.mac-guide__option strong { display: block; font-size: 1rem; font-weight: 650; }
+.mac-guide__option small { display: block; color: var(--text-2); font-size: .75rem; margin-top: .15rem; }
+.mac-guide__option > span:last-child { color: var(--pink-500); font-size: 1.4rem; }
+.mac-guide__option:hover { background: var(--frost); color: var(--pink-500); }
+.mac-guide__option:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.mac-guide__note { display: flex; align-items: center; gap: .4rem; margin-top: 1rem; color: var(--text-2); font-size: .7rem; }
+.mac-guide__note .icon { width: 16px; height: 16px; flex: none; }
+@media (max-width: 720px) {
+  .mac-guide__inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .mac-guide__option { padding-inline: .4rem; }
+}

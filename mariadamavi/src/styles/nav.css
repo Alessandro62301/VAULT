@@ -189,6 +189,15 @@
   }
   .nav__toggle {
     display: inline-flex;
+    flex: 0 0 44px;
+    width: 44px;
+    margin-left: 0;
+  }
+  .nav__cta {
+    --btn-h: 44px;
+    padding-inline: 12px;
+    font-size: .75rem;
+    gap: 6px;
   }
   .nav__bar > .theme-toggle {
     display: none;
@@ -214,6 +223,9 @@
     right: 0;
     display: block;
     padding: var(--space-4) var(--space-6) var(--space-6);
+    max-height: calc(100dvh - 90px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border-radius: var(--radius-lg);
     background: var(--ink-900);
     box-shadow: inset 0 0 0 1px var(--line), var(--shadow-float);
@@ -272,6 +284,11 @@
 }
 
 @media (max-width: 380px) {
+  .nav__bar { gap: 4px; padding-left: 12px; }
+  .nav__brand { font-size: 1.15rem; }
+  .nav__cta { padding-inline: 10px; font-size: .7rem; }
+  .nav__cta .icon { display: none; }
+  .nav__sheet .btn { white-space: normal; font-size: .85rem; }
   .nav__cta .nav__cta-label-long {
     display: none;
   }

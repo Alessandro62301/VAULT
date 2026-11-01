@@ -1,0 +1,13 @@
+{
+  "name": "mariadamavi-painel",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Painel interno: estoque, vendas e fiado lidos do Mercado Phone.",
+  "engines": { "node": ">=20.6" },
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "demo": "node server.js",
+    "senha": "node scripts/gerar-senha.js"
+  }
+}

@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MAP } from "./map-data.js";
-import { PHASES } from "./journey-phases.js";
+import { JOURNEYS, journeyMap } from "./journey-modes.js";
+import { whatsappLink } from "./whatsapp.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +95,7 @@ function spriteURL(rows) {
 }
 
 // Caminho completo em ordem, com o comprimento acumulado e onde fica cada fase
-function buildRoute(data) {
+function buildRoute(data, phases) {
   const pts = [];
   const kinds = []; // tipo do trecho que começa em cada ponto
   data.segments.forEach((seg, i) => {
@@ -115,7 +115,7 @@ function buildRoute(data) {
     const i = pts.findIndex((p) => p[0] === nx && p[1] === ny);
     return acc[i];
   };
-  return { pts, kinds, acc, total: acc[acc.length - 1], stops: PHASES.map((p) => stopAt(p.node)) };
+  return { pts, kinds, acc, total: acc[acc.length - 1], stops: phases.map((p) => stopAt(p.node)) };
 }
 
 function pointAt(route, d) {
@@ -141,12 +141,15 @@ export function initJourney() {
   const hero = section.querySelector(".journey__hero");
   const maria = section.querySelector(".journey__maria");
   maria.style.backgroundImage = spriteURL(SPRITES.maria);
-  const nodes = [...section.querySelectorAll(".journey__node")];
+  let nodes = [...section.querySelectorAll(".journey__node")];
+  let mode = 'encomenda';
+  let phases = JOURNEYS[mode].phases;
   const dialog = section.querySelector(".journey__dialog");
   const dN = dialog.querySelector(".journey__dialog-n");
   const dT = dialog.querySelector(".journey__dialog-t");
   const dText = dialog.querySelector(".journey__dialog-text");
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const simple = window.matchMedia("(max-width: 720px), (max-aspect-ratio: 4/5), (max-height: 740px), (prefers-reduced-motion: reduce)");
   const portrait = window.matchMedia("(max-width: 720px), (max-aspect-ratio: 4/5)");
 
   section.querySelector(".journey__sprite--bag").style.backgroundImage = spriteURL(SPRITES.bag);
@@ -160,14 +163,14 @@ export function initJourney() {
   let typing = null;
 
   const layout = () => {
-    data = portrait.matches ? MAP.mobile : MAP.desktop;
-    route = buildRoute(data);
+    data = journeyMap(mode, portrait.matches);
+    route = buildRoute(data, phases);
     maria.style.left = `${data.maria[0] / data.w * 100}%`;
     maria.style.top = `${data.maria[1] / data.h * 100}%`;
     routesSvg.setAttribute("viewBox", `0 0 ${data.w} ${data.h}`);
     routesSvg.setAttribute("preserveAspectRatio", "none");
     routesSvg.innerHTML = data.segments
-      .filter((s) => s.type !== "land")
+      .filter((s) => mode === 'pronta' || s.type !== "land")
       .map((s) => `<path data-type="${s.type}" d="M${s.points.map((p) => p.join(" ")).join("L")}" />`)
       .join("");
     nodes.forEach((n) => {
@@ -181,15 +184,15 @@ export function initJourney() {
   const setPhase = (k) => {
     if (k === phase) return;
     phase = k;
-    const p = PHASES[k];
+    const p = phases[k];
     nodes.forEach((n, i) => {
       n.classList.toggle("is-done", i < k);
       n.classList.toggle("is-current", i === k);
     });
-    dN.textContent = `Fase ${k + 1}/7`;
+    dN.textContent = `Fase ${k + 1}/${phases.length}`;
     dT.textContent = p.title;
-    section.classList.toggle("is-end", k === PHASES.length - 1);
-    if (reduced) {
+    section.classList.toggle("is-end", k === phases.length - 1);
+    if (reduced.matches || simple.matches) {
       dText.textContent = p.text;
       return;
     }
@@ -207,7 +210,7 @@ export function initJourney() {
   // progresso 0..1 → distância no caminho: em cada intervalo, 35% parado na fase e 65% andando
   const render = (pr) => {
     progress = pr;
-    const n = PHASES.length - 1;
+    const n = phases.length - 1;
     const seg = Math.min(n - 1, Math.floor(pr * n));
     const local = pr * n - seg;
     const DWELL = 0.35;
@@ -235,29 +238,95 @@ export function initJourney() {
     dialog.classList.toggle("is-top", portrait.matches && pt.y / data.h > 0.55);
   };
 
+  const updateContent = () => {
+    const content = JOURNEYS[mode];
+    section.dataset.delivery = mode;
+    section.querySelector('[data-journey-intro]').textContent = content.intro;
+    nodes.forEach(node => node.remove());
+    nodes = phases.map((p, i) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'journey__node';
+      button.dataset.node = p.node;
+      button.dataset.phase = String(i);
+      button.setAttribute('aria-label', `Fase ${i + 1}: ${p.title}`);
+      const sign = document.createElement('span');
+      sign.className = 'journey__sign';
+      const number = document.createElement('b');
+      number.textContent = String(i + 1);
+      sign.append(number, p.title);
+      button.append(sign);
+      map.append(button);
+      return button;
+    });
+    const items = phases.map((p, i) => {
+      const item = document.createElement('li');
+      item.dataset.phase = String(i);
+      const title = document.createElement('strong');
+      title.textContent = `Fase ${i + 1} · ${p.title}`;
+      item.append(title, ` ${p.text}`);
+      return item;
+    });
+    section.querySelector('.journey__list').replaceChildren(...items);
+    section.querySelectorAll('[data-wa="journey"]').forEach(link => {
+      link.dataset.waExtra = content.message;
+      link.href = whatsappLink('journey', content.message);
+      link.textContent = `${content.cta} ↗`;
+    });
+    typing?.kill();
+    phase = -1;
+  };
+
+  updateContent();
   layout();
   portrait.addEventListener("change", layout);
   new ResizeObserver(() => render(progress)).observe(map);
 
-  if (reduced) {
-    render(1);
-    return;
-  }
+  let st;
+  const syncMode = () => {
+    st?.kill();
+    st = null;
+    typing?.kill();
+    phase = -1;
+    if (simple.matches) {
+      render(1);
+    } else {
+      st = ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: "bottom bottom",
+        onUpdate: (self) => render(self.progress),
+      });
+      render(st.progress);
+    }
+    ScrollTrigger.refresh();
+  };
+  simple.addEventListener("change", syncMode);
+  syncMode();
 
-  const st = ScrollTrigger.create({
-    trigger: section,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: 0.4,
-    onUpdate: (self) => render(self.progress),
+  section.querySelector('.journey__switch').hidden = false;
+  section.querySelector('.journey__switch').addEventListener('change', event => {
+    const selected = event.target.value;
+    if (!JOURNEYS[selected] || selected === mode) return;
+    mode = selected;
+    phases = JOURNEYS[mode].phases;
+    progress = 0;
+    updateContent();
+    layout();
+    syncMode();
+    if (st) {
+      window.scrollTo({ top: st.start + 1, behavior: 'instant' });
+      render(0);
+    }
   });
 
-  // clicar numa fase leva o scroll até ela
-  nodes.forEach((n) =>
-    n.addEventListener("click", () => {
+  // Delegação mantém os pontos clicáveis ao trocar a modalidade.
+  map.addEventListener("click", event => {
+      const n = event.target.closest('.journey__node');
+      if (!n) return;
+      if (!st) return;
       const k = Number(n.dataset.phase);
-      const target = st.start + ((st.end - st.start) * (k / (PHASES.length - 1)) + 2);
+      const target = st.start + ((st.end - st.start) * (k / (phases.length - 1)) + 2);
       window.scrollTo({ top: target, behavior: "smooth" });
-    })
-  );
+  });
 }

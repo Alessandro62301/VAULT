@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Painel · Maria da Mavi</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23d81b74'/><text x='16' y='22' font-size='16' font-family='Arial' font-weight='700' fill='white' text-anchor='middle'>M</text></svg>">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <main id="login" class="login" hidden>
+    <form class="login__card" id="form-login">
+      <p class="marca">Maria da Mavi</p>
+      <h1>Painel interno</h1>
+      <label for="senha">Senha</label>
+      <input id="senha" name="senha" type="password" autocomplete="current-password" required autofocus>
+      <p class="login__erro" id="login-erro" role="alert"></p>
+      <button type="submit" class="botao botao--forte">Entrar</button>
+      <p class="login__dica" id="login-dica" hidden>Modo demonstração: a senha é <strong>demo</strong>.</p>
+    </form>
+  </main>
+
+  <div id="app" class="app" hidden>
+    <header class="topo">
+      <p class="marca">Maria da Mavi <span class="topo__selo" id="selo-demo" hidden>dados fictícios</span></p>
+      <nav class="abas" aria-label="Seções">
+        <a href="#resumo" data-aba="resumo">Resumo</a>
+        <a href="#estoque" data-aba="estoque">Estoque</a>
+        <a href="#vendas" data-aba="vendas">Vendas</a>
+        <a href="#fiado" data-aba="fiado">Fiado</a>
+      </nav>
+      <div class="topo__acoes">
+        <button class="botao" id="atualizar" title="Buscar dados novos no Mercado Phone">Atualizar</button>
+        <button class="botao botao--leve" id="sair">Sair</button>
+      </div>
+    </header>
+    <main class="conteudo" id="conteudo" aria-live="polite"></main>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

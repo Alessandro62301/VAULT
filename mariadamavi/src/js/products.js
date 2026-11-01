@@ -1,108 +1,71 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { trackEvent } from './measurement.js';
 gsap.registerPlugin(ScrollTrigger);
 
-// Produtos: a conversa com a Maria aparece aos poucos e cada favo da colmeia revela a nossa foto no scroll,
-// de baixo para cima, com a linha rosa do "scanner" na borda. A foto da Apple sobe e sai.
-// Hexágono em pé com cantos arredondados, em pixels do favo (serve para o recorte e o contorno)
-function hexPath(w, h, r) {
-  const pts = [
-    [w / 2, 0],
-    [w, h / 4],
-    [w, (3 * h) / 4],
-    [w / 2, h],
-    [0, (3 * h) / 4],
-    [0, h / 4],
-  ];
-  const n = pts.length;
-  const toward = (p, q, d) => {
-    const dx = q[0] - p[0];
-    const dy = q[1] - p[1];
-    const len = Math.hypot(dx, dy);
-    return [p[0] + (dx / len) * d, p[1] + (dy / len) * d];
-  };
-  let d = "";
-  for (let i = 0; i < n; i++) {
-    const prev = pts[(i - 1 + n) % n];
-    const cur = pts[i];
-    const next = pts[(i + 1) % n];
-    const a = toward(cur, prev, r);
-    const b = toward(cur, next, r);
-    d += `${i === 0 ? "M" : "L"}${a[0].toFixed(2)} ${a[1].toFixed(2)}Q${cur[0].toFixed(2)} ${cur[1].toFixed(2)} ${b[0].toFixed(2)} ${b[1].toFixed(2)}`;
-  }
-  return d + "Z";
-}
-
 export function initProducts() {
-  const section = document.querySelector(".products");
+  const section = document.querySelector('.products');
   if (!section) return;
-
-  const shape = new ResizeObserver((entries) => {
-    entries.forEach(({ target, contentRect }) => {
-      const { width: w, height: h } = contentRect;
-      const d = hexPath(w, h, w * 0.07);
-      target.style.clipPath = `path("${d}")`;
-      target.style.borderRadius = "0";
-      const svg = target.parentElement.querySelector(".cell__outline");
-      svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-      svg.querySelector("path").setAttribute("d", d);
+  const picker = section.querySelector('.product-picker');
+  const tabs = [...picker.querySelectorAll('[data-product]')];
+  const panels = [...section.querySelectorAll('[data-product-panel]')];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobile = window.matchMedia('(max-width: 720px)');
+  let active = 0;
+  // Without JavaScript, all products and their WhatsApp links remain visible.
+  picker.hidden = false;
+  picker.setAttribute('role', 'tablist');
+  const orient = () => picker.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
+  orient();
+  mobile.addEventListener('change', orient);
+  tabs.forEach((tab, index) => {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-controls', panels[index].id);
+    panels[index].setAttribute('role', 'tabpanel');
+    panels[index].setAttribute('aria-labelledby', tab.id);
+    panels[index].tabIndex = 0;
+  });
+  function select(index, animate = true) {
+    if (animate && index !== active) trackEvent('product_select', { product: tabs[index].dataset.product });
+    active = index;
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.tabIndex = i === index ? 0 : -1;
+      panels[i].hidden = i !== index;
+    });
+    const image = panels[index].querySelector('.product-display__image');
+    const info = panels[index].querySelector('.product-display__info');
+    gsap.killTweensOf([image, info]);
+    gsap.set([image, info], { clearProps: 'transform,opacity,visibility' });
+    if (animate && !reduced.matches) {
+      gsap.fromTo(image, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
+      gsap.fromTo(info, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+    }
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => { if (i !== active) select(i); });
+    tab.addEventListener('keydown', (event) => {
+      const next = mobile.matches ? 'ArrowRight' : 'ArrowDown';
+      const prev = mobile.matches ? 'ArrowLeft' : 'ArrowUp';
+      let index;
+      if (event.key === next) index = (active + 1) % tabs.length;
+      else if (event.key === prev) index = (active - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') index = 0;
+      else if (event.key === 'End') index = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(index);
+      tabs[index].focus({ preventScroll: true });
+      if (mobile.matches) picker.scrollTo({ left: tabs[index].offsetLeft - picker.offsetLeft - 16, behavior: 'instant' });
     });
   });
-  section.querySelectorAll(".cell__body").forEach((b) => shape.observe(b));
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  // A conversa (estilo Direct) aparece mensagem por mensagem, com "digitando" antes das respostas da Maria
-  const chat = section.querySelector(".chat");
-  if (chat) {
-    const msgs = [...chat.querySelectorAll(".msg")];
-    const typing = chat.querySelector(".chat__typing");
-    gsap.set(msgs, { autoAlpha: 0, y: 14, scale: 0.96 });
-    const tl = gsap.timeline({ paused: true });
-    msgs.forEach((m) => {
-      const fromMaria = m.classList.contains("msg--maria");
-      if (fromMaria) {
-        tl.call(() => {
-          m.before(typing);
-          typing.classList.add("is-on");
-        }).to({}, { duration: 0.9 });
-        tl.call(() => {
-          typing.classList.remove("is-on");
-          typing.parentElement.appendChild(typing); // sai do meio do bloco, para o avatar cair na última mensagem
-        });
-      } else {
-        tl.to({}, { duration: 0.5 });
-      }
-      tl.to(m, {
-        autoAlpha: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.45,
-        ease: "back.out(1.8)",
-        transformOrigin: fromMaria ? "0% 100%" : "100% 100%",
-      });
+  select(0, false);
+  const motion = gsap.matchMedia();
+  motion.add('(prefers-reduced-motion: no-preference)', () => {
+    const chat = section.querySelector('.chat');
+    gsap.from(chat.querySelectorAll('.msg'), {
+      opacity: 0, y: 8, duration: 0.4, stagger: 0.16, ease: 'power2.out',
+      scrollTrigger: { trigger: chat, start: 'top 85%', once: true },
     });
-    ScrollTrigger.create({ trigger: chat, start: "top 75%", once: true, onEnter: () => tl.play() });
-  }
-
-  section.querySelectorAll(".cell").forEach((card) => {
-    const product = card.querySelector(".cell__product");
-    const photo = card.querySelector(".cell__photo");
-    const shade = card.querySelector(".cell__shade");
-    const scan = card.querySelector(".cell__scan");
-
-    const tl = gsap.timeline({
-      defaults: { ease: "none" },
-      scrollTrigger: { trigger: card, start: "top 82%", end: "top 30%", scrub: 0.5 },
-    });
-
-    // primeiro um respiro com a foto da Apple, depois a revelação
-    tl.to({}, { duration: 0.25 })
-      .set(scan, { opacity: 1 })
-      .fromTo(photo, { clipPath: "inset(100% 0% 0% 0%)", scale: 1.12 }, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 1 })
-      .fromTo(scan, { top: "100%" }, { top: "0%", duration: 1 }, "<")
-      .to(product, { yPercent: -18, scale: 0.92, autoAlpha: 0, duration: 0.8, ease: "power1.in" }, "<0.15")
-      .to(shade, { opacity: 1, duration: 0.6 }, "<0.3")
-      .set(scan, { opacity: 0 });
   });
 }

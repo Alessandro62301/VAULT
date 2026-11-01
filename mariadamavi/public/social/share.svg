@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fcfaf9"/>
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="#fcfaf9" stroke="#ead2df" stroke-width="2"/>
+  <text x="72" y="104" fill="#d40070" font-family="Arial, sans-serif" font-size="32" font-weight="900" letter-spacing="-1">MARIADAMAVI</text>
+  <text x="1128" y="99" text-anchor="end" fill="#705864" font-family="Arial, sans-serif" font-size="18">Apple lacrado e seminovo</text>
+  <text x="72" y="240" fill="#210d1a" font-family="Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-3">Seu próximo Apple.</text>
+  <text x="72" y="330" fill="#d40070" font-family="Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="-3">A gente escolhe junto.</text>
+  <text x="76" y="399" fill="#705864" font-family="Arial, sans-serif" font-size="25">Atendimento direto com a Maria. Cuidado em cada encomenda.</text>
+  <rect x="72" y="469" width="280" height="62" rx="31" fill="#d40070"/>
+  <text x="212" y="508" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Vamos conversar ↗</text>
+  <text x="1128" y="509" text-anchor="end" fill="#210d1a" font-family="Arial, sans-serif" font-size="23">mariadamavi.com.br</text>
+</svg>

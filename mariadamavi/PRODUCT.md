@@ -1,5 +1,9 @@
 # Product
 
+## Loja online — decisão de 27/10/2026
+
+Domínio confirmado: mariadamavi.com.br. Loja escolhida: WordPress + WooCommerce em store.mariadamavi.com.br, com carrinho e futuro pagamento PIX/cartão. A landing e o atendimento consultivo continuam separados. Prévia local em commerce/ com tema filho Storefront; catálogo, preços e frete são demonstração. Hospedagem, gateway, catálogo real e publicação ainda pendentes. Ver commerce/README.md.
+
 <!-- impeccable:product-schema 1 -->
 
 ## Platform
@@ -45,13 +49,15 @@ entrepreneurial family behind the brand.
 
 ## Capabilities and Constraints
 
-- In-stock items or custom order in **2 to 14 business days**.
+- In-stock items or custom order in **2 to 14 business days after payment**.
 - Custom MacBook Pro orders in top configurations (up to 128 GB RAM).
-- Warranty: sealed = **1 year manufacturer warranty**; semi-new = **6 months**.
+- Warranty: sealed = **1 year directly with Apple**; semi-new = **6 months with mariadamavi**.
 - Every sale has invoice (nota fiscal) + contract + warranty.
 - Trade-in accepted: **iPhone 11 or newer**, **MacBook M1 or newer**.
-- Payment: PIX, card in installments, PIX + card (exact installment terms: undecided).
-- Undecided: domain, other counters (years, cities), installment terms.
+- Payment: PIX, card in **up to 18 installments with interest**, or PIX + card. Quote the installment amounts and total before payment.
+- CNPJ: **65.798.444/0001-60**, corrected and confirmed by the user on 01/11/2026. WhatsApp service: **24 hours**.
+- Mac lines offered: **M5 and M6**. MacBook Pro configurator distinguishes M5, M5 Pro, M5 Max and M6 using verified Apple specifications.
+- Undecided: other counters (years, cities), coupon conditions, formal cancellation/return policies, legal company name.
 
 ## Brand Commitments
 
@@ -71,8 +77,8 @@ entrepreneurial family behind the brand.
 - **500+ orders delivered** (real number).
 - MaviBag photo: `_briefing/refs/mavibag/mavibag-01.png`.
 - Instagram screenshots: `_briefing/refs/`.
-- Absent (do not fabricate): customer testimonials, named clients, unboxing videos, team
-  photos, years in business. Use clearly marked placeholders.
+- Received: real unboxing video and photos of Maria, Maria with Junior, an educational activity, and the original pink shopping bag. Assets in `public/colecao/`. The supplied iVogue cover leads the Coleção Mavi carousel after the hero; the other two covers are website design proposals using supplied photos.
+- Absent (do not fabricate): customer testimonials, named clients, years in business.
 
 ## Product Principles
 
@@ -91,4 +97,4 @@ for all scroll-driven and 3D effects. Brazilian Portuguese.
 
 - Prefer light mode: nearly white surfaces, clear hierarchy, fewer decorative elements.
 - Stage 5 (MaviBag) uses the real packaging photo, concise expandable details and subtle scroll motion.
-- Keep the existing 3D hero for now. The planned replacement is a real video of Maria packing an order, once provided; do not generate a substitute video or face.
+- Hero: real, user-provided portrait unboxing with Maria, beside clear store copy and a primary WhatsApp CTA. It follows the selected theme. On mobile, copy and CTA come first. Video loads and plays with sound only after the visitor chooses to watch; no autoplay. Do not generate substitute footage or faces.

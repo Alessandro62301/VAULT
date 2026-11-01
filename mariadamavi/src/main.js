@@ -9,30 +9,33 @@ import "./styles/whatsapp.css";
 import "./styles/hero.css";
 import "./styles/board.css";
 import "./styles/products.css";
-import "./styles/custom.css";
+import "./styles/mac-guide.css";
 import "./styles/mavibag.css";
 import "./styles/journey.css";
 import "./styles/footer.css";
 import "./styles/closing.css";
+import "./styles/collection.css";
 
 import { initNav } from "./js/nav.js";
 import { initTheme } from "./js/theme.js";
 import { initHero } from "./js/hero.js";
 import { initBoard } from "./js/board.js";
 import { initProducts } from "./js/products.js";
-import { initCustom } from "./js/custom.js";
 import { initMavibag } from "./js/mavibag.js";
 import { initJourney } from "./js/journey.js";
+import { initMeasurement } from "./js/measurement.js";
+import { initCollection } from "./js/collection.js";
 import { initWhatsappLinks, initWhatsappFloat } from "./js/whatsapp.js";
 
 initTheme();
+initMeasurement();
 initWhatsappLinks();
 initNav();
 initWhatsappFloat();
 initHero();
+initCollection();
 initBoard();
 initProducts();
-initCustom();
 initMavibag();
 initJourney();
 

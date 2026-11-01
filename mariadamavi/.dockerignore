@@ -1,0 +1,12 @@
+node_modules
+dist
+commerce
+painel
+_briefing
+assets-src
+film
+tests
+.git
+.claude
+.impeccable
+*.md

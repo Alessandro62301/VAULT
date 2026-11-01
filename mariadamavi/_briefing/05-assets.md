@@ -85,3 +85,10 @@ A leitura completa dos posts e dos destaques exigiu login durante a conferência
 
 Destaques públicos verificados no perfil: Feedbacks `18042009995795719`, Encomendas
 `18135006739561804`, Bastidores `18055926983742125`. Links diretos usados no site.
+
+## Hero humano — unboxing real (27/10/2026)
+
+- Fonte: `unboxingiphone18promaxmavi.mp4`, vídeo fornecido pelo Junior nesta conversa (original preservado em Downloads).
+- `public/hero/maria-unboxing.mp4`: vídeo completo, 80,27 s, 720×1280, H.264/AAC, faststart; derivado por compressão, sem alteração de rosto, fala ou legendas.
+- `public/hero/maria-unboxing-poster.jpg`: quadro real extraído aos 72 s, 720×1280; sem geração ou retoque facial.
+- O MP4 só é carregado ao assistir; a capa é priorizada no primeiro carregamento. Os arquivos da animação antiga permanecem no projeto, sem uso no hero.

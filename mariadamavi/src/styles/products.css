@@ -1,66 +1,79 @@
-/* Produtos: banner com foto + grade de cards em forma de pasta (como a Wave).
-   Cada card mostra a foto do produto no padrão Apple e, no scroll, revela a nossa foto. */
-.products {
-  padding: clamp(5rem, 9vw, 8rem) var(--gutter) clamp(5rem, 10vw, 9rem);
-  background: var(--ink-950);
-}
+/* Vitrine: seleção de produtos com espaço para a conversa. */
+.products { padding: clamp(4.5rem, 8vw, 8rem) var(--gutter); background: var(--ink-950); }
+.products__inner { width: min(100%, 1240px); margin-inline: auto; }
+.products__heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 3rem; }
+.products__eyebrow { color: var(--pink-400); font-size: 0.7rem; font-weight: 650; letter-spacing: 0.13em; }
+.products__title { margin-top: 1.25rem; font-size: clamp(3rem, 6vw, 5.75rem); line-height: 0.94; }
+.products__title em, .products__intro h3 em { font-style: normal; color: var(--pink-500); }
+.products__lead { max-width: 27ch; padding-bottom: 0.25rem; color: var(--text-2); font-size: 1rem; }
+.products__showroom { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 2.5rem; border-top: 1px solid var(--line-strong); padding-top: 1.5rem; }
+.product-picker { align-self: start; padding-top: 0.5rem; }
+.product-picker[hidden], .product-display[hidden] { display: none; }
+.product-picker__item { display: flex; align-items: center; gap: 1rem; width: 100%; min-height: 60px; padding: 0.5rem 0.75rem; border: 0; border-bottom: 1px solid var(--line); background: transparent; text-align: left; font-size: 1.0625rem; cursor: pointer; transition: color 180ms, background-color 180ms; }
+.product-picker__number { font-size: 0.65rem; font-variant-numeric: tabular-nums; color: var(--text-3); }
+.product-picker__item .icon { width: 16px; height: 16px; margin-left: auto; opacity: 0; }
+.product-picker__item[aria-selected="true"] { color: var(--pink-400); background: var(--frost); font-weight: 700; }
+.product-picker__item[aria-selected="true"] .icon { opacity: 1; }
+.product-picker__item:hover { background: var(--frost); }
+.product-picker__item:focus-visible { outline-offset: -2px; border-radius: 4px; }
+.products__displays, .product-display { min-width: 0; }
+.product-display:focus-visible { border-radius: 12px; }
+.product-display__visual { position: relative; display: grid; place-items: center; height: 380px; overflow: hidden; border-radius: 12px; background: var(--ink-900); isolation: isolate; }
+.product-display__edition { position: absolute; top: 1.5rem; left: 1.75rem; color: var(--text-3); font-size: 0.65rem; letter-spacing: 0.14em; }
+.product-display__backdrop { position: absolute; font-size: clamp(4rem, 10vw, 9.5rem); font-weight: 850; font-stretch: var(--stretch-display); text-transform: uppercase; letter-spacing: -0.04em; color: var(--text); opacity: 0.055; white-space: nowrap; user-select: none; }
+.product-display__image { position: relative; width: 70%; height: 260px; object-fit: contain; filter: drop-shadow(0 18px 20px rgba(30, 5, 18, 0.14)); }
+.product-display__image--iphone, .product-display__image--watch { height: 260px; width: 55%; }
+.product-display__image--airpods, .product-display__image--mac-mini { height: 220px; }
+.product-display__note { position: absolute; bottom: 1.25rem; right: 1.75rem; color: var(--pink-400); font-family: "Caveat Variable", cursive; font-size: 1.6rem; transform: rotate(-4deg); }
+.product-display__info { display: flex; justify-content: space-between; align-items: end; gap: 1.75rem; min-height: 168px; padding: 1.5rem 0 0.25rem; }
+.product-display__name { margin-bottom: 0.6rem; color: var(--pink-400); font-size: 0.75rem; font-weight: 650; }
+.product-display__info h3 { font-size: clamp(1.6rem, 2.7vw, 2.5rem); line-height: 1; text-wrap: initial; }
+.product-display__description { max-width: 48ch; margin-top: 0.75rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-2); }
+.product-display__cta { flex-shrink: 0; box-shadow: none; }
+.products__details { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: 0.72rem; color: var(--text-3); }
+.products__banner { display: grid; grid-template-columns: 1fr minmax(0, 420px); align-items: center; gap: clamp(2rem, 7vw, 6rem); margin-top: clamp(4rem, 8vw, 7rem); }
+.products__intro h3 { margin-top: 1rem; font-size: clamp(2.25rem, 3.8vw, 3.75rem); line-height: 0.98; }
+.products__intro > p:not(.products__eyebrow) { max-width: 42ch; margin-top: 1.25rem; color: var(--text-2); }
+.products__intro .btn { margin-top: 1.5rem; box-shadow: none; }
+.products__intro > .products__terms { font-size: 0.75rem; line-height: 1.65; color: var(--text-3); }
+.products__showroom:has(.product-picker[hidden]) { display: block; }
+.products__showroom:has(.product-picker[hidden]) .products__displays { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 
-.products__inner {
-  width: min(100%, 1320px);
-  margin-inline: auto;
-  container-type: inline-size; /* a colmeia mede os favos pela largura deste bloco */
+@media (max-width: 1020px) {
+  .products__showroom { grid-template-columns: 175px minmax(0, 1fr); gap: 1.5rem; }
+  .product-display__info { align-items: start; flex-direction: column; gap: 1rem; min-height: 245px; }
+  .products__banner { gap: 2.5rem; grid-template-columns: 1fr 1fr; }
+  .products__lead { font-size: 0.9rem; }
 }
-
-/* Banner humano: o convite da Maria à esquerda, uma conversa de WhatsApp à direita */
-.products__banner {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-items: end;
-  gap: clamp(2rem, 5vw, 5rem);
-  padding: clamp(1.5rem, 4.5vw, 4rem);
-  overflow: hidden;
-  border-radius: 28px;
-  background:
-    radial-gradient(60% 80% at 85% 30%, rgba(232, 25, 127, 0.28), transparent 70%),
-    radial-gradient(50% 60% at 0% 100%, rgba(168, 10, 88, 0.22), transparent 70%),
-    var(--ink-900);
-  box-shadow: inset 0 0 0 1px var(--line);
-  isolation: isolate;
-}
-.products__banner::before {
-  /* grão leve, para o painel não parecer chapado */
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.18;
-  background: url("/quem-somos/cork.svg") 0 0 / 260px auto;
-  mix-blend-mode: soft-light;
-}
-
-.products__title {
-  font-size: clamp(2.5rem, 1.3rem + 3.4vw, 4.75rem);
-  line-height: 0.88;
-}
-.products__title em {
-  display: block;
-  margin-top: 0.08em;
-  color: var(--pink-500);
-  font-style: normal;
-}
-.products__intro p {
-  max-width: 44ch;
-  margin-top: var(--space-6);
-  color: var(--text-2);
-  font-size: clamp(1rem, 0.92rem + 0.3vw, 1.1875rem);
-  line-height: 1.5;
-}
-.products__intro .btn {
-  --btn-h: 56px;
-  margin-top: var(--space-8);
-  padding-right: 1.5rem;
-  font-size: var(--fs-md);
+@media (max-width: 720px) {
+  .products__heading { display: block; margin-bottom: 1.75rem; }
+  .products__eyebrow { font-size: 0.62rem; letter-spacing: 0.09em; }
+  .products__title { font-size: clamp(2.75rem, 10.6vw, 4.5rem); margin-top: 1rem; }
+  .products__lead { margin-top: 1.25rem; max-width: none; }
+  .products__lead br { display: none; }
+  .products__showroom { display: block; padding-top: 0; }
+  .product-picker { display: flex; gap: 0.25rem; overflow-x: auto; padding: 0.75rem 0 1rem; margin-bottom: 0.5rem; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+  .product-picker__item { flex: 0 0 auto; width: auto; min-height: 44px; padding: 0.5rem 1rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.85rem; white-space: nowrap; }
+  .product-picker__number, .product-picker__item .icon { display: none; }
+  .product-picker__item[aria-selected="true"] { color: #fff; background: var(--pink-600); border-color: var(--pink-600); }
+  .product-display__visual { height: 300px; }
+  .product-display__edition { top: 1rem; left: 1rem; }
+  .product-display__backdrop { font-size: clamp(3.6rem, 20vw, 7rem); }
+  .product-display__image, .product-display__image--iphone, .product-display__image--watch { height: 205px; }
+  .product-display__image--airpods, .product-display__image--mac-mini { height: 175px; }
+  .product-display__note { bottom: 0.75rem; right: 1rem; font-size: 1.35rem; }
+  .product-display__info { padding-top: 1.25rem; min-height: 242px; }
+  .product-display__info h3 { font-size: 2rem; }
+  .product-display__description { font-size: 0.875rem; }
+  .product-display__cta { width: 100%; margin-top: auto; }
+  .products__details { display: block; font-size: 0.7rem; }
+  .products__details p + p { margin-top: 0.5rem; }
+  .products__banner { grid-template-columns: 1fr; gap: 2rem; }
+  .products__intro h3 { font-size: 2.65rem; }
+  .products__intro > p:not(.products__eyebrow) { font-size: 0.95rem; }
+  .products__intro > .products__terms { font-size: 0.75rem; }
+  .products__intro .btn { width: 100%; }
+  .products__showroom:has(.product-picker[hidden]) .products__displays { grid-template-columns: 1fr; }
 }
 
 /* Conversa no estilo Direct: a Maria à esquerda (cinza), o cliente à direita (degradê) */
@@ -267,200 +280,6 @@
   text-align: center;
 }
 
-/* Colmeia: hexágonos em pé, a 2ª fileira deslocada meio hexágono e encaixada na 1ª.
-   A grade usa colunas de meio hexágono e linhas de 1/4 da altura, para o encaixe sair exato. */
-.hive {
-  --cols: 4;
-  --w: calc(100cqw / (var(--cols) + 0.5));
-  --h: calc(var(--w) * 1.1547);
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-auto-rows: calc(var(--h) / 4);
-  margin: clamp(3.5rem, 6vw, 5.5rem) 0 0;
-  padding: 0;
-  list-style: none;
-}
-.hive > li {
-  grid-row: span 4;
-}
-/* desktop: 4 em cima, 4 embaixo deslocados */
-.hive > li:nth-child(1) { grid-area: 1 / 1 / span 4 / span 2; }
-.hive > li:nth-child(2) { grid-area: 1 / 3 / span 4 / span 2; }
-.hive > li:nth-child(3) { grid-area: 1 / 5 / span 4 / span 2; }
-.hive > li:nth-child(4) { grid-area: 1 / 7 / span 4 / span 2; }
-.hive > li:nth-child(5) { grid-area: 4 / 2 / span 4 / span 2; }
-.hive > li:nth-child(6) { grid-area: 4 / 4 / span 4 / span 2; }
-.hive > li:nth-child(7) { grid-area: 4 / 6 / span 4 / span 2; }
-.hive > li:nth-child(8) { grid-area: 4 / 8 / span 4 / span 2; }
-
-.cell {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  scale: 0.955; /* o respiro entre os favos */
-  color: var(--text);
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: scale var(--dur) var(--ease-land);
-}
-.cell__body {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 18%; /* sem JS: um quadrado arredondado; com JS: o hexágono */
-  background:
-    radial-gradient(60% 50% at 50% 48%, rgba(232, 25, 127, 0.14), transparent 70%),
-    linear-gradient(180deg, #14060f 0%, #0c0309 100%);
-}
-.cell__outline {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-}
-.cell__outline path {
-  fill: none;
-  stroke: var(--line-strong);
-  stroke-width: 1;
-  transition: stroke var(--dur) var(--ease-land);
-}
-
-/* Produto no padrão Apple */
-.cell__product {
-  position: absolute;
-  left: 50%;
-  top: 46%;
-  width: calc(var(--pw, 62%) * 0.86);
-  max-height: 46%;
-  object-fit: contain;
-  translate: -50% -50%;
-  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.55));
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-}
-
-/* Nossa foto, revelada de baixo para cima no scroll */
-.cell__photo {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: inset(100% 0 0 0);
-  pointer-events: none;
-  z-index: 2;
-}
-.cell__shade {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 0;
-  pointer-events: none;
-  background: linear-gradient(0deg, rgba(10, 2, 8, 0.75) 0%, rgba(10, 2, 8, 0) 50%);
-}
-.cell__scan {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 2px;
-  z-index: 3;
-  opacity: 0;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, var(--pink-400) 20%, #fff 50%, var(--pink-400) 80%, transparent);
-  box-shadow: 0 0 14px 2px rgba(232, 25, 127, 0.7);
-}
-
-.cell__label {
-  position: absolute;
-  left: 50%;
-  bottom: 17%;
-  z-index: 4;
-  translate: -50% 0;
-  font-size: clamp(0.8125rem, 0.7rem + 0.4vw, 1.0625rem);
-  color: #fff; /* os favos são sempre escuros, nos dois temas */
-  font-weight: 650;
-  white-space: nowrap;
-  text-shadow: 0 1px 8px rgba(10, 2, 8, 0.8);
-}
-
-.cell:hover,
-.cell:focus-visible {
-  scale: 0.985;
-}
-.cell:hover .cell__outline path,
-.cell:focus-visible .cell__outline path {
-  stroke: var(--pink-500);
-  stroke-width: 1.5;
-}
-.cell:focus-visible {
-  outline: none;
-}
-
-.products__credit {
-  margin-top: var(--space-12);
-  color: var(--text-3);
-  font-size: var(--fs-xs);
-  text-align: center;
-}
-.products__credit a {
-  color: var(--text-2);
-}
-
-@media (max-width: 980px) {
-  .products__banner {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
-}
-
-@media (max-width: 720px) {
-  .products__banner {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    padding: var(--space-6) var(--space-4) var(--space-4);
-    border-radius: 22px;
-  }
-  .products__title {
-    font-size: clamp(2.25rem, 10vw, 3.25rem);
-  }
-  .products__intro .btn {
-    width: 100%;
-  }
-  .msg {
-    max-width: 88%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cell__photo {
-    clip-path: none;
-  }
-  .cell__product,
-  .cell__scan {
-    display: none;
-  }
-}
-
-/* celular e tablet: favos de 2 em 2, alternando o deslocamento */
-@media (max-width: 820px) {
-  .hive {
-    --cols: 2;
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .hive > li:nth-child(1) { grid-area: 1 / 1 / span 4 / span 2; }
-  .hive > li:nth-child(2) { grid-area: 1 / 3 / span 4 / span 2; }
-  .hive > li:nth-child(3) { grid-area: 4 / 2 / span 4 / span 2; }
-  .hive > li:nth-child(4) { grid-area: 4 / 4 / span 4 / span 2; }
-  .hive > li:nth-child(5) { grid-area: 7 / 1 / span 4 / span 2; }
-  .hive > li:nth-child(6) { grid-area: 7 / 3 / span 4 / span 2; }
-  .hive > li:nth-child(7) { grid-area: 10 / 2 / span 4 / span 2; }
-  .hive > li:nth-child(8) { grid-area: 10 / 4 / span 4 / span 2; }
-}
 
 /* Direct no tema claro */
 [data-theme="light"] .chat {

@@ -36,9 +36,8 @@ export function initNav() {
 
   // Marca o link da seção que está na tela
   const links = [...nav.querySelectorAll('a[href^="#"]')].filter((a) => a.getAttribute("href").length > 1);
-  const sections = [...new Set(links.map((a) => a.getAttribute("href")))]
-    .map((id) => document.querySelector(id))
-    .filter(Boolean);
+  // Também observa seções sem item no menu, para não manter outro link marcado.
+  const sections = [...document.querySelectorAll('main > section[id]')];
 
   const setCurrent = (id) => {
     links.forEach((a) => {

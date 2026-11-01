@@ -4,12 +4,13 @@ export const WHATSAPP_NUMBER = "5521920184210";
 
 const MESSAGES = {
   nav: "Oi Maria! Vim pelo site e quero fazer uma encomenda.",
-  hero: "Oi Maria! Vim pelo site e quero a minha MaviBag.",
+  hero: "Oi Maria! Vim pelo site e queria conversar sobre o meu próximo Apple. Pode me ajudar a escolher?",
   produtos: "Oi Maria! Vim pelo site e queria ajuda pra escolher o meu Apple.",
   "sob-medida": "Oi Maria! Quero encomendar um",
+  macbook: "Oi Maria! Vim pelo site e estou procurando um MacBook.",
   produto: "Oi Maria! Vim pelo site e quero saber sobre",
   mavibag: "Oi Maria! Vi os detalhes da MaviBag no site e quero encomendar o meu Apple.",
-  journey: "Oi Maria! Vi o mapa no site e quero começar a minha encomenda.",
+  journey: "Oi Maria! Vi como funciona a compra no site.",
   board: "Oi Maria! Vi o seu quadro no site e queria conversar.",
   menu: "Oi Maria! Vim pelo site e quero fazer uma encomenda.",
   float: "Oi Maria! Vim pelo site e queria tirar uma dúvida.",

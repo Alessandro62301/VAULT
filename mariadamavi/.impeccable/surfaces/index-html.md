@@ -15,13 +15,13 @@ THESIS: the store with a face that packs every order by hand. The page is the Ma
 
 OWN-WORLD: near-black wine ground (#0A0208, #14060F), MaviBag hot pink (#E8197F) as light and as print, blush (#FFB8DA). Heavy condensed caps like the bag's vertical MARIADAMAVI print; Archivo across widths, condensed for display, normal for text. Frosted-plastic surfaces, pink foam texture, cork board for Quem somos. Pill controls.
 
-STORY: they see the MaviBag being made, meet Maria and Junior on the board, trust the facts, message Maria.
+STORY: they meet Maria through her real unboxing, understand the Apple offering and direct WhatsApp service, then discover the couple and their care through the board and MaviBag.
 
-FIRST VIEWPORT: full-bleed scroll-scrubbed MaviBag line film (placeholder poster until delivered); headline in condensed caps over the calm top-center; primary pill "Quero a minha MaviBag" (WhatsApp) beside "Ver produtos"; floating pill nav on top.
+FIRST VIEWPORT (updated with user approval): theme-aware split hero; large condensed headline "Seu próximo Apple. A gente escolhe junto.", primary "Conversar com a Maria" WhatsApp CTA, secondary product anchor and factual trust points. Real portrait unboxing on the right with a still frame and explicit play action; on mobile, copy and CTA precede media. Video is never an autoplay background and loads only on request.
 
 FORM: brief-pinned (waveofunboxing.com.br structure recolored in the @mariadamavi look). seed: none (unavailable)
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-Signature interaction: the scroll drives the MaviBag being filled; the finished bag drops into the next section.
+Hero interaction: an explicit play action starts the real unboxing inline with native controls and audio; playback pauses offscreen and never resumes automatically.
 Motion grammar: land decelerates (expo-out), leave accelerates; nothing grows from zero; reduced-motion shows final states.

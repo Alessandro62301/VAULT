@@ -13,17 +13,17 @@ export const PHASES = [
   {
     "node": "pagamento",
     "title": "Pagamento",
-    "text": "PIX, cartão ou os dois. Você escolhe o jeito que fica melhor."
+    "text": "PIX, cartão em até 18x com juros, ou os dois. Você escolhe o jeito que fica melhor."
   },
   {
     "node": "compra",
     "title": "Compra nos EUA",
-    "text": "A gente compra o seu lacrado, direto dos EUA. Se tiver pronta entrega, essa fase é pulada."
+    "text": "A gente compra o seu lacrado, direto dos EUA, conforme o modelo e a configuração combinados."
   },
   {
     "node": "viagem",
     "title": "Viagem",
-    "text": "Frete segurado e rastreio pelo WhatsApp. A encomenda chega em 2 a 14 dias úteis."
+    "text": "Frete segurado e rastreio pelo WhatsApp. Encomendas em 2 a 14 dias úteis após o pagamento."
   },
   {
     "node": "mavibag",

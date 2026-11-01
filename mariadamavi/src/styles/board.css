@@ -166,6 +166,7 @@
   pointer-events: none;
   user-select: none;
 }
+.polaroid__img--maria { height: auto; aspect-ratio: 1; object-position: center 60%; }
 .polaroid figcaption {
   padding: 0.8cqw 0.2cqw 1.1cqw;
   color: #2b2226;
