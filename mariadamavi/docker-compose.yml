@@ -6,5 +6,13 @@ services:
     build: .
     image: mariadamavi-site
     restart: unless-stopped
-    ports:
-      - "8080:80"
+    # Sem porta publicada: o Traefik da VPS entrega o domínio.
+    # Ele precisa estar ligado a esta rede:
+    #   docker network connect mariadamavi-landing_default <container do traefik>
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=mariadamavi-landing_default"
+      - "traefik.http.routers.mavi-landing.entrypoints=websecure"
+      - "traefik.http.routers.mavi-landing.rule=Host(`mariadamavi.com.br`) || Host(`www.mariadamavi.com.br`)"
+      - "traefik.http.routers.mavi-landing.tls.certresolver=letsencrypt"
+      - "traefik.http.services.mavi-landing.loadbalancer.server.port=80"
