@@ -1,6 +1,6 @@
 # Publicação da landing — Docker / Easypanel
 
-Preparado em 02/11/2026. As correções estão no projeto local; ainda não foram publicadas na VPS.
+Atualizado em 03/11/2026. O build SEO está pronto; esta versão ainda precisa ser publicada na VPS.
 
 ## Easypanel com Git/GitHub
 
@@ -12,7 +12,7 @@ Preparado em 02/11/2026. As correções estão no projeto local; ainda não fora
 
 ## Easypanel com Upload
 
-O pacote `mariadamavi-pagespeed-2026-11-02.zip`, entregue em `../outputs/landing-review/`, contém uma versão já compilada: `dist/`, configuração do Nginx, cabeçalhos e Dockerfile próprio. Use esse ZIP no serviço existente, Build Path `/`, builder Dockerfile e porta 80. O Dockerfile do pacote serve exatamente o build auditado, sem recompilar com npm. Ele também roda `nginx -t`.
+O pacote `../outputs/mariadamavi-seo-2026-11-03.zip` contém o build compilado, `robots.txt`, sitemap, metadados e dados estruturados SEO, logo otimizada, configuração do Nginx e Dockerfile estático. Use esse ZIP no serviço existente, builder Dockerfile e porta 80. O Dockerfile serve exatamente esse build e executa `nginx -t`.
 
 Não misture HTML/JS de um build com `security-headers.conf` de outro: os hashes devem corresponder. Publique a imagem inteira. Para voltar à versão anterior, use a imagem/deployment anterior preservada pelo seu fluxo de publicação.
 
@@ -37,6 +37,7 @@ O Compose existente utiliza Traefik, sem porta publicada no host. Não crie um s
 - Arquivos `/assets/` e `/optimized/`: cache de um ano. HTML: revalidação. Conteúdo textual: gzip quando aceito pelo cliente. AVIF/WebP devem retornar MIME de imagem; fontes WOFF2 devem retornar MIME de fonte.
 - Não pode haver erros de CSP no console, erros de carregamento ou arquivos 404 da própria página.
 - Rodar novamente o PageSpeed no endereço público. A medição local não substitui a rede, proxy e CPU do teste público.
+- No Google Search Console, inspecionar a URL inicial, executar o teste ao vivo e solicitar indexação; enviar `https://mariadamavi.com.br/sitemap.xml` no relatório Sitemaps. A solicitação requer uma conta com acesso verificado à propriedade e não garante indexação.
 
 Se a hospedagem utilizar Nginx fora do container, `nginx-performance.conf` é apenas um fragmento para mesclar ao servidor HTTPS existente. Nesse caso, copie o arquivo gerado de segurança para o caminho indicado, preserve certificados e os demais sites e valide com `nginx -t` antes do reload. Não é necessário aplicar esse fragmento separadamente quando usar o Dockerfile entregue.
 

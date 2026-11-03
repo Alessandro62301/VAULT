@@ -59,59 +59,59 @@
   },
   "rock-in-rio": {
     "source": "/colecao/rock-in-rio.jpg",
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 3533984,
+    "width": 1080,
+    "height": 1350,
+    "originalBytes": 398785,
     "variants": [
       {
-        "url": "/optimized/rock-in-rio-480-05175a3c24.webp",
+        "url": "/optimized/rock-in-rio-480-303bf6fa6a.webp",
         "width": 480,
-        "height": 643,
-        "bytes": 75978
+        "height": 600,
+        "bytes": 65240
       },
       {
-        "url": "/optimized/rock-in-rio-640-d616f5c7ea.webp",
+        "url": "/optimized/rock-in-rio-640-3b17a787eb.webp",
         "width": 640,
-        "height": 857,
-        "bytes": 118756
+        "height": 800,
+        "bytes": 100470
       },
       {
-        "url": "/optimized/rock-in-rio-960-637441061d.webp",
+        "url": "/optimized/rock-in-rio-960-afb650ce30.webp",
         "width": 960,
-        "height": 1286,
-        "bytes": 242120
+        "height": 1200,
+        "bytes": 186490
       },
       {
-        "url": "/optimized/rock-in-rio-1200-d21f5e6714.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 364222
+        "url": "/optimized/rock-in-rio-1080-3bd8b56d43.webp",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 229078
       }
     ],
     "avifVariants": [
       {
-        "url": "/optimized/rock-in-rio-480-d106706dfb.avif",
+        "url": "/optimized/rock-in-rio-480-12f44a4157.avif",
         "width": 480,
-        "height": 643,
-        "bytes": 40516
+        "height": 600,
+        "bytes": 35586
       },
       {
-        "url": "/optimized/rock-in-rio-640-8bfe4d6af2.avif",
+        "url": "/optimized/rock-in-rio-640-9c093ac943.avif",
         "width": 640,
-        "height": 857,
-        "bytes": 63147
+        "height": 800,
+        "bytes": 54238
       },
       {
-        "url": "/optimized/rock-in-rio-960-f73a297a2f.avif",
+        "url": "/optimized/rock-in-rio-960-4865371276.avif",
         "width": 960,
-        "height": 1286,
-        "bytes": 117183
+        "height": 1200,
+        "bytes": 95591
       },
       {
-        "url": "/optimized/rock-in-rio-1200-bdb8cca895.avif",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 172864
+        "url": "/optimized/rock-in-rio-1080-5624f15bbc.avif",
+        "width": 1080,
+        "height": 1350,
+        "bytes": 119928
       }
     ]
   },
