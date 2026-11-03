@@ -6,9 +6,8 @@ services:
     build: .
     image: mariadamavi-site
     restart: unless-stopped
-    # Sem porta publicada: o Traefik da VPS entrega o domínio.
-    # Ele precisa estar ligado a esta rede:
-    #   docker network connect mariadamavi-landing_default <container do traefik>
+    # Sem porta publicada: o Traefik da VPS (network_mode: host) entrega o
+    # domínio e alcança o IP do container nesta rede.
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=mariadamavi-landing_default"

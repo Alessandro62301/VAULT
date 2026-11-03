@@ -1,7 +1,4 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { trackEvent } from './measurement.js';
-gsap.registerPlugin(ScrollTrigger);
 
 export function initProducts() {
   const section = document.querySelector('.products');
@@ -35,11 +32,10 @@ export function initProducts() {
     });
     const image = panels[index].querySelector('.product-display__image');
     const info = panels[index].querySelector('.product-display__info');
-    gsap.killTweensOf([image, info]);
-    gsap.set([image, info], { clearProps: 'transform,opacity,visibility' });
+    if (animate) for (const element of [image, info]) element.getAnimations().forEach(animation => animation.cancel());
     if (animate && !reduced.matches) {
-      gsap.fromTo(image, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' });
-      gsap.fromTo(info, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+      image.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 500, easing: 'cubic-bezier(.16,1,.3,1)' });
+      info.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 350, easing: 'ease-out' });
     }
   }
   tabs.forEach((tab, i) => {
@@ -60,12 +56,15 @@ export function initProducts() {
     });
   });
   select(0, false);
-  const motion = gsap.matchMedia();
-  motion.add('(prefers-reduced-motion: no-preference)', () => {
-    const chat = section.querySelector('.chat');
-    gsap.from(chat.querySelectorAll('.msg'), {
-      opacity: 0, y: 8, duration: 0.4, stagger: 0.16, ease: 'power2.out',
-      scrollTrigger: { trigger: chat, start: 'top 85%', once: true },
-    });
-  });
+  const chat = section.querySelector('.chat');
+  const observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    observer.disconnect();
+    if (reduced.matches) return;
+    chat.querySelectorAll('.msg').forEach((message, index) => message.animate(
+      [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }],
+      { duration: 400, delay: index * 160, fill: 'backwards', easing: 'ease-out' },
+    ));
+  }, { threshold: .15 });
+  observer.observe(chat);
 }

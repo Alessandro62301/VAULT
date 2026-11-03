@@ -1,0 +1,305 @@
+{
+  "ivogue-outubro": {
+    "source": "/colecao/ivogue-outubro.jpg",
+    "width": 1792,
+    "height": 2400,
+    "originalBytes": 3763766,
+    "variants": [
+      {
+        "url": "/optimized/ivogue-outubro-480-f975c39192.webp",
+        "width": 480,
+        "height": 643,
+        "bytes": 87920
+      },
+      {
+        "url": "/optimized/ivogue-outubro-640-29a471e0d8.webp",
+        "width": 640,
+        "height": 857,
+        "bytes": 145756
+      },
+      {
+        "url": "/optimized/ivogue-outubro-960-a554cbfb07.webp",
+        "width": 960,
+        "height": 1286,
+        "bytes": 311992
+      },
+      {
+        "url": "/optimized/ivogue-outubro-1200-67edef52dd.webp",
+        "width": 1200,
+        "height": 1607,
+        "bytes": 481756
+      }
+    ],
+    "avifVariants": [
+      {
+        "url": "/optimized/ivogue-outubro-480-19ea194ea0.avif",
+        "width": 480,
+        "height": 643,
+        "bytes": 45590
+      },
+      {
+        "url": "/optimized/ivogue-outubro-640-cb80fbf9ed.avif",
+        "width": 640,
+        "height": 857,
+        "bytes": 70928
+      },
+      {
+        "url": "/optimized/ivogue-outubro-960-b3f26c212a.avif",
+        "width": 960,
+        "height": 1286,
+        "bytes": 141896
+      },
+      {
+        "url": "/optimized/ivogue-outubro-1200-068b33e24b.avif",
+        "width": 1200,
+        "height": 1607,
+        "bytes": 223366
+      }
+    ]
+  },
+  "rock-in-rio": {
+    "source": "/colecao/rock-in-rio.jpg",
+    "width": 1792,
+    "height": 2400,
+    "originalBytes": 3533984,
+    "variants": [
+      {
+        "url": "/optimized/rock-in-rio-480-05175a3c24.webp",
+        "width": 480,
+        "height": 643,
+        "bytes": 75978
+      },
+      {
+        "url": "/optimized/rock-in-rio-640-d616f5c7ea.webp",
+        "width": 640,
+        "height": 857,
+        "bytes": 118756
+      },
+      {
+        "url": "/optimized/rock-in-rio-960-637441061d.webp",
+        "width": 960,
+        "height": 1286,
+        "bytes": 242120
+      },
+      {
+        "url": "/optimized/rock-in-rio-1200-d21f5e6714.webp",
+        "width": 1200,
+        "height": 1607,
+        "bytes": 364222
+      }
+    ],
+    "avifVariants": [
+      {
+        "url": "/optimized/rock-in-rio-480-d106706dfb.avif",
+        "width": 480,
+        "height": 643,
+        "bytes": 40516
+      },
+      {
+        "url": "/optimized/rock-in-rio-640-8bfe4d6af2.avif",
+        "width": 640,
+        "height": 857,
+        "bytes": 63147
+      },
+      {
+        "url": "/optimized/rock-in-rio-960-f73a297a2f.avif",
+        "width": 960,
+        "height": 1286,
+        "bytes": 117183
+      },
+      {
+        "url": "/optimized/rock-in-rio-1200-bdb8cca895.avif",
+        "width": 1200,
+        "height": 1607,
+        "bytes": 172864
+      }
+    ]
+  },
+  "maria-avatar": {
+    "source": "/colecao/maria-macbook.png",
+    "width": 1684,
+    "height": 2528,
+    "originalBytes": 592888,
+    "variants": [
+      {
+        "url": "/optimized/maria-avatar-128-e5cb7e5129.webp",
+        "width": 128,
+        "height": 193,
+        "bytes": 3568
+      }
+    ],
+    "avifVariants": []
+  },
+  "maria-unboxing": {
+    "source": "/hero/maria-unboxing-poster.jpg",
+    "width": 720,
+    "height": 1280,
+    "originalBytes": 123027,
+    "variants": [
+      {
+        "url": "/optimized/maria-unboxing-360-db8aa73e93.webp",
+        "width": 360,
+        "height": 640,
+        "bytes": 29954
+      },
+      {
+        "url": "/optimized/maria-unboxing-640-1eab951249.webp",
+        "width": 640,
+        "height": 1138,
+        "bytes": 67380
+      },
+      {
+        "url": "/optimized/maria-unboxing-720-f4dbb9e0ba.webp",
+        "width": 720,
+        "height": 1280,
+        "bytes": 81218
+      }
+    ],
+    "avifVariants": [
+      {
+        "url": "/optimized/maria-unboxing-360-daf516ec4f.avif",
+        "width": 360,
+        "height": 640,
+        "bytes": 16644
+      },
+      {
+        "url": "/optimized/maria-unboxing-640-6641c4af6f.avif",
+        "width": 640,
+        "height": 1138,
+        "bytes": 39868
+      },
+      {
+        "url": "/optimized/maria-unboxing-720-dd0b7ccba0.avif",
+        "width": 720,
+        "height": 1280,
+        "bytes": 49954
+      }
+    ]
+  },
+  "mavibag": {
+    "source": "/quem-somos/mavibag.jpg",
+    "width": 900,
+    "height": 864,
+    "originalBytes": 140593,
+    "variants": [
+      {
+        "url": "/optimized/mavibag-400-c07cb0f9b1.webp",
+        "width": 400,
+        "height": 384,
+        "bytes": 18034
+      },
+      {
+        "url": "/optimized/mavibag-700-dbf4a2595f.webp",
+        "width": 700,
+        "height": 672,
+        "bytes": 33172
+      },
+      {
+        "url": "/optimized/mavibag-900-1356d15f4d.webp",
+        "width": 900,
+        "height": 864,
+        "bytes": 47366
+      }
+    ],
+    "avifVariants": []
+  },
+  "maria-odontologia": {
+    "source": "/colecao/maria-odontologia.jpg",
+    "width": 1200,
+    "height": 1600,
+    "originalBytes": 127366,
+    "variants": [
+      {
+        "url": "/optimized/maria-odontologia-400-b96b00f996.webp",
+        "width": 400,
+        "height": 533,
+        "bytes": 18612
+      },
+      {
+        "url": "/optimized/maria-odontologia-700-c9a70cbe19.webp",
+        "width": 700,
+        "height": 933,
+        "bytes": 39722
+      }
+    ],
+    "avifVariants": []
+  },
+  "maria-junior": {
+    "source": "/colecao/maria-junior.jpg",
+    "width": 900,
+    "height": 1600,
+    "originalBytes": 220334,
+    "variants": [
+      {
+        "url": "/optimized/maria-junior-400-7d025c2117.webp",
+        "width": 400,
+        "height": 711,
+        "bytes": 39694
+      },
+      {
+        "url": "/optimized/maria-junior-700-1974e3793d.webp",
+        "width": 700,
+        "height": 1244,
+        "bytes": 107122
+      }
+    ],
+    "avifVariants": []
+  },
+  "odontologia-comunidade": {
+    "source": "/colecao/odontologia-comunidade.jpg",
+    "width": 1600,
+    "height": 1200,
+    "originalBytes": 305624,
+    "variants": [
+      {
+        "url": "/optimized/odontologia-comunidade-400-1a61a0060f.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 28450
+      },
+      {
+        "url": "/optimized/odontologia-comunidade-700-c398956af9.webp",
+        "width": 700,
+        "height": 525,
+        "bytes": 71804
+      }
+    ],
+    "avifVariants": []
+  },
+  "sacola-rosa": {
+    "source": "/colecao/sacola-rosa-origens.jpg",
+    "width": 1200,
+    "height": 1600,
+    "originalBytes": 113607,
+    "variants": [
+      {
+        "url": "/optimized/sacola-rosa-400-26584444b3.webp",
+        "width": 400,
+        "height": 533,
+        "bytes": 13774
+      },
+      {
+        "url": "/optimized/sacola-rosa-700-c07c75d36a.webp",
+        "width": 700,
+        "height": 933,
+        "bytes": 27122
+      }
+    ],
+    "avifVariants": []
+  },
+  "icone-rosa": {
+    "source": "/colecao/icone-rosa.png",
+    "width": 500,
+    "height": 500,
+    "originalBytes": 70685,
+    "variants": [
+      {
+        "url": "/optimized/icone-rosa-64-aa462eb8cb.webp",
+        "width": 64,
+        "height": 64,
+        "bytes": 1380
+      }
+    ],
+    "avifVariants": []
+  }
+}

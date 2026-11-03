@@ -169,10 +169,14 @@ export function initJourney() {
     maria.style.top = `${data.maria[1] / data.h * 100}%`;
     routesSvg.setAttribute("viewBox", `0 0 ${data.w} ${data.h}`);
     routesSvg.setAttribute("preserveAspectRatio", "none");
-    routesSvg.innerHTML = data.segments
+    routesSvg.replaceChildren(...data.segments
       .filter((s) => mode === 'pronta' || s.type !== "land")
-      .map((s) => `<path data-type="${s.type}" d="M${s.points.map((p) => p.join(" ")).join("L")}" />`)
-      .join("");
+      .map((s) => {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.dataset.type = s.type;
+        path.setAttribute('d', `M${s.points.map(p => p.join(' ')).join('L')}`);
+        return path;
+      }));
     nodes.forEach((n) => {
       const [x, y] = data.nodes[n.dataset.node];
       n.style.setProperty("--x", ((x / data.w) * 100).toFixed(3));

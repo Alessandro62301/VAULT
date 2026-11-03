@@ -26,6 +26,7 @@
 .hero__watch::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,3,9,.3), transparent 25%, transparent 62%, rgba(13,3,9,.85)); pointer-events: none; }
 .hero__poster, .hero__video { display: block; width: 100%; height: 100%; object-fit: contain; }
 .hero__poster { object-fit: cover; transition: transform 500ms var(--ease-land); }
+.hero__watch > picture { display: block; width: 100%; height: 100%; }
 .hero__watch:hover .hero__poster { transform: scale(1.025); }
 .hero__watch:focus-visible { outline: 3px solid var(--pink-400); outline-offset: -5px; border-radius: 22px; }
 .hero__video-tag { position: absolute; z-index: 1; top: 1.1rem; left: 0; right: 0; text-align: center; font-size: .6rem; font-weight: 650; letter-spacing: .1em; text-shadow: 0 1px 5px #000; }

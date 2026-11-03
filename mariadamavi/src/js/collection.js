@@ -37,6 +37,14 @@ export function initCollection() {
     const preview = document.createElement('div');
     preview.className = button.className;
     for (const child of button.children) preview.append(child.cloneNode(true));
+    const photo = preview.querySelector('img');
+    if (photo?.dataset.fullSrc) {
+      preview.querySelectorAll('source').forEach(source => source.remove());
+      photo.removeAttribute('srcset');
+      photo.removeAttribute('sizes');
+      photo.src = photo.dataset.fullSrc;
+      photo.loading = 'eager';
+    }
     section.querySelector('.collection__enlarged').replaceChildren(preview);
     section.querySelector('#edition-title').textContent = button.closest('article').querySelector('h3').textContent;
     dialog.showModal();

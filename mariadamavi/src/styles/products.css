@@ -285,7 +285,7 @@
 [data-theme="light"] .chat {
   --chat-bg: #fff;
   --chat-fg: #000;
-  --chat-muted: #737373;
+  --chat-muted: #656565;
   --chat-in: #efefef;
   --chat-line: #dbdbdb;
   box-shadow:

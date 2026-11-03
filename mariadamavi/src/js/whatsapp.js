@@ -41,6 +41,10 @@ export function initWhatsappFloat() {
   const hero = document.querySelector("#inicio");
   const footer = document.querySelector(".footer");
   if (!float || !hero) return;
+  const photo = float.querySelector('.wa-float__photo');
+  const showPhoto = () => { if (photo.naturalWidth) float.classList.add('has-photo'); };
+  photo?.addEventListener('load', showPhoto, { once: true });
+  if (photo?.complete) showPhoto();
 
   let pastHero = false;
   let atFooter = false;

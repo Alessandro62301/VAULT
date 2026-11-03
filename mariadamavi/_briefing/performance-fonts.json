@@ -1,0 +1,49 @@
+[
+  {
+    "family": "Archivo Variable",
+    "source": "node_modules\\@fontsource-variable\\archivo\\files\\archivo-latin-standard-normal.woff2",
+    "axes": {
+      "wdth": [
+        62,
+        100,
+        100
+      ],
+      "wght": [
+        300,
+        400,
+        900
+      ]
+    },
+    "url": "/optimized/archivo-standard-normal-e358e2063e.woff2",
+    "originalBytes": 90104,
+    "bytes": 74276
+  },
+  {
+    "family": "Caveat Variable",
+    "source": "node_modules\\@fontsource-variable\\caveat\\files\\caveat-latin-wght-normal.woff2",
+    "axes": {},
+    "url": "/optimized/caveat-wght-normal-057ed524a2.woff2",
+    "originalBytes": 74932,
+    "bytes": 73976
+  },
+  {
+    "family": "Bodoni Moda Variable",
+    "source": "node_modules\\@fontsource-variable\\bodoni-moda\\files\\bodoni-moda-latin-standard-normal.woff2",
+    "axes": {
+      "wght": 500
+    },
+    "url": "/optimized/bodoni-moda-standard-normal-e8b1ff84dd.woff2",
+    "originalBytes": 46260,
+    "bytes": 26324
+  },
+  {
+    "family": "Bodoni Moda Variable",
+    "source": "node_modules\\@fontsource-variable\\bodoni-moda\\files\\bodoni-moda-latin-standard-italic.woff2",
+    "axes": {
+      "wght": 500
+    },
+    "url": "/optimized/bodoni-moda-standard-italic-ab39832736.woff2",
+    "originalBytes": 53756,
+    "bytes": 29796
+  }
+]
