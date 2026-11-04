@@ -1,0 +1,1285 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-04",
+  "pricingStatus": "reference",
+  "whatsapp": "5521920184210",
+  "source": {
+    "name": "QuantoPega",
+    "url": "https://quantopega.com.br/quanto-vale",
+    "checkedAt": "2026-11-04",
+    "note": "Valores-base públicos da tabela sugerida; não são preços de venda. Descontos iniciais da demonstração pública do iPhone 13 128GB, configuráveis por modelo."
+  },
+  "tradeIn": [
+    {
+      "id": "iphone-11",
+      "name": "iPhone 11",
+      "capacities": [
+        {
+          "gb": 64,
+          "baseCents": 44000
+        },
+        {
+          "gb": 128,
+          "baseCents": 64000
+        },
+        {
+          "gb": 256,
+          "baseCents": 74000
+        }
+      ]
+    },
+    {
+      "id": "iphone-11-pro",
+      "name": "iPhone 11 Pro",
+      "capacities": [
+        {
+          "gb": 64,
+          "baseCents": 44000
+        },
+        {
+          "gb": 256,
+          "baseCents": 54000
+        },
+        {
+          "gb": 512,
+          "baseCents": 64000
+        }
+      ]
+    },
+    {
+      "id": "iphone-11-pro-max",
+      "name": "iPhone 11 Pro Max",
+      "capacities": [
+        {
+          "gb": 64,
+          "baseCents": 64000
+        },
+        {
+          "gb": 256,
+          "baseCents": 74000
+        },
+        {
+          "gb": 512,
+          "baseCents": 84000
+        }
+      ]
+    },
+    {
+      "id": "iphone-12-mini",
+      "name": "iPhone 12 mini",
+      "capacities": [
+        {
+          "gb": 64,
+          "baseCents": 75000
+        },
+        {
+          "gb": 128,
+          "baseCents": 90000
+        },
+        {
+          "gb": 256,
+          "baseCents": 95000
+        }
+      ]
+    },
+    {
+      "id": "iphone-12",
+      "name": "iPhone 12",
+      "capacities": [
+        {
+          "gb": 64,
+          "baseCents": 94000
+        },
+        {
+          "gb": 128,
+          "baseCents": 109900
+        },
+        {
+          "gb": 256,
+          "baseCents": 114000
+        }
+      ]
+    },
+    {
+      "id": "iphone-12-pro",
+      "name": "iPhone 12 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 124000
+        },
+        {
+          "gb": 256,
+          "baseCents": 144000
+        },
+        {
+          "gb": 512,
+          "baseCents": 164000
+        }
+      ]
+    },
+    {
+      "id": "iphone-12-pro-max",
+      "name": "iPhone 12 Pro Max",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 164000
+        },
+        {
+          "gb": 256,
+          "baseCents": 179900
+        },
+        {
+          "gb": 512,
+          "baseCents": 200000
+        }
+      ]
+    },
+    {
+      "id": "iphone-13-mini",
+      "name": "iPhone 13 mini",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 125000
+        },
+        {
+          "gb": 256,
+          "baseCents": 135000
+        },
+        {
+          "gb": 512,
+          "baseCents": 145000
+        }
+      ]
+    },
+    {
+      "id": "iphone-13",
+      "name": "iPhone 13",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 154500
+        },
+        {
+          "gb": 256,
+          "baseCents": 164000
+        },
+        {
+          "gb": 512,
+          "baseCents": 174000
+        }
+      ]
+    },
+    {
+      "id": "iphone-13-pro",
+      "name": "iPhone 13 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 194500
+        },
+        {
+          "gb": 256,
+          "baseCents": 209500
+        },
+        {
+          "gb": 512,
+          "baseCents": 204000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 214000
+        }
+      ]
+    },
+    {
+      "id": "iphone-13-pro-max",
+      "name": "iPhone 13 Pro Max",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 224500
+        },
+        {
+          "gb": 256,
+          "baseCents": 244500
+        },
+        {
+          "gb": 512,
+          "baseCents": 264500
+        },
+        {
+          "gb": 1024,
+          "baseCents": 274500
+        }
+      ]
+    },
+    {
+      "id": "iphone-14",
+      "name": "iPhone 14",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 164000
+        },
+        {
+          "gb": 256,
+          "baseCents": 184000
+        },
+        {
+          "gb": 512,
+          "baseCents": 224000
+        }
+      ]
+    },
+    {
+      "id": "iphone-14-plus",
+      "name": "iPhone 14 Plus",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 184000
+        },
+        {
+          "gb": 256,
+          "baseCents": 204000
+        },
+        {
+          "gb": 512,
+          "baseCents": 244000
+        }
+      ]
+    },
+    {
+      "id": "iphone-14-pro",
+      "name": "iPhone 14 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 247000
+        },
+        {
+          "gb": 256,
+          "baseCents": 267000
+        },
+        {
+          "gb": 512,
+          "baseCents": 274000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 284000
+        }
+      ]
+    },
+    {
+      "id": "iphone-14-pro-max",
+      "name": "iPhone 14 Pro Max",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 287000
+        },
+        {
+          "gb": 256,
+          "baseCents": 302900
+        },
+        {
+          "gb": 512,
+          "baseCents": 304000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 314000
+        }
+      ]
+    },
+    {
+      "id": "iphone-15",
+      "name": "iPhone 15",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 224500
+        },
+        {
+          "gb": 256,
+          "baseCents": 239500
+        },
+        {
+          "gb": 512,
+          "baseCents": 259500
+        }
+      ]
+    },
+    {
+      "id": "iphone-15-plus",
+      "name": "iPhone 15 Plus",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 244500
+        },
+        {
+          "gb": 256,
+          "baseCents": 259500
+        },
+        {
+          "gb": 512,
+          "baseCents": 279500
+        }
+      ]
+    },
+    {
+      "id": "iphone-15-pro",
+      "name": "iPhone 15 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 284500
+        },
+        {
+          "gb": 256,
+          "baseCents": 314500
+        },
+        {
+          "gb": 512,
+          "baseCents": 334500
+        },
+        {
+          "gb": 1024,
+          "baseCents": 344500
+        }
+      ]
+    },
+    {
+      "id": "iphone-15-pro-max",
+      "name": "iPhone 15 Pro Max",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 374500
+        },
+        {
+          "gb": 512,
+          "baseCents": 394500
+        },
+        {
+          "gb": 1024,
+          "baseCents": 404500
+        }
+      ]
+    },
+    {
+      "id": "iphone-16e",
+      "name": "iPhone 16e",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 260000
+        },
+        {
+          "gb": 256,
+          "baseCents": 275000
+        },
+        {
+          "gb": 512,
+          "baseCents": 295000
+        }
+      ]
+    },
+    {
+      "id": "iphone-16",
+      "name": "iPhone 16",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 324500
+        },
+        {
+          "gb": 256,
+          "baseCents": 344000
+        },
+        {
+          "gb": 512,
+          "baseCents": 354000
+        }
+      ]
+    },
+    {
+      "id": "iphone-16-plus",
+      "name": "iPhone 16 Plus",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 344500
+        },
+        {
+          "gb": 256,
+          "baseCents": 364000
+        },
+        {
+          "gb": 512,
+          "baseCents": 374000
+        }
+      ]
+    },
+    {
+      "id": "iphone-16-pro",
+      "name": "iPhone 16 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "baseCents": 374000
+        },
+        {
+          "gb": 256,
+          "baseCents": 407000
+        },
+        {
+          "gb": 512,
+          "baseCents": 384000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 394000
+        }
+      ]
+    },
+    {
+      "id": "iphone-16-pro-max",
+      "name": "iPhone 16 Pro Max",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 454000
+        },
+        {
+          "gb": 512,
+          "baseCents": 444000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 464000
+        }
+      ]
+    },
+    {
+      "id": "iphone-17e",
+      "name": "iPhone 17e",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 340000
+        },
+        {
+          "gb": 512,
+          "baseCents": 360000
+        }
+      ]
+    },
+    {
+      "id": "iphone-17",
+      "name": "iPhone 17",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 430000
+        },
+        {
+          "gb": 512,
+          "baseCents": 460000
+        }
+      ]
+    },
+    {
+      "id": "iphone-air",
+      "name": "iPhone Air",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 480000
+        },
+        {
+          "gb": 512,
+          "baseCents": 510000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 540000
+        }
+      ]
+    },
+    {
+      "id": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 540000
+        },
+        {
+          "gb": 512,
+          "baseCents": 580000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 620000
+        }
+      ]
+    },
+    {
+      "id": "iphone-17-pro-max",
+      "name": "iPhone 17 Pro Max",
+      "capacities": [
+        {
+          "gb": 256,
+          "baseCents": 600000
+        },
+        {
+          "gb": 512,
+          "baseCents": 640000
+        },
+        {
+          "gb": 1024,
+          "baseCents": 680000
+        },
+        {
+          "gb": 2048,
+          "baseCents": 740000
+        }
+      ]
+    }
+  ],
+  "appearance": [
+    {
+      "id": "pristine",
+      "label": "Muito bem cuidado",
+      "description": "Sem marcas aparentes.",
+      "deductionCents": 0
+    },
+    {
+      "id": "light",
+      "label": "Marcas leves",
+      "description": "Pequenos riscos de uso.",
+      "deductionCents": 17800
+    },
+    {
+      "id": "moderate",
+      "label": "Marcas moderadas",
+      "description": "Riscos e marcas mais visíveis.",
+      "deductionCents": 40000
+    }
+  ],
+  "damages": [
+    {
+      "id": "battery",
+      "label": "Bateria com saúde baixa",
+      "description": "Abaixo de 80% de capacidade.",
+      "deductionCents": 25000
+    },
+    {
+      "id": "screen",
+      "label": "Tela trocada ou com defeito",
+      "description": "Troca de tela ou reparo necessário.",
+      "deductionCents": 35000
+    },
+    {
+      "id": "back",
+      "label": "Traseira danificada",
+      "description": "Vidro trincado ou quebrado.",
+      "deductionCents": 22500
+    },
+    {
+      "id": "faceid",
+      "label": "Face ID com defeito",
+      "description": "Reconhecimento facial não funciona.",
+      "deductionCents": 45000
+    },
+    {
+      "id": "charging",
+      "label": "Conector de carga",
+      "description": "Falha ao carregar pelo conector.",
+      "deductionCents": 25000
+    },
+    {
+      "id": "camera",
+      "label": "Câmera traseira",
+      "description": "Falha no funcionamento da câmera.",
+      "deductionCents": 40000
+    },
+    {
+      "id": "part-camera",
+      "label": "Aviso de peça: câmera",
+      "description": "Notificação de peça no sistema.",
+      "deductionCents": 72000
+    },
+    {
+      "id": "part-battery",
+      "label": "Aviso de peça: bateria",
+      "description": "Notificação de peça no sistema.",
+      "deductionCents": 30900
+    },
+    {
+      "id": "part-screen",
+      "label": "Aviso de peça: tela",
+      "description": "Notificação de peça no sistema.",
+      "deductionCents": 30900
+    }
+  ],
+  "bonus": {
+    "enabled": false,
+    "amountCents": 10000,
+    "condition": "used"
+  },
+  "targets": [
+    {
+      "id": "iphone-13-mini",
+      "name": "iPhone 13 mini",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-13",
+      "name": "iPhone 13",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-13-pro",
+      "name": "iPhone 13 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-13-pro-max",
+      "name": "iPhone 13 Pro Max",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-14",
+      "name": "iPhone 14",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-14-plus",
+      "name": "iPhone 14 Plus",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-14-pro",
+      "name": "iPhone 14 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-14-pro-max",
+      "name": "iPhone 14 Pro Max",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-15",
+      "name": "iPhone 15",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-15-plus",
+      "name": "iPhone 15 Plus",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-15-pro",
+      "name": "iPhone 15 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-15-pro-max",
+      "name": "iPhone 15 Pro Max",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-16e",
+      "name": "iPhone 16e",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-16",
+      "name": "iPhone 16",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-16-plus",
+      "name": "iPhone 16 Plus",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-16-pro",
+      "name": "iPhone 16 Pro",
+      "capacities": [
+        {
+          "gb": 128,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-16-pro-max",
+      "name": "iPhone 16 Pro Max",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-17e",
+      "name": "iPhone 17e",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-17",
+      "name": "iPhone 17",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-air",
+      "name": "iPhone Air",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "iphone-17-pro-max",
+      "name": "iPhone 17 Pro Max",
+      "capacities": [
+        {
+          "gb": 256,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 512,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 1024,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        },
+        {
+          "gb": 2048,
+          "prices": {
+            "sealed": null,
+            "used": null
+          }
+        }
+      ]
+    }
+  ],
+  "payments": {
+    "maxInstallments": 18,
+    "installments": [
+      1,
+      3,
+      6,
+      12,
+      18
+    ],
+    "cardRatesBasisPoints": {
+      "1": null,
+      "3": null,
+      "6": null,
+      "12": null,
+      "18": null
+    }
+  }
+}

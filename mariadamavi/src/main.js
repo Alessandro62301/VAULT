@@ -12,6 +12,7 @@ import "./styles/mac-guide.css";
 import "./styles/mavibag.css";
 import "./styles/journey.css";
 import "./styles/footer.css";
+import "./styles/privacy.css";
 import "./styles/closing.css";
 import "./styles/collection.css";
 

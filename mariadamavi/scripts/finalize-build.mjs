@@ -5,7 +5,7 @@ import { gzipSync } from 'node:zlib';
 
 const hashes = new Set();
 const hash = data => `sha256-${createHash('sha256').update(data).digest('base64')}`;
-for (const page of ['dist/index.html', 'dist/v2/index.html']) {
+for (const page of ['dist/index.html', 'dist/v2/index.html', 'dist/simular-upgrade/index.html']) {
   // HTML parsers normalize CRLF before executing inline scripts. Hash that same text.
   let html = (await readFile(page, 'utf8')).replace(/\r\n?/g, '\n');
   for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)) {
@@ -23,11 +23,11 @@ for (const page of ['dist/index.html', 'dist/v2/index.html']) {
   await writeFile(page, html);
 }
 const csp = [
-  "default-src 'self'", `script-src 'self' ${[...hashes].map(h => `'${h}'`).join(' ')} 'strict-dynamic'`,
-  "script-src-attr 'none'", "style-src 'self' 'unsafe-inline'", "img-src 'self' data:",
-  "font-src 'self' data:", "media-src 'self'", "connect-src 'self'", "object-src 'none'",
+  "default-src 'self'", `script-src 'self' https://www.googletagmanager.com ${[...hashes].map(h => `'${h}'`).join(' ')} 'strict-dynamic'`,
+  "script-src-attr 'none'", "style-src 'self' 'unsafe-inline'", "img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com",
+  "font-src 'self' data:", "media-src 'self'", "connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com", "object-src 'none'",
   "base-uri 'none'", "frame-ancestors 'none'", "form-action 'none'",
-  "require-trusted-types-for 'script'", "trusted-types 'none'",
+  "require-trusted-types-for 'script'", "trusted-types mavi-google-tag",
 ].join('; ');
 const headers = {
   'Content-Security-Policy': csp,
@@ -47,7 +47,7 @@ async function compress(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const file = join(directory, entry.name);
     if (entry.isDirectory()) { await compress(file); continue; }
-    if (!['.html', '.js', '.css', '.svg', '.xml', '.txt'].includes(extname(file))) continue;
+    if (!['.html', '.js', '.css', '.svg', '.xml', '.txt', '.json'].includes(extname(file))) continue;
     const content = await readFile(file);
     if (content.length > 1024) await writeFile(`${file}.gz`, gzipSync(content, { level: 9 }));
   }

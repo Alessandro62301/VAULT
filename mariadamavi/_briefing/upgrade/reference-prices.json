@@ -1,0 +1,566 @@
+{
+  "source": "https://quantopega.com.br/quanto-vale",
+  "checkedAt": "2026-11-04",
+  "values": [
+    {
+      "name": "iPhone 8 Plus 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-8-plus-64gb",
+      "value": "R$ 300,00"
+    },
+    {
+      "name": "iPhone 8 Plus 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-8-plus-128gb",
+      "value": "R$ 350,00"
+    },
+    {
+      "name": "iPhone 8 Plus 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-8-plus-256gb",
+      "value": "R$ 400,00"
+    },
+    {
+      "name": "iPhone X 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-x-64gb",
+      "value": "R$ 300,00"
+    },
+    {
+      "name": "iPhone X 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-x-256gb",
+      "value": "R$ 400,00"
+    },
+    {
+      "name": "iPhone XR 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xr-64gb",
+      "value": "R$ 400,00"
+    },
+    {
+      "name": "iPhone XR 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xr-128gb",
+      "value": "R$ 500,00"
+    },
+    {
+      "name": "iPhone XR 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xr-256gb",
+      "value": "R$ 600,00"
+    },
+    {
+      "name": "iPhone XS 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xs-64gb",
+      "value": "R$ 300,00"
+    },
+    {
+      "name": "iPhone XS 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xs-256gb",
+      "value": "R$ 400,00"
+    },
+    {
+      "name": "iPhone XS 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xs-512gb",
+      "value": "R$ 500,00"
+    },
+    {
+      "name": "iPhone XS Max 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xs-max-64gb",
+      "value": "R$ 400,00"
+    },
+    {
+      "name": "iPhone XS Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xs-max-256gb",
+      "value": "R$ 500,00"
+    },
+    {
+      "name": "iPhone XS Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-xs-max-512gb",
+      "value": "R$ 600,00"
+    },
+    {
+      "name": "iPhone 11 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-64gb",
+      "value": "R$ 440,00"
+    },
+    {
+      "name": "iPhone 11 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-128gb",
+      "value": "R$ 640,00"
+    },
+    {
+      "name": "iPhone 11 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-256gb",
+      "value": "R$ 740,00"
+    },
+    {
+      "name": "iPhone 11 Pro 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-pro-64gb",
+      "value": "R$ 440,00"
+    },
+    {
+      "name": "iPhone 11 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-pro-256gb",
+      "value": "R$ 540,00"
+    },
+    {
+      "name": "iPhone 11 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-pro-512gb",
+      "value": "R$ 640,00"
+    },
+    {
+      "name": "iPhone 11 Pro Max 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-pro-max-64gb",
+      "value": "R$ 640,00"
+    },
+    {
+      "name": "iPhone 11 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-pro-max-256gb",
+      "value": "R$ 740,00"
+    },
+    {
+      "name": "iPhone 11 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-11-pro-max-512gb",
+      "value": "R$ 840,00"
+    },
+    {
+      "name": "iPhone SE 2020 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-se-2020-64gb",
+      "value": "R$ 350,00"
+    },
+    {
+      "name": "iPhone SE 2020 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-se-2020-128gb",
+      "value": "R$ 450,00"
+    },
+    {
+      "name": "iPhone SE 2020 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-se-2020-256gb",
+      "value": "R$ 500,00"
+    },
+    {
+      "name": "iPhone 12 mini 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-mini-64gb",
+      "value": "R$ 750,00"
+    },
+    {
+      "name": "iPhone 12 mini 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-mini-128gb",
+      "value": "R$ 900,00"
+    },
+    {
+      "name": "iPhone 12 mini 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-mini-256gb",
+      "value": "R$ 950,00"
+    },
+    {
+      "name": "iPhone 12 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-64gb",
+      "value": "R$ 940,00"
+    },
+    {
+      "name": "iPhone 12 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-128gb",
+      "value": "R$ 1.099,00"
+    },
+    {
+      "name": "iPhone 12 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-256gb",
+      "value": "R$ 1.140,00"
+    },
+    {
+      "name": "iPhone 12 Pro 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-pro-128gb",
+      "value": "R$ 1.240,00"
+    },
+    {
+      "name": "iPhone 12 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-pro-256gb",
+      "value": "R$ 1.440,00"
+    },
+    {
+      "name": "iPhone 12 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-pro-512gb",
+      "value": "R$ 1.640,00"
+    },
+    {
+      "name": "iPhone 12 Pro Max 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-pro-max-128gb",
+      "value": "R$ 1.640,00"
+    },
+    {
+      "name": "iPhone 12 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-pro-max-256gb",
+      "value": "R$ 1.799,00"
+    },
+    {
+      "name": "iPhone 12 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-12-pro-max-512gb",
+      "value": "R$ 2.000,00"
+    },
+    {
+      "name": "iPhone 13 mini 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-mini-128gb",
+      "value": "R$ 1.250,00"
+    },
+    {
+      "name": "iPhone 13 mini 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-mini-256gb",
+      "value": "R$ 1.350,00"
+    },
+    {
+      "name": "iPhone 13 mini 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-mini-512gb",
+      "value": "R$ 1.450,00"
+    },
+    {
+      "name": "iPhone 13 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-128gb",
+      "value": "R$ 1.545,00"
+    },
+    {
+      "name": "iPhone 13 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-256gb",
+      "value": "R$ 1.640,00"
+    },
+    {
+      "name": "iPhone 13 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-512gb",
+      "value": "R$ 1.740,00"
+    },
+    {
+      "name": "iPhone 13 Pro 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-128gb",
+      "value": "R$ 1.945,00"
+    },
+    {
+      "name": "iPhone 13 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-256gb",
+      "value": "R$ 2.095,00"
+    },
+    {
+      "name": "iPhone 13 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-512gb",
+      "value": "R$ 2.040,00"
+    },
+    {
+      "name": "iPhone 13 Pro 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-1tb",
+      "value": "R$ 2.140,00"
+    },
+    {
+      "name": "iPhone 13 Pro Max 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-max-128gb",
+      "value": "R$ 2.245,00"
+    },
+    {
+      "name": "iPhone 13 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-max-256gb",
+      "value": "R$ 2.445,00"
+    },
+    {
+      "name": "iPhone 13 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-max-512gb",
+      "value": "R$ 2.645,00"
+    },
+    {
+      "name": "iPhone 13 Pro Max 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-13-pro-max-1tb",
+      "value": "R$ 2.745,00"
+    },
+    {
+      "name": "iPhone SE 2022 64GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-se-2022-64gb",
+      "value": "R$ 600,00"
+    },
+    {
+      "name": "iPhone SE 2022 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-se-2022-128gb",
+      "value": "R$ 700,00"
+    },
+    {
+      "name": "iPhone SE 2022 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-se-2022-256gb",
+      "value": "R$ 800,00"
+    },
+    {
+      "name": "iPhone 14 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-128gb",
+      "value": "R$ 1.640,00"
+    },
+    {
+      "name": "iPhone 14 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-256gb",
+      "value": "R$ 1.840,00"
+    },
+    {
+      "name": "iPhone 14 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-512gb",
+      "value": "R$ 2.240,00"
+    },
+    {
+      "name": "iPhone 14 Plus 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-plus-128gb",
+      "value": "R$ 1.840,00"
+    },
+    {
+      "name": "iPhone 14 Plus 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-plus-256gb",
+      "value": "R$ 2.040,00"
+    },
+    {
+      "name": "iPhone 14 Plus 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-plus-512gb",
+      "value": "R$ 2.440,00"
+    },
+    {
+      "name": "iPhone 14 Pro 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-128gb",
+      "value": "R$ 2.470,00"
+    },
+    {
+      "name": "iPhone 14 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-256gb",
+      "value": "R$ 2.670,00"
+    },
+    {
+      "name": "iPhone 14 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-512gb",
+      "value": "R$ 2.740,00"
+    },
+    {
+      "name": "iPhone 14 Pro 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-1tb",
+      "value": "R$ 2.840,00"
+    },
+    {
+      "name": "iPhone 14 Pro Max 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-max-128gb",
+      "value": "R$ 2.870,00"
+    },
+    {
+      "name": "iPhone 14 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-max-256gb",
+      "value": "R$ 3.029,00"
+    },
+    {
+      "name": "iPhone 14 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-max-512gb",
+      "value": "R$ 3.040,00"
+    },
+    {
+      "name": "iPhone 14 Pro Max 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-14-pro-max-1tb",
+      "value": "R$ 3.140,00"
+    },
+    {
+      "name": "iPhone 15 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-128gb",
+      "value": "R$ 2.245,00"
+    },
+    {
+      "name": "iPhone 15 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-256gb",
+      "value": "R$ 2.395,00"
+    },
+    {
+      "name": "iPhone 15 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-512gb",
+      "value": "R$ 2.595,00"
+    },
+    {
+      "name": "iPhone 15 Plus 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-plus-128gb",
+      "value": "R$ 2.445,00"
+    },
+    {
+      "name": "iPhone 15 Plus 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-plus-256gb",
+      "value": "R$ 2.595,00"
+    },
+    {
+      "name": "iPhone 15 Plus 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-plus-512gb",
+      "value": "R$ 2.795,00"
+    },
+    {
+      "name": "iPhone 15 Pro 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-128gb",
+      "value": "R$ 2.845,00"
+    },
+    {
+      "name": "iPhone 15 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-256gb",
+      "value": "R$ 3.145,00"
+    },
+    {
+      "name": "iPhone 15 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-512gb",
+      "value": "R$ 3.345,00"
+    },
+    {
+      "name": "iPhone 15 Pro 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-1tb",
+      "value": "R$ 3.445,00"
+    },
+    {
+      "name": "iPhone 15 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-max-256gb",
+      "value": "R$ 3.745,00"
+    },
+    {
+      "name": "iPhone 15 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-max-512gb",
+      "value": "R$ 3.945,00"
+    },
+    {
+      "name": "iPhone 15 Pro Max 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-15-pro-max-1tb",
+      "value": "R$ 4.045,00"
+    },
+    {
+      "name": "iPhone 16e 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16e-128gb",
+      "value": "R$ 2.600,00"
+    },
+    {
+      "name": "iPhone 16e 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16e-256gb",
+      "value": "R$ 2.750,00"
+    },
+    {
+      "name": "iPhone 16e 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16e-512gb",
+      "value": "R$ 2.950,00"
+    },
+    {
+      "name": "iPhone 16 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-128gb",
+      "value": "R$ 3.245,00"
+    },
+    {
+      "name": "iPhone 16 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-256gb",
+      "value": "R$ 3.440,00"
+    },
+    {
+      "name": "iPhone 16 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-512gb",
+      "value": "R$ 3.540,00"
+    },
+    {
+      "name": "iPhone 16 Plus 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-plus-128gb",
+      "value": "R$ 3.445,00"
+    },
+    {
+      "name": "iPhone 16 Plus 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-plus-256gb",
+      "value": "R$ 3.640,00"
+    },
+    {
+      "name": "iPhone 16 Plus 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-plus-512gb",
+      "value": "R$ 3.740,00"
+    },
+    {
+      "name": "iPhone 16 Pro 128GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-128gb",
+      "value": "R$ 3.740,00"
+    },
+    {
+      "name": "iPhone 16 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-256gb",
+      "value": "R$ 4.070,00"
+    },
+    {
+      "name": "iPhone 16 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-512gb",
+      "value": "R$ 3.840,00"
+    },
+    {
+      "name": "iPhone 16 Pro 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-1tb",
+      "value": "R$ 3.940,00"
+    },
+    {
+      "name": "iPhone 16 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-max-256gb",
+      "value": "R$ 4.540,00"
+    },
+    {
+      "name": "iPhone 16 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-max-512gb",
+      "value": "R$ 4.440,00"
+    },
+    {
+      "name": "iPhone 16 Pro Max 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-16-pro-max-1tb",
+      "value": "R$ 4.640,00"
+    },
+    {
+      "name": "iPhone 17e 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17e-256gb",
+      "value": "R$ 3.400,00"
+    },
+    {
+      "name": "iPhone 17e 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17e-512gb",
+      "value": "R$ 3.600,00"
+    },
+    {
+      "name": "iPhone 17 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-256gb",
+      "value": "R$ 4.300,00"
+    },
+    {
+      "name": "iPhone 17 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-512gb",
+      "value": "R$ 4.600,00"
+    },
+    {
+      "name": "iPhone Air 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-air-256gb",
+      "value": "R$ 4.800,00"
+    },
+    {
+      "name": "iPhone Air 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-air-512gb",
+      "value": "R$ 5.100,00"
+    },
+    {
+      "name": "iPhone Air 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-air-1tb",
+      "value": "R$ 5.400,00"
+    },
+    {
+      "name": "iPhone 17 Pro 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-256gb",
+      "value": "R$ 5.400,00"
+    },
+    {
+      "name": "iPhone 17 Pro 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-512gb",
+      "value": "R$ 5.800,00"
+    },
+    {
+      "name": "iPhone 17 Pro 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-1tb",
+      "value": "R$ 6.200,00"
+    },
+    {
+      "name": "iPhone 17 Pro Max 256GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-max-256gb",
+      "value": "R$ 6.000,00"
+    },
+    {
+      "name": "iPhone 17 Pro Max 512GB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-max-512gb",
+      "value": "R$ 6.400,00"
+    },
+    {
+      "name": "iPhone 17 Pro Max 1TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-max-1tb",
+      "value": "R$ 6.800,00"
+    },
+    {
+      "name": "iPhone 17 Pro Max 2TB",
+      "url": "https://quantopega.com.br/quanto-vale/iphone-17-pro-max-2tb",
+      "value": "R$ 7.400,00"
+    }
+  ]
+}

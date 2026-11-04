@@ -6,8 +6,8 @@ import { initWhatsappLinks, whatsappLink, WHATSAPP_NUMBER } from '../js/whatsapp
 initWhatsappLinks();
 // The V2 tells this story through cards and film, so its messages name those sections.
 const versionMessages = {
-  journey: 'Oi Maria! Conheci a experiência Mavi no site e quero começar a minha encomenda.',
-  board: 'Oi Maria! Vi seu unboxing no site e queria conversar sobre o meu próximo Apple.',
+  journey: 'Oi Maria! Vim pelo site, conheci a experiência Mavi e quero começar a minha encomenda.',
+  board: 'Oi Maria! Vim pelo site, vi seu unboxing e queria conversar sobre o meu próximo Apple.',
 };
 Object.entries(versionMessages).forEach(([origin, message]) => {
   document.querySelectorAll(`[data-wa="${origin}"]`).forEach(link => {

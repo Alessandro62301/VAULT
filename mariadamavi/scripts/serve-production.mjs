@@ -10,7 +10,7 @@ createServer(async (req, res) => {
     let file = resolve(root, `.${pathname}`);
     if (file !== root && !file.startsWith(root + sep)) { res.writeHead(403).end(); return; }
     if ((await stat(file)).isDirectory()) file = resolve(file, 'index.html');
-    const type = extname(file) === '.avif' ? 'image/avif' : types[extname(file)] || 'application/octet-stream';
+    const type = extname(file) === '.avif' ? 'image/avif' : extname(file) === '.json' ? 'application/json; charset=utf-8' : types[extname(file)] || 'application/octet-stream';
     const headers = JSON.parse(await readFile('deployment/security-headers.json', 'utf8'));
     const hashed = pathname.startsWith('/assets/') || pathname.startsWith('/optimized/');
     const responseHeaders = { ...headers, 'Content-Type': type, 'Cache-Control': hashed ? 'public, max-age=31536000, immutable' : 'no-cache', Vary: 'Accept-Encoding' };

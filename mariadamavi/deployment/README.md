@@ -1,6 +1,6 @@
 # Publicação da landing — Docker / Easypanel
 
-Atualizado em 03/11/2026. O build SEO está pronto; esta versão ainda precisa ser publicada na VPS.
+Atualizado em 04/11/2026. O build com SEO, GA4 e simulador de upgrade está pronto; esta versão ainda precisa ser publicada na VPS.
 
 ## Easypanel com Git/GitHub
 
@@ -12,7 +12,7 @@ Atualizado em 03/11/2026. O build SEO está pronto; esta versão ainda precisa s
 
 ## Easypanel com Upload
 
-O pacote `../outputs/mariadamavi-seo-2026-11-03.zip` contém o build compilado, `robots.txt`, sitemap, metadados e dados estruturados SEO, logo otimizada, configuração do Nginx e Dockerfile estático. Use esse ZIP no serviço existente, builder Dockerfile e porta 80. O Dockerfile serve exatamente esse build e executa `nginx -t`.
+O pacote `../outputs/mariadamavi-upgrade-2026-11-04.zip` contém o build compilado, SEO, GA4, a página `/simular-upgrade/`, tabela pública de configuração, configuração do Nginx e Dockerfile estático. Use esse ZIP no serviço existente, builder Dockerfile e porta 80. O Dockerfile serve exatamente esse build e executa `nginx -t`. Detalhes do simulador e da futura integração administrativa estão em `upgrade.md`.
 
 Não misture HTML/JS de um build com `security-headers.conf` de outro: os hashes devem corresponder. Publique a imagem inteira. Para voltar à versão anterior, use a imagem/deployment anterior preservada pelo seu fluxo de publicação.
 
@@ -47,5 +47,9 @@ Se a hospedagem utilizar Nginx fora do container, `nginx-performance.conf` é ap
 - `npm run images:optimize` regenera as imagens responsivas sem alterar os originais.
 - `npm test` executa os testes existentes. `npm run preview:production` reproduz localmente os cabeçalhos e a compressão; não substitui o teste do Nginx real.
 - As fontes preservam os caracteres latinos existentes e os eixos usados pela landing. Novos idiomas/eixos/pesos fora desses intervalos exigem rever `scripts/optimize-fonts.py`; licenças SIL OFL acompanham os arquivos.
+
+## Google Analytics 4
+
+A landing usa o ID `G-KD86VF99WL`. A tag só é carregada depois que a pessoa permite a medição pelo aviso de privacidade. A escolha pode ser aberta novamente pelo rodapé. A política de Content Security Policy gerada pelo build libera os endpoints necessários do Google; publique sempre `dist/` junto com os cabeçalhos gerados para esse mesmo build.
 
 Referências: [Builders do Easypanel](https://easypanel.io/docs/builders), [herança de cabeçalhos do Nginx](https://nginx.org/en/docs/http/ngx_http_headers_module.html).

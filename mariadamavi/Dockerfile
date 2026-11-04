@@ -10,6 +10,7 @@ COPY index.html vite.config.js ./
 COPY src ./src
 COPY public ./public
 COPY v2 ./v2
+COPY simular-upgrade ./simular-upgrade
 COPY scripts ./scripts
 RUN npm run build
 

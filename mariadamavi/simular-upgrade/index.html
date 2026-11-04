@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Simule seu upgrade de iPhone | mariadamavi</title>
+    <meta name="description" content="Veja uma estimativa de quanto seu iPhone usado pode valer na troca e escolha seu próximo Apple. Simule seu upgrade e confira os detalhes com a Maria." />
+    <meta name="theme-color" content="#fcfaf9" />
+    <link rel="canonical" href="https://mariadamavi.com.br/simular-upgrade/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Seu próximo iPhone começa com o seu. | Mavi" />
+    <meta property="og:description" content="Descubra o potencial do seu usado e planeje seu upgrade com a Maria." />
+    <meta property="og:url" content="https://mariadamavi.com.br/simular-upgrade/" />
+    <meta property="og:image" content="https://mariadamavi.com.br/social/share.png" />
+    <link rel="icon" href="/optimized/icone-rosa-64-aa462eb8cb.webp" type="image/webp" />
+    <link rel="preload" as="font" href="/optimized/archivo-standard-normal-e358e2063e.woff2" type="font/woff2" crossorigin />
+    <script>try { var t = localStorage.getItem('mavi-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script type="module" src="/src/upgrade/main.js"></script>
+  </head>
+  <body>
+    <svg class="icon-sprite" aria-hidden="true"><symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol><symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol><symbol id="refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6 7a7 7 0 0 1 12-1l2 3M4 15l2 3a7 7 0 0 0 12-1"/></symbol><symbol id="phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol><symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4L12 3Z"/></symbol></svg>
+    <a class="skip-link" href="#simulador">Pular para o simulador</a>
+    <header class="upgrade-header">
+      <a class="brand" href="/" aria-label="mariadamavi, página inicial">mariadamavi<span>.</span></a>
+      <div class="header-actions"><a class="back-link" href="/">← Voltar para a loja</a><button class="theme-toggle" type="button" aria-label="Ativar tema escuro" aria-pressed="true"><span aria-hidden="true">◐</span></button></div>
+    </header>
+
+    <main class="upgrade-main" id="simulador">
+      <section class="upgrade-intro" aria-labelledby="page-title">
+        <div><p class="eyebrow"><span></span> UPGRADE COM A MAVI</p><h1 id="page-title">Seu próximo iPhone<br />começa com <em>o seu.</em></h1><p class="intro-copy">Seu usado pode ser parte do próximo capítulo. Descubra uma estimativa de troca e escolha o iPhone que vem depois.</p></div>
+        <div class="intro-side"><div class="orbit-mark" aria-hidden="true"><svg><use href="#refresh"/></svg><span>m</span></div><p>Um novo começo.<br /><strong>Do seu jeito.</strong></p></div>
+      </section>
+      <div class="reassurance"><span><svg><use href="#check"/></svg> Sem cadastro</span><span><svg><use href="#check"/></svg> Estimativa na hora</span><span><svg><use href="#check"/></svg> A Maria confere com você</span></div>
+
+      <div id="loading" class="loading-state" role="status">Preparando sua simulação…</div>
+      <div id="load-error" class="load-error" role="alert" hidden><h2>Não conseguimos abrir a tabela agora.</h2><p>Você pode tentar novamente ou pedir sua avaliação diretamente à Maria.</p><button id="retry" type="button" class="primary-button">Tentar novamente</button><a href="https://wa.me/5521920184210?text=Oi%2C%20Maria%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20pr%C3%B3ximo%20Apple.%20Pode%20me%20ajudar%3F" class="text-button">Falar com a Maria ↗</a></div>
+
+      <div class="upgrade-layout" id="upgrade-app" hidden>
+        <section class="simulator-card" aria-label="Configurar upgrade">
+          <div class="simulator-card__intro"><span class="eyebrow">MONTE SUA TROCA</span><span>Preencha no seu ritmo.</span></div>
+          <form id="upgrade-form" novalidate>
+            <section data-panel="1" class="step-panel" aria-labelledby="step-title-1">
+              <div class="panel-heading"><p class="eyebrow">COMECE PELO QUE JÁ É SEU</p><h2 id="step-title-1" tabindex="-1">Qual iPhone vai entrar na troca?</h2><p>Escolha o modelo e o armazenamento do seu aparelho.</p></div>
+              <div class="field"><label for="trade-model-search" id="trade-model-label">Seu modelo</label><div class="model-picker" id="trade-picker"><input type="hidden" id="trade-model" name="tradeModel" /><div class="model-picker__control"><input id="trade-model-search" data-picker-search type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="trade-model-options" aria-labelledby="trade-model-label" autocomplete="off" spellcheck="false" placeholder="Busque ou selecione seu iPhone" /><button type="button" data-picker-toggle tabindex="-1" aria-label="Mostrar modelos de iPhone"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></button></div><div class="model-picker__popup" data-picker-popup hidden><div class="model-picker__meta"><span>ESCOLHA O SEU</span><span data-picker-count></span></div><div class="model-picker__list" id="trade-model-options" role="listbox" aria-label="Modelos do seu iPhone"></div><p class="model-picker__empty" data-picker-empty role="status" hidden>Nenhum iPhone encontrado. Tente outro nome.</p><div class="model-picker__hint">Digite para buscar <span>↑ ↓ navegar · Enter selecionar</span></div></div></div></div>
+              <fieldset class="storage-field" id="trade-memory" hidden><legend>Armazenamento</legend><div class="storage-options" id="trade-capacities"></div></fieldset>
+              <details class="help-detail"><summary>Não sabe o modelo ou a memória?</summary><p>No iPhone, abra <strong>Ajustes → Geral → Sobre</strong>. Ali você encontra o nome do modelo e a capacidade.</p></details>
+              <p class="subtle-note">Avaliamos iPhones 11 ou mais novos. Tem outro aparelho? <a href="https://wa.me/5521920184210?text=Oi%2C%20Maria%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20pr%C3%B3ximo%20Apple.%20Pode%20me%20ajudar%3F" data-wa="upgrade-other">Conversa com a Maria ↗</a></p>
+            </section>
+
+            <section data-panel="2" class="step-panel" aria-labelledby="step-title-2" hidden>
+              <div class="panel-heading"><p class="eyebrow">OS DETALHES CONTAM</p><h2 id="step-title-2" tabindex="-1">Como está o seu iPhone?</h2><p>Conta com sinceridade. Isso deixa a estimativa mais próxima da avaliação.</p></div>
+              <fieldset><legend>Aparência do aparelho</legend><div id="appearance-options" class="appearance-options"></div></fieldset>
+              <fieldset class="damage-field"><legend>Algum destes detalhes?</legend><p class="field-hint">Marque apenas o que se aplica. Se estiver tudo bem, deixe desmarcado.</p><div id="damage-options" class="damage-options"></div></fieldset>
+              <fieldset class="eligibility"><legend>O iPhone liga e você consegue remover a conta iCloud?</legend><div class="inline-choices"><label><input type="radio" name="eligible" value="yes" required /> Sim, tudo certo</label><label><input type="radio" name="eligible" value="no" required /> Não / preciso de ajuda</label></div><p class="field-hint">Aparelhos bloqueados ou que não ligam precisam de uma avaliação individual.</p></fieldset>
+            </section>
+
+            <section data-panel="3" class="step-panel" aria-labelledby="step-title-3" hidden>
+              <div class="panel-heading"><p class="eyebrow">AGORA, O PRÓXIMO CAPÍTULO</p><h2 id="step-title-3" tabindex="-1">Qual vai ser o próximo?</h2><p>Me conta qual você quer. A Maria confirma disponibilidade, preço e a diferença para trocar.</p></div>
+              <div class="field"><label for="target-model-search" id="target-model-label">Seu próximo iPhone</label><div class="model-picker" id="target-picker"><input type="hidden" id="target-model" name="targetModel" /><div class="model-picker__control"><input id="target-model-search" data-picker-search type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="target-model-options" aria-labelledby="target-model-label" autocomplete="off" spellcheck="false" placeholder="Busque seu próximo iPhone" /><button type="button" data-picker-toggle tabindex="-1" aria-label="Mostrar opções para o próximo iPhone"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></button></div><div class="model-picker__popup" data-picker-popup hidden><div class="model-picker__meta"><span>SEU PRÓXIMO CAPÍTULO</span><span data-picker-count></span></div><div class="model-picker__list" id="target-model-options" role="listbox" aria-label="Opções para seu próximo iPhone"></div><p class="model-picker__empty" data-picker-empty role="status" hidden>Nenhum iPhone encontrado. Tente outro nome.</p><div class="model-picker__hint">Digite para buscar <span>↑ ↓ navegar · Enter selecionar</span></div></div></div></div>
+              <fieldset class="storage-field"><legend>Armazenamento</legend><div class="storage-options" id="target-capacities"></div></fieldset>
+              <fieldset><legend>Do jeito que você prefere</legend><div class="inline-choices condition-choices"><label><input type="radio" name="targetCondition" value="sealed" checked /><span><strong>Lacrado</strong><small>1 ano de garantia com a Apple</small></span></label><label><input type="radio" name="targetCondition" value="used" /><span><strong>Seminovo</strong><small>6 meses de garantia com a Mavi</small></span></label></div></fieldset>
+              <label class="bonus-choice" id="bonus-option" hidden><input type="checkbox" name="bonus" /> <span id="bonus-label"></span></label>
+              <div class="payment-area"><fieldset><legend>Como você pensa em pagar a diferença?</legend><div class="inline-choices"><label><input type="radio" name="payment" value="pix" checked /> PIX</label><label><input type="radio" name="payment" value="card" /> Cartão</label></div></fieldset><div class="field installment-field" id="installment-field" hidden><label for="installments">Parcelas</label><select id="installments" name="installments"></select></div><p class="field-hint" id="payment-hint">Valor final e condições combinados antes do pagamento.</p></div>
+              <div class="maria-note"><img src="/optimized/maria-avatar-128-e5cb7e5129.webp" width="48" height="48" alt="Maria" /><p>“Você traz seu próximo plano.<br /><strong>Eu te ajudo a fazer a troca.”</strong><span>Maria, do outro lado da conversa ♡</span></p></div>
+            </section>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <div class="form-navigation"><p id="form-guidance">Escolha seu iPhone para começar.</p><button class="primary-button" id="form-review" type="button">Selecionar meu iPhone <svg><use href="#arrow"/></svg></button><a class="primary-button" id="form-whatsapp" target="_blank" rel="noopener" data-wa="upgrade-form" hidden>Conferir com a Maria <svg><use href="#arrow"/></svg></a></div>
+          </form>
+        </section>
+
+        <aside class="estimate-column" id="upgrade-summary" aria-labelledby="estimate-title">
+          <div class="estimate-card"><div class="estimate-top"><span class="eyebrow">SUA TROCA, MAIS CLARA</span><span class="live-dot" title="Atualiza com suas escolhas"></span></div>
+            <div class="phone-art"><span class="art-ring" aria-hidden="true"></span><img src="/produtos/apple/iphone.webp" width="240" height="180" alt="iPhone, imagem ilustrativa" /><span class="art-caption">novo capítulo →</span></div>
+            <div class="estimate-value"><p id="estimate-title">Estimativa para seu usado</p><output id="trade-value" class="empty-value" aria-live="polite">Escolha seu iPhone</output><span class="reference-pill">Valor de referência</span></div>
+            <details class="breakdown" id="estimate-breakdown" open hidden><summary>Como chegamos nesse valor <span aria-hidden="true">⌄</span></summary><dl id="breakdown-lines"></dl></details>
+            <div class="upgrade-destination" id="destination-summary" hidden><span>SEU PRÓXIMO</span><strong id="target-summary"></strong><div><span>Valor do próximo</span><b id="target-price">A confirmar</b></div><div class="difference-row"><span>Diferença para o upgrade</span><b id="difference">Sob consulta</b></div><p id="installment-result" hidden></p></div>
+            <p class="estimate-note" id="estimate-note">Escolha seu modelo para ver uma estimativa. Depois, informe as condições do aparelho.</p>
+            <button class="primary-button summary-continue" id="summary-continue" type="button">Selecionar meu iPhone <svg><use href="#arrow"/></svg></button><a class="primary-button summary-whatsapp" id="summary-whatsapp" target="_blank" rel="noopener" data-wa="upgrade-summary" hidden>Conferir com a Maria <svg><use href="#arrow"/></svg></a>
+            <div class="summary-tools"><button type="button" id="copy-summary" disabled>Copiar resumo</button><button type="button" id="reset-simulation"><svg><use href="#refresh"/></svg> Recomeçar</button></div><p id="copy-status" class="copy-status" role="status"></p><textarea id="copy-fallback" readonly aria-label="Resumo para copiar" hidden></textarea>
+          </div>
+          <p class="under-card"><svg><use href="#check"/></svg> Simular é grátis e não reserva um aparelho.</p>
+        </aside>
+        <div class="mobile-estimate is-empty"><div><span>Seu usado, estimado</span><strong id="mobile-trade-value" aria-hidden="true">Selecione um modelo</strong></div><a href="#upgrade-summary">Ver resumo ↓</a></div>
+      </div>
+
+      <section class="next-steps" aria-label="Depois da simulação"><div><span>01</span><h3>Você simula.</h3><p>Seu modelo, seu estado de uso.<br />Tudo transparente na conta.</p></div><div><span>02</span><h3>A gente conversa.</h3><p>A Maria confere as informações<br />e combina os valores com você.</p></div><div><span>03</span><h3>Seu upgrade acontece.</h3><p>Proposta aprovada, tudo por escrito.<br />Com cuidado do começo ao fim.</p></div></section>
+      <details class="reference-detail"><summary>Sobre os valores desta simulação</summary><p>Os valores-base dos usados seguem a <a href="https://quantopega.com.br/quanto-vale" target="_blank" rel="noopener">tabela pública sugerida do QuantoPega</a>, consultada em 04/11/2026. Os descontos iniciais usam a demonstração de avarias do iPhone 13 128 GB; podem variar na avaliação de cada modelo. Não constituem oferta de compra nem garantia de aceitação. O valor final depende da conferência do aparelho, peças, bateria, bloqueios e disponibilidade. Preços de venda e taxas de cartão são confirmados com a Maria.</p></details>
+      <noscript><p class="load-error">Ative o JavaScript para simular ou <a href="https://wa.me/5521920184210?text=Oi%2C%20Maria%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20pr%C3%B3ximo%20Apple.%20Pode%20me%20ajudar%3F">peça sua avaliação à Maria pelo WhatsApp</a>.</p></noscript>
+    </main>
+    <footer class="upgrade-footer"><a class="brand" href="/">mariadamavi<span>.</span></a><p>Seu próximo Apple. A gente escolhe junto.</p><button class="footer__privacy" type="button" data-analytics-settings>Privacidade e medição</button><span>© 2026 · CNPJ 65.798.444/0001-60</span></footer>
+    <aside class="analytics-consent" data-analytics-consent aria-labelledby="analytics-consent-title" role="region"><div class="analytics-consent__copy"><p class="analytics-consent__eyebrow">Sua privacidade</p><h2 id="analytics-consent-title">Podemos medir as visitas?</h2><p>O Google Analytics nos ajuda a entender como o site é usado. A medição só é ativada se você permitir; você pode mudar sua escolha pelo rodapé.</p></div><div class="analytics-consent__actions"><button class="analytics-consent__accept" type="button" data-analytics-accept>Permitir medição</button><button class="analytics-consent__reject" type="button" data-analytics-reject>Recusar</button></div></aside>
+  </body>
+</html>
