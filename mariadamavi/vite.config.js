@@ -7,8 +7,8 @@ const tunnelHosts = [".trycloudflare.com"];
 function upgradeRedirect(server) {
   server.middlewares.use((request, response, next) => {
     const url = new URL(request.url, 'http://localhost');
-    if (url.pathname === '/simular-upgrade') {
-      response.writeHead(302, { Location: `/simular-upgrade/${url.search}` });
+    if (['/simular-upgrade', '/empresas'].includes(url.pathname)) {
+      response.writeHead(302, { Location: `${url.pathname}/${url.search}` });
       response.end();
       return;
     }
@@ -24,6 +24,7 @@ export default defineConfig({
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
         v2: fileURLToPath(new URL("./v2/index.html", import.meta.url)),
         upgrade: fileURLToPath(new URL("./simular-upgrade/index.html", import.meta.url)),
+        empresas: fileURLToPath(new URL("./empresas/index.html", import.meta.url)),
       },
     },
   },

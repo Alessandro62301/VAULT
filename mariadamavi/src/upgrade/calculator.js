@@ -7,22 +7,30 @@ const assert = (condition, message) => { if (!condition) throw new Error(message
 const uniqueIds = list => new Set(list.map(item => item.id)).size === list.length;
 
 export function validateUpgradeConfig(config) {
-  assert(config?.schemaVersion === 1, 'Versão da tabela não suportada.');
+  assert(config?.schemaVersion === 2, 'Versão da tabela não suportada.');
   for (const key of ['tradeIn', 'targets', 'appearance', 'damages']) {
     assert(Array.isArray(config[key]) && config[key].length > 0 && uniqueIds(config[key]), `Tabela inválida: ${key}.`);
     for (const item of config[key]) assert(typeof item.id === 'string' && typeof (item.name ?? item.label) === 'string', 'Item inválido na tabela.');
   }
+  const conditions = [...config.appearance, ...config.damages];
+  assert(uniqueIds(conditions) && config.appearance.some(item => item.id === 'pristine'), 'Categorias de desconto inválidas.');
+  const deductionKeys = conditions.filter(item => item.id !== 'pristine').map(item => item.id);
   for (const model of [...config.tradeIn, ...config.targets]) {
     assert(Array.isArray(model.capacities) && model.capacities.length > 0, 'Capacidades ausentes.');
     assert(new Set(model.capacities.map(c => c.gb)).size === model.capacities.length, 'Capacidade duplicada.');
     for (const capacity of model.capacities) {
       assert(Number.isSafeInteger(capacity.gb) && capacity.gb > 0, 'Capacidade inválida.');
-      if ('baseCents' in capacity) assert(isMoney(capacity.baseCents), 'Valor-base inválido.');
-      else for (const condition of ['sealed', 'used']) assert(capacity.prices && (capacity.prices[condition] === null || isMoney(capacity.prices[condition])), 'Preço de venda inválido.');
+      if (config.tradeIn.includes(model)) {
+        assert(isMoney(capacity.baseCents), 'Valor-base inválido.');
+        assert(capacity.deductions && Object.keys(capacity.deductions).length === deductionKeys.length, 'Tabela de descontos por capacidade incompleta.');
+        for (const key of deductionKeys) {
+          const amount = capacity.deductions[key];
+          assert(amount === null || isMoney(amount), `Desconto por capacidade inválido: ${key}.`);
+        }
+      } else for (const condition of ['sealed', 'used']) assert(capacity.prices && (capacity.prices[condition] === null || isMoney(capacity.prices[condition])), 'Preço de venda inválido.');
     }
-    for (const amount of Object.values(model.deductions ?? {})) assert(isMoney(amount), 'Desconto por modelo inválido.');
+    assert(model.deductions === undefined, 'Configure os descontos por capacidade, não por família de modelo.');
   }
-  for (const item of [...config.appearance, ...config.damages]) assert(isMoney(item.deductionCents), 'Desconto inválido.');
   assert(config.bonus && isMoney(config.bonus.amountCents) && typeof config.bonus.enabled === 'boolean', 'Bônus inválido.');
   assert(/^[1-9]\d{9,14}$/.test(config.whatsapp), 'Contato inválido.');
   assert(config.payments && Array.isArray(config.payments.installments) && config.payments.installments.length > 0, 'Parcelamento ausente.');
@@ -45,12 +53,15 @@ export function calculateUpgrade(config, state) {
   const damageIds = [...new Set(state.damageIds ?? [])];
   const damages = damageIds.map(id => config.damages.find(item => item.id === id));
   assert(damages.every(Boolean), 'Condição de aparelho inválida.');
-  const items = [appearance, ...damages].map(item => ({ ...item, deductionCents: model.deductions?.[item.id] ?? item.deductionCents }));
-  const deductionsCents = items.reduce((total, item) => total + item.deductionCents, 0);
+  const deductionTable = { ...capacity.deductions, pristine: 0 };
+  const items = [appearance, ...damages].map(item => ({ ...item, deductionCents: deductionTable[item.id] }));
+  assert(items.every(item => item.deductionCents === null || isMoney(item.deductionCents)), 'Desconto não informado para esta combinação.');
+  const unpricedItems = items.filter(item => item.deductionCents === null);
+  const deductionsCents = items.reduce((total, item) => total + (item.deductionCents === null ? 0 : item.deductionCents), 0);
   assert(isMoney(deductionsCents), 'Total de descontos inválido.');
-  const eligible = state.eligible !== 'no';
-  const tradeCents = eligible ? Math.max(0, capacity.baseCents - deductionsCents) : null;
-  const bonusCents = eligible && config.bonus.enabled && state.bonus && state.targetCondition === config.bonus.condition ? config.bonus.amountCents : 0;
+  const manualReview = state.eligible === 'no' || unpricedItems.length > 0;
+  const tradeCents = manualReview ? null : Math.max(0, capacity.baseCents - deductionsCents);
+  const bonusCents = !manualReview && config.bonus.enabled && state.bonus && state.targetCondition === config.bonus.condition ? config.bonus.amountCents : 0;
   const creditCents = tradeCents === null ? null : tradeCents + bonusCents;
   const priceCents = targetCapacity.prices[state.targetCondition];
   const differenceCents = priceCents === null || creditCents === null ? null : Math.max(0, priceCents - creditCents);
@@ -59,10 +70,10 @@ export function calculateUpgrade(config, state) {
   const rate = state.payment === 'pix' ? 0 : config.payments.cardRatesBasisPoints[installments];
   const totalCents = differenceCents === null || rate === null ? null : differenceCents + Math.round(differenceCents * rate / 10000);
   assert(totalCents === null || isMoney(totalCents), 'Total inválido.');
-  return { model, capacity, appearance, damages, items: items.filter(item => item.deductionCents > 0), deductionsCents,
+  return { model, capacity, appearance, damages, deductionTable, unpricedItems, items: items.filter(item => item.deductionCents === null || item.deductionCents > 0), deductionsCents,
     tradeCents, bonusCents, creditCents, priceCents, differenceCents, totalCents, installments,
     installmentCents: totalCents === null ? null : Math.ceil(totalCents / installments),
-    target, targetCapacity, manualReview: !eligible, exhausted: eligible && tradeCents === 0 };
+    target, targetCapacity, manualReview, exhausted: !manualReview && tradeCents === 0 };
 }
 
 export function buildUpgradeMessage(config, state, result) {
@@ -71,6 +82,7 @@ export function buildUpgradeMessage(config, state, result) {
     `Meu aparelho: ${result.model.name} ${formatStorage(result.capacity.gb)}.`,
     `Aparência: ${result.appearance.label}.`,
     `Condições: ${result.damages.length ? result.damages.map(item => item.label).join('; ') : 'sem avarias informadas'}.`,
+    ...(result.unpricedItems.length ? [`Itens sem valor tabelado: ${result.unpricedItems.map(item => item.label).join('; ')}.`] : []),
     `Liga e consigo remover o iCloud: ${state.eligible === 'yes' ? 'sim' : state.eligible === 'no' ? 'não / preciso de ajuda' : 'a confirmar'}.`,
     result.manualReview ? 'Aparelho precisa de avaliação individual.' : `Estimativa de referência para o usado: ${formatMoney(result.creditCents)} (sujeita à avaliação).`,
     `Quero: ${result.target.name} ${formatStorage(result.targetCapacity.gb)}, ${condition}.`,

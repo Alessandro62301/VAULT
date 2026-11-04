@@ -1,7 +1,7 @@
 // Google Analytics 4: só carrega a tag depois de autorização para medição.
+import { ANALYTICS_HOSTS, loadWeSalesTracking } from './wesales.js';
 const MEASUREMENT_ID = 'G-KD86VF99WL';
 const CONSENT_KEY = 'mavi-analytics-consent';
-const ANALYTICS_HOSTS = new Set(['mariadamavi.com.br', 'www.mariadamavi.com.br']);
 const FIELDS = {
   whatsapp_click: ['origin', 'section'],
   product_select: ['product'],
@@ -9,6 +9,7 @@ const FIELDS = {
   video_start: [],
   upgrade_step: ['step'],
   upgrade_whatsapp: ['product', 'condition'],
+  lead_form_open: ['section'],
 };
 
 let analyticsAllowed = false;
@@ -110,6 +111,9 @@ function updateConsent(value) {
 
   if (analyticsAllowed) {
     loadGoogleTag();
+    // Also updates an already-loaded tag after a previous refusal.
+    if (tagLoaded) window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    try { loadWeSalesTracking('granted'); } catch (error) { console.warn('Rastreamento WeSales indisponível.', error); }
   } else if (tagLoaded) {
     window.gtag('consent', 'update', {
       analytics_storage: 'denied',
@@ -119,6 +123,9 @@ function updateConsent(value) {
     });
   }
   if (!analyticsAllowed) clearAnalyticsCookies();
+  // The vendor installs automatic listeners and has no documented teardown API.
+  // Reload after saving refusal to remove them, without loading it again.
+  if (!analyticsAllowed && document.querySelector('script[data-wesales-tracking]')) location.reload();
 }
 
 export function initMeasurement() {

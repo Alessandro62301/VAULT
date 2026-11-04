@@ -1,9 +1,13 @@
 import '@fontsource-variable/archivo/standard.css';
 import '@fontsource-variable/caveat/index.css';
 import './style.css';
+import '../styles/privacy.css';
+import './privacy.css';
+import { initMeasurement } from '../js/measurement.js';
 import { initWhatsappLinks, whatsappLink, WHATSAPP_NUMBER } from '../js/whatsapp.js';
 
 initWhatsappLinks();
+initMeasurement();
 // The V2 tells this story through cards and film, so its messages name those sections.
 const versionMessages = {
   journey: 'Oi Maria! Vim pelo site, conheci a experiência Mavi e quero começar a minha encomenda.',

@@ -137,6 +137,10 @@
 .form-navigation > .primary-button { margin-left: auto; }
 .estimate-value output.empty-value { font-size: 27px; letter-spacing: -.04em; margin-block: 12px; }
 .summary-tools button:disabled { opacity: .4; cursor: default; }
+.condition-option.needs-review { border-style: dashed; }
+.condition-option.needs-review .condition-price { color: var(--text-3); }
+.condition-option.needs-review:has(input:checked) .condition-price { color: var(--pink-400); }
+.panel-heading .condition-device { color: var(--pink-400); font-size: 11px; margin-top: 9px; }
 
 @media(min-width:721px) {
   .estimate-column {

@@ -49,7 +49,7 @@ function conditionChoice(item, name, type) {
   input.checked = name === 'appearance' && item.id === 'pristine';
   const copy = element('span', undefined, 'condition-copy');
   copy.append(element('strong', item.label), element('small', item.description));
-  const price = element('span', item.deductionCents ? `− ${formatMoney(item.deductionCents)}` : 'Sem desconto', 'condition-price');
+  const price = element('span', item.id === 'pristine' ? 'Sem desconto' : 'Selecione um modelo', 'condition-price');
   price.dataset.deduction = item.id;
   label.append(input, copy, price);
   return label;
@@ -105,21 +105,23 @@ function render() {
     return;
   }
   const result = calculateUpgrade(config, state);
+  $('#condition-device').textContent = `${result.model.name} · ${formatStorage(result.capacity.gb)}`;
   $('#trade-value').textContent = result.manualReview ? 'Vamos avaliar' : formatMoney(result.creditCents);
   $('#mobile-trade-value').textContent = result.manualReview ? 'Vamos avaliar' : formatMoney(result.creditCents);
   $('#trade-value').classList.toggle('manual-value', result.manualReview);
   const lines = $('#breakdown-lines');
   lines.replaceChildren();
   addLine(lines, 'Valor-base do aparelho', formatMoney(result.capacity.baseCents));
-  for (const item of result.items) addLine(lines, item.label, `− ${formatMoney(item.deductionCents)}`, 'deduction-line');
+  for (const item of result.items) addLine(lines, item.label, item.deductionCents === null ? 'Avaliação individual' : `− ${formatMoney(item.deductionCents)}`, 'deduction-line');
   if (result.bonusCents) addLine(lines, 'Bônus de troca', `+ ${formatMoney(result.bonusCents)}`, 'bonus-line');
   if (!result.items.length) addLine(lines, 'Avarias informadas', 'Nenhuma');
   addLine(lines, 'Estimativa de troca', result.manualReview ? 'Avaliação individual' : formatMoney(result.creditCents), 'total-line');
   $('#target-summary').textContent = `${result.target.name} · ${formatStorage(result.targetCapacity.gb)} · ${state.targetCondition === 'sealed' ? 'Lacrado' : 'Seminovo'}`;
   $('#target-price').textContent = result.priceCents === null ? 'A confirmar' : formatMoney(result.priceCents);
   $('#difference').textContent = result.differenceCents === null ? 'Sob consulta' : formatMoney(result.differenceCents);
-  $('#estimate-note').textContent = result.manualReview
-    ? 'Se o aparelho não liga ou tem bloqueio de conta, a Maria precisa avaliar antes de informar um valor.'
+  $('#estimate-note').textContent = result.unpricedItems.length
+    ? 'Há um item selecionado sem desconto tabelado para este modelo e memória. A Maria precisa avaliar antes de informar um valor.'
+    : result.manualReview ? 'Se o aparelho não liga ou tem bloqueio de conta, a Maria precisa avaliar antes de informar um valor.'
     : result.exhausted ? 'Os descontos atingiram o valor-base. A Maria precisa conferir o aparelho para uma avaliação individual.'
     : 'Estimativa sujeita à conferência do aparelho. Preço de venda e diferença confirmados pela Maria.';
   $('#installment-field').hidden = state.payment !== 'card';
@@ -135,9 +137,9 @@ function render() {
   $('#bonus-option').hidden = !bonusVisible;
   $('#bonus-label').textContent = `Considerar bônus de ${formatMoney(config.bonus.amountCents)} na troca por seminovo`;
   for (const amount of document.querySelectorAll('[data-deduction]')) {
-    const item = [...config.appearance, ...config.damages].find(item => item.id === amount.dataset.deduction);
-    const cents = result.model.deductions?.[item.id] ?? item.deductionCents;
-    amount.textContent = cents ? `− ${formatMoney(cents)}` : 'Sem desconto';
+    const cents = result.deductionTable[amount.dataset.deduction];
+    amount.textContent = cents === null ? 'Avaliação individual' : cents ? `− ${formatMoney(cents)}` : 'Sem desconto';
+    amount.closest('.condition-option').classList.toggle('needs-review', cents === null);
   }
   const message = buildUpgradeMessage(config, state, result);
   const url = `https://wa.me/${config.whatsapp}?${new URLSearchParams({ text: message })}`;

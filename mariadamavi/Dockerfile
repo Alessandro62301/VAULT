@@ -11,6 +11,7 @@ COPY src ./src
 COPY public ./public
 COPY v2 ./v2
 COPY simular-upgrade ./simular-upgrade
+COPY empresas ./empresas
 COPY scripts ./scripts
 RUN npm run build
 

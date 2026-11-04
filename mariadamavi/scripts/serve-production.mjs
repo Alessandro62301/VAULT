@@ -9,7 +9,13 @@ createServer(async (req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     let file = resolve(root, `.${pathname}`);
     if (file !== root && !file.startsWith(root + sep)) { res.writeHead(403).end(); return; }
-    if ((await stat(file)).isDirectory()) file = resolve(file, 'index.html');
+    if ((await stat(file)).isDirectory()) {
+      if (!pathname.endsWith('/')) {
+        res.writeHead(301, { Location: `${pathname}/${new URL(req.url, 'http://localhost').search}` }).end();
+        return;
+      }
+      file = resolve(file, 'index.html');
+    }
     const type = extname(file) === '.avif' ? 'image/avif' : extname(file) === '.json' ? 'application/json; charset=utf-8' : types[extname(file)] || 'application/octet-stream';
     const headers = JSON.parse(await readFile('deployment/security-headers.json', 'utf8'));
     const hashed = pathname.startsWith('/assets/') || pathname.startsWith('/optimized/');
@@ -23,4 +29,6 @@ createServer(async (req, res) => {
     res.writeHead(200, responseHeaders);
     res.end(req.method === 'HEAD' ? undefined : content);
   } catch { res.writeHead(404, { 'Content-Type': 'text/plain' }).end('Not found'); }
-}).listen(4175, '127.0.0.1', () => console.log('Production validation: http://127.0.0.1:4175'));
+}).listen(Number(process.env.PORT || 4175), '127.0.0.1', function () {
+  console.log(`Production validation: http://127.0.0.1:${this.address().port}`);
+});

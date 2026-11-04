@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updatedAt": "2026-11-04",
   "pricingStatus": "reference",
   "whatsapp": "5521920184210",
@@ -7,7 +7,8 @@
     "name": "QuantoPega",
     "url": "https://quantopega.com.br/quanto-vale",
     "checkedAt": "2026-11-04",
-    "note": "Valores-base públicos da tabela sugerida; não são preços de venda. Descontos iniciais da demonstração pública do iPhone 13 128GB, configuráveis por modelo."
+    "note": "Valores-base e descontos por modelo e memória da tabela fornecida em 04/11/2026. Campos sem valor permanecem null e exigem avaliação individual quando selecionados.",
+    "providedTableSha256": "d0a8ffa0b7691805fe65631658cd7bed606bfd3098075266bb9488d45e13ee59"
   },
   "tradeIn": [
     {
@@ -16,15 +17,54 @@
       "capacities": [
         {
           "gb": 64,
-          "baseCents": 44000
+          "baseCents": 44000,
+          "deductions": {
+            "light": 10100,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 30000,
+            "back": 11400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 30000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         },
         {
           "gb": 128,
-          "baseCents": 64000
+          "baseCents": 64000,
+          "deductions": {
+            "light": 11500,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 30000,
+            "back": 13400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 30000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 74000
+          "baseCents": 74000,
+          "deductions": {
+            "light": 12200,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 30000,
+            "back": 14400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 30000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         }
       ]
     },
@@ -34,15 +74,54 @@
       "capacities": [
         {
           "gb": 64,
-          "baseCents": 44000
+          "baseCents": 44000,
+          "deductions": {
+            "light": 10100,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 11400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 40000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 54000
+          "baseCents": 54000,
+          "deductions": {
+            "light": 10800,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 12400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 40000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 64000
+          "baseCents": 64000,
+          "deductions": {
+            "light": 11500,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 13400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 40000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         }
       ]
     },
@@ -52,15 +131,54 @@
       "capacities": [
         {
           "gb": 64,
-          "baseCents": 64000
+          "baseCents": 64000,
+          "deductions": {
+            "light": 11500,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 13400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 40000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 74000
+          "baseCents": 74000,
+          "deductions": {
+            "light": 12200,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 14400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 40000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 84000
+          "baseCents": 84000,
+          "deductions": {
+            "light": 12900,
+            "moderate": 30000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 15400,
+            "faceid": 35000,
+            "charging": 15000,
+            "camera": 40000,
+            "part-camera": null,
+            "part-battery": 20000,
+            "part-screen": 30000
+          }
         }
       ]
     },
@@ -70,15 +188,54 @@
       "capacities": [
         {
           "gb": 64,
-          "baseCents": 75000
+          "baseCents": 75000,
+          "deductions": {
+            "light": 12300,
+            "moderate": 35000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 14500,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 40000,
+            "part-camera": 27800,
+            "part-battery": 15000,
+            "part-screen": 15000
+          }
         },
         {
           "gb": 128,
-          "baseCents": 90000
+          "baseCents": 90000,
+          "deductions": {
+            "light": 13300,
+            "moderate": 35000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 16000,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 50000,
+            "part-camera": 33300,
+            "part-battery": 18000,
+            "part-screen": 18000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 95000
+          "baseCents": 95000,
+          "deductions": {
+            "light": 13700,
+            "moderate": 35000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 16500,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 50000,
+            "part-camera": 35200,
+            "part-battery": 19000,
+            "part-screen": 19000
+          }
         }
       ]
     },
@@ -88,15 +245,54 @@
       "capacities": [
         {
           "gb": 64,
-          "baseCents": 94000
+          "baseCents": 94000,
+          "deductions": {
+            "light": 13600,
+            "moderate": 35000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 16400,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 40000,
+            "part-camera": 29600,
+            "part-battery": 18800,
+            "part-screen": 18800
+          }
         },
         {
           "gb": 128,
-          "baseCents": 109900
+          "baseCents": 109900,
+          "deductions": {
+            "light": 14700,
+            "moderate": 35000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 18000,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 50000,
+            "part-camera": 37600,
+            "part-battery": 22000,
+            "part-screen": 22000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 114000
+          "baseCents": 114000,
+          "deductions": {
+            "light": 15000,
+            "moderate": 35000,
+            "battery": 20000,
+            "screen": 35000,
+            "back": 18400,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 50000,
+            "part-camera": 44000,
+            "part-battery": 22800,
+            "part-screen": 22800
+          }
         }
       ]
     },
@@ -106,15 +302,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 124000
+          "baseCents": 124000,
+          "deductions": {
+            "light": 15700,
+            "moderate": 35000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 19400,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 60000,
+            "part-camera": 45600,
+            "part-battery": 24800,
+            "part-screen": 24800
+          }
         },
         {
           "gb": 256,
-          "baseCents": 144000
+          "baseCents": 144000,
+          "deductions": {
+            "light": 17100,
+            "moderate": 35000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 21400,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 60000,
+            "part-camera": 49600,
+            "part-battery": 28800,
+            "part-screen": 28800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 164000
+          "baseCents": 164000,
+          "deductions": {
+            "light": 18500,
+            "moderate": 35000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 23400,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 60000,
+            "part-camera": 60700,
+            "part-battery": 32800,
+            "part-screen": 32800
+          }
         }
       ]
     },
@@ -124,15 +359,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 164000
+          "baseCents": 164000,
+          "deductions": {
+            "light": 18500,
+            "moderate": 35000,
+            "battery": 25000,
+            "screen": 50000,
+            "back": 23400,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 60000,
+            "part-camera": 57600,
+            "part-battery": 32800,
+            "part-screen": 32800
+          }
         },
         {
           "gb": 256,
-          "baseCents": 179900
+          "baseCents": 179900,
+          "deductions": {
+            "light": 19600,
+            "moderate": 35000,
+            "battery": 25000,
+            "screen": 50000,
+            "back": 25000,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 60000,
+            "part-camera": 65600,
+            "part-battery": 36000,
+            "part-screen": 36000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 200000
+          "baseCents": 200000,
+          "deductions": {
+            "light": 21000,
+            "moderate": 35000,
+            "battery": 25000,
+            "screen": 50000,
+            "back": 27000,
+            "faceid": 45000,
+            "charging": 20000,
+            "camera": 60000,
+            "part-camera": 74000,
+            "part-battery": 40000,
+            "part-screen": 40000
+          }
         }
       ]
     },
@@ -142,15 +416,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 125000
+          "baseCents": 125000,
+          "deductions": {
+            "light": 15800,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 19500,
+            "faceid": 45000,
+            "charging": 25000,
+            "camera": 40000,
+            "part-camera": 46300,
+            "part-battery": 25000,
+            "part-screen": 25000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 135000
+          "baseCents": 135000,
+          "deductions": {
+            "light": 16500,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 20500,
+            "faceid": 45000,
+            "charging": 25000,
+            "camera": 40000,
+            "part-camera": 50000,
+            "part-battery": 27000,
+            "part-screen": 27000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 145000
+          "baseCents": 145000,
+          "deductions": {
+            "light": 17200,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 21500,
+            "faceid": 45000,
+            "charging": 25000,
+            "camera": 40000,
+            "part-camera": 53700,
+            "part-battery": 29000,
+            "part-screen": 29000
+          }
         }
       ]
     },
@@ -160,15 +473,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 154500
+          "baseCents": 154500,
+          "deductions": {
+            "light": 17800,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 22500,
+            "faceid": 45000,
+            "charging": 25000,
+            "camera": 40000,
+            "part-camera": 72000,
+            "part-battery": 30900,
+            "part-screen": 30900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 164000
+          "baseCents": 164000,
+          "deductions": {
+            "light": 18500,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 23400,
+            "faceid": 45000,
+            "charging": 25000,
+            "camera": 40000,
+            "part-camera": 61800,
+            "part-battery": 32800,
+            "part-screen": 32800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 174000
+          "baseCents": 174000,
+          "deductions": {
+            "light": 19200,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 35000,
+            "back": 24400,
+            "faceid": 45000,
+            "charging": 25000,
+            "camera": 40000,
+            "part-camera": 64400,
+            "part-battery": 34800,
+            "part-screen": 34800
+          }
         }
       ]
     },
@@ -178,19 +530,71 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 194500
+          "baseCents": 194500,
+          "deductions": {
+            "light": 20600,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 40000,
+            "back": 26500,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 65600,
+            "part-battery": 38900,
+            "part-screen": 38900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 209500
+          "baseCents": 209500,
+          "deductions": {
+            "light": 21700,
+            "moderate": 40000,
+            "battery": 25000,
+            "screen": 40000,
+            "back": 28000,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 77800,
+            "part-battery": 41900,
+            "part-screen": 41900
+          }
         },
         {
           "gb": 512,
-          "baseCents": 204000
+          "baseCents": 204000,
+          "deductions": {
+            "light": 21300,
+            "moderate": 45000,
+            "battery": 25000,
+            "screen": 40000,
+            "back": 27400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 83800,
+            "part-battery": 40800,
+            "part-screen": 40800
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 214000
+          "baseCents": 214000,
+          "deductions": {
+            "light": 22000,
+            "moderate": 45000,
+            "battery": 25000,
+            "screen": 40000,
+            "back": 28400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 79200,
+            "part-battery": 42800,
+            "part-screen": 42800
+          }
         }
       ]
     },
@@ -200,19 +604,71 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 224500
+          "baseCents": 224500,
+          "deductions": {
+            "light": 22700,
+            "moderate": 45000,
+            "battery": 25000,
+            "screen": 90000,
+            "back": 29500,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 81600,
+            "part-battery": 44900,
+            "part-screen": 44900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 244500
+          "baseCents": 244500,
+          "deductions": {
+            "light": 24100,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 90000,
+            "back": 31500,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 89800,
+            "part-battery": 48900,
+            "part-screen": 48900
+          }
         },
         {
           "gb": 512,
-          "baseCents": 264500
+          "baseCents": 264500,
+          "deductions": {
+            "light": 25500,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 90000,
+            "back": 33500,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 97900,
+            "part-battery": 52900,
+            "part-screen": 52900
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 274500
+          "baseCents": 274500,
+          "deductions": {
+            "light": 26200,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 90000,
+            "back": 34500,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 65000,
+            "part-camera": 101600,
+            "part-battery": 54900,
+            "part-screen": 54900
+          }
         }
       ]
     },
@@ -222,15 +678,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 164000
+          "baseCents": 164000,
+          "deductions": {
+            "light": 18500,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 50000,
+            "back": 23400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 50000,
+            "part-camera": 97800,
+            "part-battery": 32800,
+            "part-screen": 32800
+          }
         },
         {
           "gb": 256,
-          "baseCents": 184000
+          "baseCents": 184000,
+          "deductions": {
+            "light": 19900,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 50000,
+            "back": 25400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 50000,
+            "part-camera": 65600,
+            "part-battery": 36800,
+            "part-screen": 36800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 224000
+          "baseCents": 224000,
+          "deductions": {
+            "light": 22700,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 50000,
+            "back": 29400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 50000,
+            "part-camera": 73600,
+            "part-battery": 44800,
+            "part-screen": 44800
+          }
         }
       ]
     },
@@ -240,15 +735,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 184000
+          "baseCents": 184000,
+          "deductions": {
+            "light": 19900,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 70000,
+            "back": 25400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 50000,
+            "part-camera": 68100,
+            "part-battery": 36800,
+            "part-screen": 36800
+          }
         },
         {
           "gb": 256,
-          "baseCents": 204000
+          "baseCents": 204000,
+          "deductions": {
+            "light": 21300,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 70000,
+            "back": 27400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 50000,
+            "part-camera": 75500,
+            "part-battery": 40800,
+            "part-screen": 40800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 244000
+          "baseCents": 244000,
+          "deductions": {
+            "light": 24100,
+            "moderate": 50000,
+            "battery": 25000,
+            "screen": 70000,
+            "back": 31400,
+            "faceid": 60000,
+            "charging": 25000,
+            "camera": 50000,
+            "part-camera": 90300,
+            "part-battery": 48800,
+            "part-screen": 48800
+          }
         }
       ]
     },
@@ -258,19 +792,71 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 247000
+          "baseCents": 247000,
+          "deductions": {
+            "light": 24300,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 31700,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 89600,
+            "part-battery": 49400,
+            "part-screen": 49400
+          }
         },
         {
           "gb": 256,
-          "baseCents": 267000
+          "baseCents": 267000,
+          "deductions": {
+            "light": 25700,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 33700,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 98800,
+            "part-battery": 53400,
+            "part-screen": 53400
+          }
         },
         {
           "gb": 512,
-          "baseCents": 274000
+          "baseCents": 274000,
+          "deductions": {
+            "light": 26200,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 34400,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 106800,
+            "part-battery": 54800,
+            "part-screen": 54800
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 284000
+          "baseCents": 284000,
+          "deductions": {
+            "light": 26900,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 35400,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 105100,
+            "part-battery": 56800,
+            "part-screen": 56800
+          }
         }
       ]
     },
@@ -280,19 +866,71 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 287000
+          "baseCents": 287000,
+          "deductions": {
+            "light": 27100,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 120000,
+            "back": 35700,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 109600,
+            "part-battery": 57400,
+            "part-screen": 57400
+          }
         },
         {
           "gb": 256,
-          "baseCents": 302900
+          "baseCents": 302900,
+          "deductions": {
+            "light": 28200,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 120000,
+            "back": 37300,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 114800,
+            "part-battery": 60600,
+            "part-screen": 60600
+          }
         },
         {
           "gb": 512,
-          "baseCents": 304000
+          "baseCents": 304000,
+          "deductions": {
+            "light": 28300,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 120000,
+            "back": 37400,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 121200,
+            "part-battery": 60800,
+            "part-screen": 60800
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 314000
+          "baseCents": 314000,
+          "deductions": {
+            "light": 29000,
+            "moderate": 50000,
+            "battery": 35000,
+            "screen": 120000,
+            "back": 38400,
+            "faceid": 75000,
+            "charging": 30000,
+            "camera": 95000,
+            "part-camera": 116200,
+            "part-battery": 62800,
+            "part-screen": 62800
+          }
         }
       ]
     },
@@ -302,15 +940,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 224500
+          "baseCents": 224500,
+          "deductions": {
+            "light": 22700,
+            "moderate": 60000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 29500,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 121600,
+            "part-battery": 44900,
+            "part-screen": 44900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 239500
+          "baseCents": 239500,
+          "deductions": {
+            "light": 23800,
+            "moderate": 60000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 31000,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 89800,
+            "part-battery": 47900,
+            "part-screen": 47900
+          }
         },
         {
           "gb": 512,
-          "baseCents": 259500
+          "baseCents": 259500,
+          "deductions": {
+            "light": 25200,
+            "moderate": 60000,
+            "battery": 35000,
+            "screen": 70000,
+            "back": 33000,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 96000,
+            "part-battery": 51900,
+            "part-screen": 51900
+          }
         }
       ]
     },
@@ -320,15 +997,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 244500
+          "baseCents": 244500,
+          "deductions": {
+            "light": 24100,
+            "moderate": 60000,
+            "battery": 35000,
+            "screen": 90000,
+            "back": 31500,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 90500,
+            "part-battery": 48900,
+            "part-screen": 48900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 259500
+          "baseCents": 259500,
+          "deductions": {
+            "light": 25200,
+            "moderate": 60000,
+            "battery": 35000,
+            "screen": 90000,
+            "back": 33000,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 96000,
+            "part-battery": 51900,
+            "part-screen": 51900
+          }
         },
         {
           "gb": 512,
-          "baseCents": 279500
+          "baseCents": 279500,
+          "deductions": {
+            "light": 26600,
+            "moderate": 60000,
+            "battery": 35000,
+            "screen": 90000,
+            "back": 35000,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 103400,
+            "part-battery": 55900,
+            "part-screen": 55900
+          }
         }
       ]
     },
@@ -338,19 +1054,71 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 284500
+          "baseCents": 284500,
+          "deductions": {
+            "light": 26900,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 140000,
+            "back": 35500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 120000,
+            "part-camera": 95800,
+            "part-battery": 56900,
+            "part-screen": 56900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 314500
+          "baseCents": 314500,
+          "deductions": {
+            "light": 29000,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 140000,
+            "back": 38500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 120000,
+            "part-camera": 113800,
+            "part-battery": 62900,
+            "part-screen": 62900
+          }
         },
         {
           "gb": 512,
-          "baseCents": 334500
+          "baseCents": 334500,
+          "deductions": {
+            "light": 30400,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 140000,
+            "back": 40500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 120000,
+            "part-camera": 123800,
+            "part-battery": 66900,
+            "part-screen": 66900
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 344500
+          "baseCents": 344500,
+          "deductions": {
+            "light": 31100,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 140000,
+            "back": 41500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 120000,
+            "part-camera": 127500,
+            "part-battery": 68900,
+            "part-screen": 68900
+          }
         }
       ]
     },
@@ -360,15 +1128,54 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 374500
+          "baseCents": 374500,
+          "deductions": {
+            "light": 33200,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 160000,
+            "back": 44500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 150000,
+            "part-camera": 125800,
+            "part-battery": 74900,
+            "part-screen": 74900
+          }
         },
         {
           "gb": 512,
-          "baseCents": 394500
+          "baseCents": 394500,
+          "deductions": {
+            "light": 34600,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 160000,
+            "back": 46500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 150000,
+            "part-camera": 146000,
+            "part-battery": 78900,
+            "part-screen": 78900
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 404500
+          "baseCents": 404500,
+          "deductions": {
+            "light": 35300,
+            "moderate": 60000,
+            "battery": 45000,
+            "screen": 160000,
+            "back": 47500,
+            "faceid": 100000,
+            "charging": 60000,
+            "camera": 150000,
+            "part-camera": 149700,
+            "part-battery": 80900,
+            "part-screen": 80900
+          }
         }
       ]
     },
@@ -378,15 +1185,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 260000
+          "baseCents": 260000,
+          "deductions": {
+            "light": 25200,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 70000,
+            "back": 33000,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 96200,
+            "part-battery": 52000,
+            "part-screen": 52000
+          }
         },
         {
           "gb": 256,
-          "baseCents": 275000
+          "baseCents": 275000,
+          "deductions": {
+            "light": 26300,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 70000,
+            "back": 34500,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 101800,
+            "part-battery": 55000,
+            "part-screen": 55000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 295000
+          "baseCents": 295000,
+          "deductions": {
+            "light": 27700,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 70000,
+            "back": 36500,
+            "faceid": 75000,
+            "charging": 60000,
+            "camera": 60000,
+            "part-camera": 109200,
+            "part-battery": 59000,
+            "part-screen": 59000
+          }
         }
       ]
     },
@@ -396,15 +1242,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 324500
+          "baseCents": 324500,
+          "deductions": {
+            "light": 29700,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 140000,
+            "back": 39500,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 150000,
+            "part-camera": 149800,
+            "part-battery": 64900,
+            "part-screen": 64900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 344000
+          "baseCents": 344000,
+          "deductions": {
+            "light": 31100,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 140000,
+            "back": 41400,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 150000,
+            "part-camera": 129800,
+            "part-battery": 68800,
+            "part-screen": 68800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 354000
+          "baseCents": 354000,
+          "deductions": {
+            "light": 31800,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 140000,
+            "back": 42400,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 150000,
+            "part-camera": 137600,
+            "part-battery": 70800,
+            "part-screen": 70800
+          }
         }
       ]
     },
@@ -414,15 +1299,54 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 344500
+          "baseCents": 344500,
+          "deductions": {
+            "light": 31100,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 160000,
+            "back": 41500,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 150000,
+            "part-camera": 127500,
+            "part-battery": 68900,
+            "part-screen": 68900
+          }
         },
         {
           "gb": 256,
-          "baseCents": 364000
+          "baseCents": 364000,
+          "deductions": {
+            "light": 32500,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 160000,
+            "back": 43400,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 150000,
+            "part-camera": 134700,
+            "part-battery": 72800,
+            "part-screen": 72800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 374000
+          "baseCents": 374000,
+          "deductions": {
+            "light": 33200,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 160000,
+            "back": 44400,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 150000,
+            "part-camera": 138400,
+            "part-battery": 74800,
+            "part-screen": 74800
+          }
         }
       ]
     },
@@ -432,19 +1356,71 @@
       "capacities": [
         {
           "gb": 128,
-          "baseCents": 374000
+          "baseCents": 374000,
+          "deductions": {
+            "light": 33200,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 190000,
+            "back": 44400,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 141600,
+            "part-battery": 74800,
+            "part-screen": 74800
+          }
         },
         {
           "gb": 256,
-          "baseCents": 407000
+          "baseCents": 407000,
+          "deductions": {
+            "light": 35500,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 190000,
+            "back": 47700,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 149600,
+            "part-battery": 81400,
+            "part-screen": 81400
+          }
         },
         {
           "gb": 512,
-          "baseCents": 384000
+          "baseCents": 384000,
+          "deductions": {
+            "light": 33900,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 190000,
+            "back": 45400,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 162800,
+            "part-battery": 76800,
+            "part-screen": 76800
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 394000
+          "baseCents": 394000,
+          "deductions": {
+            "light": 34600,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 190000,
+            "back": 46400,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 153600,
+            "part-battery": 78800,
+            "part-screen": 78800
+          }
         }
       ]
     },
@@ -454,15 +1430,54 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 454000
+          "baseCents": 454000,
+          "deductions": {
+            "light": 38800,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 300000,
+            "back": 52400,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 157600,
+            "part-battery": 90800,
+            "part-screen": 90800
+          }
         },
         {
           "gb": 512,
-          "baseCents": 444000
+          "baseCents": 444000,
+          "deductions": {
+            "light": 38100,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 300000,
+            "back": 51400,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 181600,
+            "part-battery": 88800,
+            "part-screen": 88800
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 464000
+          "baseCents": 464000,
+          "deductions": {
+            "light": 39500,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 300000,
+            "back": 53400,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 190000,
+            "part-camera": 177600,
+            "part-battery": 92800,
+            "part-screen": 92800
+          }
         }
       ]
     },
@@ -472,11 +1487,37 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 340000
+          "baseCents": 340000,
+          "deductions": {
+            "light": 30800,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 80000,
+            "back": 41000,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 80000,
+            "part-camera": 125800,
+            "part-battery": 68000,
+            "part-screen": 68000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 360000
+          "baseCents": 360000,
+          "deductions": {
+            "light": 32200,
+            "moderate": 60000,
+            "battery": 60000,
+            "screen": 80000,
+            "back": 43000,
+            "faceid": 100000,
+            "charging": 80000,
+            "camera": 80000,
+            "part-camera": 133200,
+            "part-battery": 72000,
+            "part-screen": 72000
+          }
         }
       ]
     },
@@ -486,11 +1527,37 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 430000
+          "baseCents": 430000,
+          "deductions": {
+            "light": 37100,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 160000,
+            "back": 50000,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 160000,
+            "part-camera": 159100,
+            "part-battery": 86000,
+            "part-screen": 86000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 460000
+          "baseCents": 460000,
+          "deductions": {
+            "light": 39200,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 160000,
+            "back": 53000,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 160000,
+            "part-camera": 170200,
+            "part-battery": 92000,
+            "part-screen": 92000
+          }
         }
       ]
     },
@@ -500,15 +1567,54 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 480000
+          "baseCents": 480000,
+          "deductions": {
+            "light": 40600,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 200000,
+            "back": 55000,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 120000,
+            "part-camera": 177600,
+            "part-battery": 96000,
+            "part-screen": 96000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 510000
+          "baseCents": 510000,
+          "deductions": {
+            "light": 42700,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 200000,
+            "back": 58000,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 120000,
+            "part-camera": 188700,
+            "part-battery": 102000,
+            "part-screen": 102000
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 540000
+          "baseCents": 540000,
+          "deductions": {
+            "light": 44800,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 200000,
+            "back": 61000,
+            "faceid": 120000,
+            "charging": 80000,
+            "camera": 120000,
+            "part-camera": 199800,
+            "part-battery": 108000,
+            "part-screen": 108000
+          }
         }
       ]
     },
@@ -518,15 +1624,54 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 540000
+          "baseCents": 540000,
+          "deductions": {
+            "light": 44800,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 220000,
+            "back": 61000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 199800,
+            "part-battery": 108000,
+            "part-screen": 108000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 580000
+          "baseCents": 580000,
+          "deductions": {
+            "light": 47600,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 220000,
+            "back": 65000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 214600,
+            "part-battery": 116000,
+            "part-screen": 116000
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 620000
+          "baseCents": 620000,
+          "deductions": {
+            "light": 50400,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 220000,
+            "back": 69000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 229400,
+            "part-battery": 124000,
+            "part-screen": 124000
+          }
         }
       ]
     },
@@ -536,19 +1681,71 @@
       "capacities": [
         {
           "gb": 256,
-          "baseCents": 600000
+          "baseCents": 600000,
+          "deductions": {
+            "light": 49000,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 320000,
+            "back": 67000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 222000,
+            "part-battery": 120000,
+            "part-screen": 120000
+          }
         },
         {
           "gb": 512,
-          "baseCents": 640000
+          "baseCents": 640000,
+          "deductions": {
+            "light": 51800,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 320000,
+            "back": 71000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 236800,
+            "part-battery": 128000,
+            "part-screen": 128000
+          }
         },
         {
           "gb": 1024,
-          "baseCents": 680000
+          "baseCents": 680000,
+          "deductions": {
+            "light": 54600,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 320000,
+            "back": 75000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 251600,
+            "part-battery": 136000,
+            "part-screen": 136000
+          }
         },
         {
           "gb": 2048,
-          "baseCents": 740000
+          "baseCents": 740000,
+          "deductions": {
+            "light": 58800,
+            "moderate": 60000,
+            "battery": 80000,
+            "screen": 320000,
+            "back": 81000,
+            "faceid": 150000,
+            "charging": 80000,
+            "camera": 200000,
+            "part-camera": 273800,
+            "part-battery": 148000,
+            "part-screen": 148000
+          }
         }
       ]
     }
@@ -557,76 +1754,64 @@
     {
       "id": "pristine",
       "label": "Muito bem cuidado",
-      "description": "Sem marcas aparentes.",
-      "deductionCents": 0
+      "description": "Sem marcas aparentes."
     },
     {
       "id": "light",
       "label": "Marcas leves",
-      "description": "Pequenos riscos de uso.",
-      "deductionCents": 17800
+      "description": "Pequenos riscos de uso."
     },
     {
       "id": "moderate",
       "label": "Marcas moderadas",
-      "description": "Riscos e marcas mais visíveis.",
-      "deductionCents": 40000
+      "description": "Riscos e marcas mais visíveis."
     }
   ],
   "damages": [
     {
       "id": "battery",
       "label": "Bateria com saúde baixa",
-      "description": "Abaixo de 80% de capacidade.",
-      "deductionCents": 25000
+      "description": "Abaixo de 80% de capacidade."
     },
     {
       "id": "screen",
       "label": "Tela trocada ou com defeito",
-      "description": "Troca de tela ou reparo necessário.",
-      "deductionCents": 35000
+      "description": "Troca de tela ou reparo necessário."
     },
     {
       "id": "back",
       "label": "Traseira danificada",
-      "description": "Vidro trincado ou quebrado.",
-      "deductionCents": 22500
+      "description": "Vidro trincado ou quebrado."
     },
     {
       "id": "faceid",
       "label": "Face ID com defeito",
-      "description": "Reconhecimento facial não funciona.",
-      "deductionCents": 45000
+      "description": "Reconhecimento facial não funciona."
     },
     {
       "id": "charging",
       "label": "Conector de carga",
-      "description": "Falha ao carregar pelo conector.",
-      "deductionCents": 25000
+      "description": "Falha ao carregar pelo conector."
     },
     {
       "id": "camera",
       "label": "Câmera traseira",
-      "description": "Falha no funcionamento da câmera.",
-      "deductionCents": 40000
+      "description": "Falha no funcionamento da câmera."
     },
     {
       "id": "part-camera",
       "label": "Aviso de peça: câmera",
-      "description": "Notificação de peça no sistema.",
-      "deductionCents": 72000
+      "description": "Notificação de peça no sistema."
     },
     {
       "id": "part-battery",
       "label": "Aviso de peça: bateria",
-      "description": "Notificação de peça no sistema.",
-      "deductionCents": 30900
+      "description": "Notificação de peça no sistema."
     },
     {
       "id": "part-screen",
       "label": "Aviso de peça: tela",
-      "description": "Notificação de peça no sistema.",
-      "deductionCents": 30900
+      "description": "Notificação de peça no sistema."
     }
   ],
   "bonus": {

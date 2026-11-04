@@ -1,0 +1,7 @@
+/* Map the shared consent component onto V2's existing palette. */
+.analytics-consent, .footer__privacy {
+  --ink-900: #f5e9ef; --text: #21191f; --text-2: #5b4651;
+  --pink-400: #c40d68; --pink-600: #d10f6f; --pink-700: #a80a58;
+  --line-strong: #ddbed0; --radius-md: 16px; --radius-pill: 999px;
+  --fs-xs: .8125rem; --fs-sm: .9375rem; --focus: #d10f6f;
+}

@@ -15,6 +15,7 @@ import "./styles/footer.css";
 import "./styles/privacy.css";
 import "./styles/closing.css";
 import "./styles/collection.css";
+import "./styles/business-link.css";
 
 import { initNav } from "./js/nav.js";
 import { initTheme } from "./js/theme.js";

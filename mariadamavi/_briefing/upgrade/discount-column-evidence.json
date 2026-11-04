@@ -1,0 +1,417 @@
+{
+  "source": "https://quantopega.com.br/quanto-vale/iphone-xs-64gb",
+  "checkedAt": "2026-11-04",
+  "method": "Public simulator: selected each model and read visible damage labels",
+  "models": [
+    {
+      "model": "iPhone 8 Plus 64GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 8 Plus 128GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 105,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 8 Plus 256GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone X 64GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone X 256GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone XR 64GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XR 128GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XR 256GB",
+      "labels": [
+        "Marcas leves- R$ 112,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 130,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XS 64GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XS 256GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XS 512GB",
+      "labels": [
+        "Marcas leves- R$ 105,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 120,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XS Max 64GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XS Max 256GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 100,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone XS Max 512GB",
+      "labels": [
+        "Marcas leves- R$ 112,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 100,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 130,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 64GB",
+      "labels": [
+        "Marcas leves- R$ 101,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 114,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 128GB",
+      "labels": [
+        "Marcas leves- R$ 115,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 134,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 256GB",
+      "labels": [
+        "Marcas leves- R$ 122,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 300,00",
+        "Traseira- R$ 144,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 Pro 64GB",
+      "labels": [
+        "Marcas leves- R$ 101,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 350,00",
+        "Traseira- R$ 114,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 400,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 Pro 256GB",
+      "labels": [
+        "Marcas leves- R$ 108,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 350,00",
+        "Traseira- R$ 124,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 400,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 Pro 512GB",
+      "labels": [
+        "Marcas leves- R$ 115,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 350,00",
+        "Traseira- R$ 134,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 400,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 Pro Max 64GB",
+      "labels": [
+        "Marcas leves- R$ 115,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 350,00",
+        "Traseira- R$ 134,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 400,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 Pro Max 256GB",
+      "labels": [
+        "Marcas leves- R$ 122,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 350,00",
+        "Traseira- R$ 144,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 400,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone 11 Pro Max 512GB",
+      "labels": [
+        "Marcas leves- R$ 129,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 350,00",
+        "Traseira- R$ 154,00",
+        "Face ID- R$ 350,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 400,00",
+        "Notif. peça - bateria- R$ 200,00",
+        "Notif. peça - tela- R$ 300,00"
+      ]
+    },
+    {
+      "model": "iPhone SE 2020 64GB",
+      "labels": [
+        "Marcas leves- R$ 100,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 105,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone SE 2020 128GB",
+      "labels": [
+        "Marcas leves- R$ 102,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 115,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone SE 2020 256GB",
+      "labels": [
+        "Marcas leves- R$ 105,00",
+        "Marcas moderadas- R$ 250,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 120,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone SE 2022 64GB",
+      "labels": [
+        "Marcas leves- R$ 112,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 130,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone SE 2022 128GB",
+      "labels": [
+        "Marcas leves- R$ 119,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 140,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    },
+    {
+      "model": "iPhone SE 2022 256GB",
+      "labels": [
+        "Marcas leves- R$ 126,00",
+        "Marcas moderadas- R$ 300,00",
+        "Bateria (saúde baixa)- R$ 200,00",
+        "Troca de tela- R$ 200,00",
+        "Traseira- R$ 150,00",
+        "Face ID- R$ 200,00",
+        "Doc de carga- R$ 150,00",
+        "Câmera traseira- R$ 300,00",
+        "Notif. peça - bateria- R$ 200,00"
+      ]
+    }
+  ]
+}

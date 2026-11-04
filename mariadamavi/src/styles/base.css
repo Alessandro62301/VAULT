@@ -181,6 +181,30 @@ button {
   background: rgba(255, 236, 246, 0.12);
 }
 
+/* Shared by contact cards and footer buttons on every page. */
+.avatar {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(10, 2, 8, 0.2);
+}
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar svg {
+  width: 62%;
+  height: 62%;
+}
+
 .btn--avatar {
   padding-left: 0.45rem;
 }

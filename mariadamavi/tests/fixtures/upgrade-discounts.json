@@ -1,0 +1,2650 @@
+{
+  "metadata": {
+    "currency": "BRL",
+    "monetaryUnit": "centavos",
+    "extractedAt": "2026-11-04",
+    "sourceFile": "Texto colado.txt",
+    "sourceSha256": "d0a8ffa0b7691805fe65631658cd7bed606bfd3098075266bb9488d45e13ee59",
+    "missingValueMeaning": "null = campo sem valor informado no texto; nunca interpretado como desconto zero.",
+    "fieldAlignment": "Nas linhas incompletas, os nomes e a ordem foram conferidos na interface pública. Os valores numéricos continuam sendo os fornecidos no arquivo colado."
+  },
+  "columns": {
+    "light": "Marcas leves",
+    "moderate": "Marcas moderadas",
+    "battery": "Bateria (saúde baixa)",
+    "screen": "Troca de tela",
+    "back": "Traseira",
+    "faceid": "Face ID",
+    "charging": "Doc de carga",
+    "camera": "Câmera traseira",
+    "part-camera": "Notif. peça - câmera",
+    "part-battery": "Notif. peça - bateria",
+    "part-screen": "Notif. peça - tela"
+  },
+  "summary": {
+    "configurations": 112,
+    "distinctModels": 36,
+    "discountCategories": 11,
+    "extractedDiscountValues": 1178,
+    "missingValues": 54,
+    "incompleteConfigurations": 29,
+    "completeConfigurations": 83,
+    "groupCounts": [
+      {
+        "group": "iPhone 17",
+        "expected": 11,
+        "actual": 11
+      },
+      {
+        "group": "iPhone Air",
+        "expected": 3,
+        "actual": 3
+      },
+      {
+        "group": "iPhone 16",
+        "expected": 16,
+        "actual": 16
+      },
+      {
+        "group": "iPhone 15",
+        "expected": 13,
+        "actual": 13
+      },
+      {
+        "group": "iPhone 14",
+        "expected": 14,
+        "actual": 14
+      },
+      {
+        "group": "iPhone 13",
+        "expected": 14,
+        "actual": 14
+      },
+      {
+        "group": "iPhone 12",
+        "expected": 12,
+        "actual": 12
+      },
+      {
+        "group": "iPhone 11",
+        "expected": 9,
+        "actual": 9
+      },
+      {
+        "group": "iPhone SE",
+        "expected": 6,
+        "actual": 6
+      },
+      {
+        "group": "iPhone XS",
+        "expected": 6,
+        "actual": 6
+      },
+      {
+        "group": "iPhone XR",
+        "expected": 3,
+        "actual": 3
+      },
+      {
+        "group": "iPhone X",
+        "expected": 2,
+        "actual": 2
+      },
+      {
+        "group": "iPhone 8",
+        "expected": 3,
+        "actual": 3
+      }
+    ],
+    "publicValueDifferences": []
+  },
+  "models": [
+    {
+      "modelId": "iphone-17e",
+      "model": "iPhone 17e",
+      "family": "iPhone 17",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 340000,
+      "deductionsCents": {
+        "light": 30800,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 80000,
+        "back": 41000,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 80000,
+        "part-camera": 125800,
+        "part-battery": 68000,
+        "part-screen": 68000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17e",
+      "model": "iPhone 17e",
+      "family": "iPhone 17",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 360000,
+      "deductionsCents": {
+        "light": 32200,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 80000,
+        "back": 43000,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 80000,
+        "part-camera": 133200,
+        "part-battery": 72000,
+        "part-screen": 72000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17",
+      "model": "iPhone 17",
+      "family": "iPhone 17",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 430000,
+      "deductionsCents": {
+        "light": 37100,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 160000,
+        "back": 50000,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 160000,
+        "part-camera": 159100,
+        "part-battery": 86000,
+        "part-screen": 86000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17",
+      "model": "iPhone 17",
+      "family": "iPhone 17",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 460000,
+      "deductionsCents": {
+        "light": 39200,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 160000,
+        "back": 53000,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 160000,
+        "part-camera": 170200,
+        "part-battery": 92000,
+        "part-screen": 92000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro",
+      "model": "iPhone 17 Pro",
+      "family": "iPhone 17",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 540000,
+      "deductionsCents": {
+        "light": 44800,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 220000,
+        "back": 61000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 199800,
+        "part-battery": 108000,
+        "part-screen": 108000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro",
+      "model": "iPhone 17 Pro",
+      "family": "iPhone 17",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 580000,
+      "deductionsCents": {
+        "light": 47600,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 220000,
+        "back": 65000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 214600,
+        "part-battery": 116000,
+        "part-screen": 116000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro",
+      "model": "iPhone 17 Pro",
+      "family": "iPhone 17",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 620000,
+      "deductionsCents": {
+        "light": 50400,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 220000,
+        "back": 69000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 229400,
+        "part-battery": 124000,
+        "part-screen": 124000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro-max",
+      "model": "iPhone 17 Pro Max",
+      "family": "iPhone 17",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 600000,
+      "deductionsCents": {
+        "light": 49000,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 320000,
+        "back": 67000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 222000,
+        "part-battery": 120000,
+        "part-screen": 120000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro-max",
+      "model": "iPhone 17 Pro Max",
+      "family": "iPhone 17",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 640000,
+      "deductionsCents": {
+        "light": 51800,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 320000,
+        "back": 71000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 236800,
+        "part-battery": 128000,
+        "part-screen": 128000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro-max",
+      "model": "iPhone 17 Pro Max",
+      "family": "iPhone 17",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 680000,
+      "deductionsCents": {
+        "light": 54600,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 320000,
+        "back": 75000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 251600,
+        "part-battery": 136000,
+        "part-screen": 136000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-17-pro-max",
+      "model": "iPhone 17 Pro Max",
+      "family": "iPhone 17",
+      "capacity": "2TB",
+      "storageGb": 2048,
+      "baseCents": 740000,
+      "deductionsCents": {
+        "light": 58800,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 320000,
+        "back": 81000,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 200000,
+        "part-camera": 273800,
+        "part-battery": 148000,
+        "part-screen": 148000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-air",
+      "model": "iPhone Air",
+      "family": "iPhone Air",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 480000,
+      "deductionsCents": {
+        "light": 40600,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 200000,
+        "back": 55000,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 120000,
+        "part-camera": 177600,
+        "part-battery": 96000,
+        "part-screen": 96000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-air",
+      "model": "iPhone Air",
+      "family": "iPhone Air",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 510000,
+      "deductionsCents": {
+        "light": 42700,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 200000,
+        "back": 58000,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 120000,
+        "part-camera": 188700,
+        "part-battery": 102000,
+        "part-screen": 102000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-air",
+      "model": "iPhone Air",
+      "family": "iPhone Air",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 540000,
+      "deductionsCents": {
+        "light": 44800,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 200000,
+        "back": 61000,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 120000,
+        "part-camera": 199800,
+        "part-battery": 108000,
+        "part-screen": 108000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16e",
+      "model": "iPhone 16e",
+      "family": "iPhone 16",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 260000,
+      "deductionsCents": {
+        "light": 25200,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 70000,
+        "back": 33000,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 96200,
+        "part-battery": 52000,
+        "part-screen": 52000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16e",
+      "model": "iPhone 16e",
+      "family": "iPhone 16",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 275000,
+      "deductionsCents": {
+        "light": 26300,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 70000,
+        "back": 34500,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 101800,
+        "part-battery": 55000,
+        "part-screen": 55000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16e",
+      "model": "iPhone 16e",
+      "family": "iPhone 16",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 295000,
+      "deductionsCents": {
+        "light": 27700,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 70000,
+        "back": 36500,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 109200,
+        "part-battery": 59000,
+        "part-screen": 59000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16",
+      "model": "iPhone 16",
+      "family": "iPhone 16",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 324500,
+      "deductionsCents": {
+        "light": 29700,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 140000,
+        "back": 39500,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 150000,
+        "part-camera": 149800,
+        "part-battery": 64900,
+        "part-screen": 64900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16",
+      "model": "iPhone 16",
+      "family": "iPhone 16",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 344000,
+      "deductionsCents": {
+        "light": 31100,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 140000,
+        "back": 41400,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 150000,
+        "part-camera": 129800,
+        "part-battery": 68800,
+        "part-screen": 68800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16",
+      "model": "iPhone 16",
+      "family": "iPhone 16",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 354000,
+      "deductionsCents": {
+        "light": 31800,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 140000,
+        "back": 42400,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 150000,
+        "part-camera": 137600,
+        "part-battery": 70800,
+        "part-screen": 70800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-plus",
+      "model": "iPhone 16 Plus",
+      "family": "iPhone 16",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 344500,
+      "deductionsCents": {
+        "light": 31100,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 160000,
+        "back": 41500,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 150000,
+        "part-camera": 127500,
+        "part-battery": 68900,
+        "part-screen": 68900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-plus",
+      "model": "iPhone 16 Plus",
+      "family": "iPhone 16",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 364000,
+      "deductionsCents": {
+        "light": 32500,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 160000,
+        "back": 43400,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 150000,
+        "part-camera": 134700,
+        "part-battery": 72800,
+        "part-screen": 72800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-plus",
+      "model": "iPhone 16 Plus",
+      "family": "iPhone 16",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 374000,
+      "deductionsCents": {
+        "light": 33200,
+        "moderate": 60000,
+        "battery": 60000,
+        "screen": 160000,
+        "back": 44400,
+        "faceid": 100000,
+        "charging": 80000,
+        "camera": 150000,
+        "part-camera": 138400,
+        "part-battery": 74800,
+        "part-screen": 74800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro",
+      "model": "iPhone 16 Pro",
+      "family": "iPhone 16",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 374000,
+      "deductionsCents": {
+        "light": 33200,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 190000,
+        "back": 44400,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 141600,
+        "part-battery": 74800,
+        "part-screen": 74800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro",
+      "model": "iPhone 16 Pro",
+      "family": "iPhone 16",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 407000,
+      "deductionsCents": {
+        "light": 35500,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 190000,
+        "back": 47700,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 149600,
+        "part-battery": 81400,
+        "part-screen": 81400
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro",
+      "model": "iPhone 16 Pro",
+      "family": "iPhone 16",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 384000,
+      "deductionsCents": {
+        "light": 33900,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 190000,
+        "back": 45400,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 162800,
+        "part-battery": 76800,
+        "part-screen": 76800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro",
+      "model": "iPhone 16 Pro",
+      "family": "iPhone 16",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 394000,
+      "deductionsCents": {
+        "light": 34600,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 190000,
+        "back": 46400,
+        "faceid": 120000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 153600,
+        "part-battery": 78800,
+        "part-screen": 78800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro-max",
+      "model": "iPhone 16 Pro Max",
+      "family": "iPhone 16",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 454000,
+      "deductionsCents": {
+        "light": 38800,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 300000,
+        "back": 52400,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 157600,
+        "part-battery": 90800,
+        "part-screen": 90800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro-max",
+      "model": "iPhone 16 Pro Max",
+      "family": "iPhone 16",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 444000,
+      "deductionsCents": {
+        "light": 38100,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 300000,
+        "back": 51400,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 181600,
+        "part-battery": 88800,
+        "part-screen": 88800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-16-pro-max",
+      "model": "iPhone 16 Pro Max",
+      "family": "iPhone 16",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 464000,
+      "deductionsCents": {
+        "light": 39500,
+        "moderate": 60000,
+        "battery": 80000,
+        "screen": 300000,
+        "back": 53400,
+        "faceid": 150000,
+        "charging": 80000,
+        "camera": 190000,
+        "part-camera": 177600,
+        "part-battery": 92800,
+        "part-screen": 92800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15",
+      "model": "iPhone 15",
+      "family": "iPhone 15",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 224500,
+      "deductionsCents": {
+        "light": 22700,
+        "moderate": 60000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 29500,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 121600,
+        "part-battery": 44900,
+        "part-screen": 44900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15",
+      "model": "iPhone 15",
+      "family": "iPhone 15",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 239500,
+      "deductionsCents": {
+        "light": 23800,
+        "moderate": 60000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 31000,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 89800,
+        "part-battery": 47900,
+        "part-screen": 47900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15",
+      "model": "iPhone 15",
+      "family": "iPhone 15",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 259500,
+      "deductionsCents": {
+        "light": 25200,
+        "moderate": 60000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 33000,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 96000,
+        "part-battery": 51900,
+        "part-screen": 51900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-plus",
+      "model": "iPhone 15 Plus",
+      "family": "iPhone 15",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 244500,
+      "deductionsCents": {
+        "light": 24100,
+        "moderate": 60000,
+        "battery": 35000,
+        "screen": 90000,
+        "back": 31500,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 90500,
+        "part-battery": 48900,
+        "part-screen": 48900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-plus",
+      "model": "iPhone 15 Plus",
+      "family": "iPhone 15",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 259500,
+      "deductionsCents": {
+        "light": 25200,
+        "moderate": 60000,
+        "battery": 35000,
+        "screen": 90000,
+        "back": 33000,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 96000,
+        "part-battery": 51900,
+        "part-screen": 51900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-plus",
+      "model": "iPhone 15 Plus",
+      "family": "iPhone 15",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 279500,
+      "deductionsCents": {
+        "light": 26600,
+        "moderate": 60000,
+        "battery": 35000,
+        "screen": 90000,
+        "back": 35000,
+        "faceid": 75000,
+        "charging": 60000,
+        "camera": 60000,
+        "part-camera": 103400,
+        "part-battery": 55900,
+        "part-screen": 55900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro",
+      "model": "iPhone 15 Pro",
+      "family": "iPhone 15",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 284500,
+      "deductionsCents": {
+        "light": 26900,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 140000,
+        "back": 35500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 120000,
+        "part-camera": 95800,
+        "part-battery": 56900,
+        "part-screen": 56900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro",
+      "model": "iPhone 15 Pro",
+      "family": "iPhone 15",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 314500,
+      "deductionsCents": {
+        "light": 29000,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 140000,
+        "back": 38500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 120000,
+        "part-camera": 113800,
+        "part-battery": 62900,
+        "part-screen": 62900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro",
+      "model": "iPhone 15 Pro",
+      "family": "iPhone 15",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 334500,
+      "deductionsCents": {
+        "light": 30400,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 140000,
+        "back": 40500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 120000,
+        "part-camera": 123800,
+        "part-battery": 66900,
+        "part-screen": 66900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro",
+      "model": "iPhone 15 Pro",
+      "family": "iPhone 15",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 344500,
+      "deductionsCents": {
+        "light": 31100,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 140000,
+        "back": 41500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 120000,
+        "part-camera": 127500,
+        "part-battery": 68900,
+        "part-screen": 68900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro-max",
+      "model": "iPhone 15 Pro Max",
+      "family": "iPhone 15",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 374500,
+      "deductionsCents": {
+        "light": 33200,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 160000,
+        "back": 44500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 150000,
+        "part-camera": 125800,
+        "part-battery": 74900,
+        "part-screen": 74900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro-max",
+      "model": "iPhone 15 Pro Max",
+      "family": "iPhone 15",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 394500,
+      "deductionsCents": {
+        "light": 34600,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 160000,
+        "back": 46500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 150000,
+        "part-camera": 146000,
+        "part-battery": 78900,
+        "part-screen": 78900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-15-pro-max",
+      "model": "iPhone 15 Pro Max",
+      "family": "iPhone 15",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 404500,
+      "deductionsCents": {
+        "light": 35300,
+        "moderate": 60000,
+        "battery": 45000,
+        "screen": 160000,
+        "back": 47500,
+        "faceid": 100000,
+        "charging": 60000,
+        "camera": 150000,
+        "part-camera": 149700,
+        "part-battery": 80900,
+        "part-screen": 80900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14",
+      "model": "iPhone 14",
+      "family": "iPhone 14",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 164000,
+      "deductionsCents": {
+        "light": 18500,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 50000,
+        "back": 23400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 50000,
+        "part-camera": 97800,
+        "part-battery": 32800,
+        "part-screen": 32800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14",
+      "model": "iPhone 14",
+      "family": "iPhone 14",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 184000,
+      "deductionsCents": {
+        "light": 19900,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 50000,
+        "back": 25400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 50000,
+        "part-camera": 65600,
+        "part-battery": 36800,
+        "part-screen": 36800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14",
+      "model": "iPhone 14",
+      "family": "iPhone 14",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 224000,
+      "deductionsCents": {
+        "light": 22700,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 50000,
+        "back": 29400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 50000,
+        "part-camera": 73600,
+        "part-battery": 44800,
+        "part-screen": 44800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-plus",
+      "model": "iPhone 14 Plus",
+      "family": "iPhone 14",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 184000,
+      "deductionsCents": {
+        "light": 19900,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 70000,
+        "back": 25400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 50000,
+        "part-camera": 68100,
+        "part-battery": 36800,
+        "part-screen": 36800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-plus",
+      "model": "iPhone 14 Plus",
+      "family": "iPhone 14",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 204000,
+      "deductionsCents": {
+        "light": 21300,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 70000,
+        "back": 27400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 50000,
+        "part-camera": 75500,
+        "part-battery": 40800,
+        "part-screen": 40800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-plus",
+      "model": "iPhone 14 Plus",
+      "family": "iPhone 14",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 244000,
+      "deductionsCents": {
+        "light": 24100,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 70000,
+        "back": 31400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 50000,
+        "part-camera": 90300,
+        "part-battery": 48800,
+        "part-screen": 48800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro",
+      "model": "iPhone 14 Pro",
+      "family": "iPhone 14",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 247000,
+      "deductionsCents": {
+        "light": 24300,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 31700,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 89600,
+        "part-battery": 49400,
+        "part-screen": 49400
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro",
+      "model": "iPhone 14 Pro",
+      "family": "iPhone 14",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 267000,
+      "deductionsCents": {
+        "light": 25700,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 33700,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 98800,
+        "part-battery": 53400,
+        "part-screen": 53400
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro",
+      "model": "iPhone 14 Pro",
+      "family": "iPhone 14",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 274000,
+      "deductionsCents": {
+        "light": 26200,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 34400,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 106800,
+        "part-battery": 54800,
+        "part-screen": 54800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro",
+      "model": "iPhone 14 Pro",
+      "family": "iPhone 14",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 284000,
+      "deductionsCents": {
+        "light": 26900,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 70000,
+        "back": 35400,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 105100,
+        "part-battery": 56800,
+        "part-screen": 56800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro-max",
+      "model": "iPhone 14 Pro Max",
+      "family": "iPhone 14",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 287000,
+      "deductionsCents": {
+        "light": 27100,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 120000,
+        "back": 35700,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 109600,
+        "part-battery": 57400,
+        "part-screen": 57400
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro-max",
+      "model": "iPhone 14 Pro Max",
+      "family": "iPhone 14",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 302900,
+      "deductionsCents": {
+        "light": 28200,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 120000,
+        "back": 37300,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 114800,
+        "part-battery": 60600,
+        "part-screen": 60600
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro-max",
+      "model": "iPhone 14 Pro Max",
+      "family": "iPhone 14",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 304000,
+      "deductionsCents": {
+        "light": 28300,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 120000,
+        "back": 37400,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 121200,
+        "part-battery": 60800,
+        "part-screen": 60800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-14-pro-max",
+      "model": "iPhone 14 Pro Max",
+      "family": "iPhone 14",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 314000,
+      "deductionsCents": {
+        "light": 29000,
+        "moderate": 50000,
+        "battery": 35000,
+        "screen": 120000,
+        "back": 38400,
+        "faceid": 75000,
+        "charging": 30000,
+        "camera": 95000,
+        "part-camera": 116200,
+        "part-battery": 62800,
+        "part-screen": 62800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-mini",
+      "model": "iPhone 13 mini",
+      "family": "iPhone 13",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 125000,
+      "deductionsCents": {
+        "light": 15800,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 19500,
+        "faceid": 45000,
+        "charging": 25000,
+        "camera": 40000,
+        "part-camera": 46300,
+        "part-battery": 25000,
+        "part-screen": 25000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-mini",
+      "model": "iPhone 13 mini",
+      "family": "iPhone 13",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 135000,
+      "deductionsCents": {
+        "light": 16500,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 20500,
+        "faceid": 45000,
+        "charging": 25000,
+        "camera": 40000,
+        "part-camera": 50000,
+        "part-battery": 27000,
+        "part-screen": 27000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-mini",
+      "model": "iPhone 13 mini",
+      "family": "iPhone 13",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 145000,
+      "deductionsCents": {
+        "light": 17200,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 21500,
+        "faceid": 45000,
+        "charging": 25000,
+        "camera": 40000,
+        "part-camera": 53700,
+        "part-battery": 29000,
+        "part-screen": 29000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13",
+      "model": "iPhone 13",
+      "family": "iPhone 13",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 154500,
+      "deductionsCents": {
+        "light": 17800,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 22500,
+        "faceid": 45000,
+        "charging": 25000,
+        "camera": 40000,
+        "part-camera": 72000,
+        "part-battery": 30900,
+        "part-screen": 30900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13",
+      "model": "iPhone 13",
+      "family": "iPhone 13",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 164000,
+      "deductionsCents": {
+        "light": 18500,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 23400,
+        "faceid": 45000,
+        "charging": 25000,
+        "camera": 40000,
+        "part-camera": 61800,
+        "part-battery": 32800,
+        "part-screen": 32800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13",
+      "model": "iPhone 13",
+      "family": "iPhone 13",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 174000,
+      "deductionsCents": {
+        "light": 19200,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 24400,
+        "faceid": 45000,
+        "charging": 25000,
+        "camera": 40000,
+        "part-camera": 64400,
+        "part-battery": 34800,
+        "part-screen": 34800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro",
+      "model": "iPhone 13 Pro",
+      "family": "iPhone 13",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 194500,
+      "deductionsCents": {
+        "light": 20600,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 40000,
+        "back": 26500,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 65600,
+        "part-battery": 38900,
+        "part-screen": 38900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro",
+      "model": "iPhone 13 Pro",
+      "family": "iPhone 13",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 209500,
+      "deductionsCents": {
+        "light": 21700,
+        "moderate": 40000,
+        "battery": 25000,
+        "screen": 40000,
+        "back": 28000,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 77800,
+        "part-battery": 41900,
+        "part-screen": 41900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro",
+      "model": "iPhone 13 Pro",
+      "family": "iPhone 13",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 204000,
+      "deductionsCents": {
+        "light": 21300,
+        "moderate": 45000,
+        "battery": 25000,
+        "screen": 40000,
+        "back": 27400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 83800,
+        "part-battery": 40800,
+        "part-screen": 40800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro",
+      "model": "iPhone 13 Pro",
+      "family": "iPhone 13",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 214000,
+      "deductionsCents": {
+        "light": 22000,
+        "moderate": 45000,
+        "battery": 25000,
+        "screen": 40000,
+        "back": 28400,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 79200,
+        "part-battery": 42800,
+        "part-screen": 42800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro-max",
+      "model": "iPhone 13 Pro Max",
+      "family": "iPhone 13",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 224500,
+      "deductionsCents": {
+        "light": 22700,
+        "moderate": 45000,
+        "battery": 25000,
+        "screen": 90000,
+        "back": 29500,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 81600,
+        "part-battery": 44900,
+        "part-screen": 44900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro-max",
+      "model": "iPhone 13 Pro Max",
+      "family": "iPhone 13",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 244500,
+      "deductionsCents": {
+        "light": 24100,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 90000,
+        "back": 31500,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 89800,
+        "part-battery": 48900,
+        "part-screen": 48900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro-max",
+      "model": "iPhone 13 Pro Max",
+      "family": "iPhone 13",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 264500,
+      "deductionsCents": {
+        "light": 25500,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 90000,
+        "back": 33500,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 97900,
+        "part-battery": 52900,
+        "part-screen": 52900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-13-pro-max",
+      "model": "iPhone 13 Pro Max",
+      "family": "iPhone 13",
+      "capacity": "1TB",
+      "storageGb": 1024,
+      "baseCents": 274500,
+      "deductionsCents": {
+        "light": 26200,
+        "moderate": 50000,
+        "battery": 25000,
+        "screen": 90000,
+        "back": 34500,
+        "faceid": 60000,
+        "charging": 25000,
+        "camera": 65000,
+        "part-camera": 101600,
+        "part-battery": 54900,
+        "part-screen": 54900
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-mini",
+      "model": "iPhone 12 mini",
+      "family": "iPhone 12",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 75000,
+      "deductionsCents": {
+        "light": 12300,
+        "moderate": 35000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 14500,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 40000,
+        "part-camera": 27800,
+        "part-battery": 15000,
+        "part-screen": 15000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-mini",
+      "model": "iPhone 12 mini",
+      "family": "iPhone 12",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 90000,
+      "deductionsCents": {
+        "light": 13300,
+        "moderate": 35000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 16000,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 50000,
+        "part-camera": 33300,
+        "part-battery": 18000,
+        "part-screen": 18000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-mini",
+      "model": "iPhone 12 mini",
+      "family": "iPhone 12",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 95000,
+      "deductionsCents": {
+        "light": 13700,
+        "moderate": 35000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 16500,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 50000,
+        "part-camera": 35200,
+        "part-battery": 19000,
+        "part-screen": 19000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12",
+      "model": "iPhone 12",
+      "family": "iPhone 12",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 94000,
+      "deductionsCents": {
+        "light": 13600,
+        "moderate": 35000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 16400,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 40000,
+        "part-camera": 29600,
+        "part-battery": 18800,
+        "part-screen": 18800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12",
+      "model": "iPhone 12",
+      "family": "iPhone 12",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 109900,
+      "deductionsCents": {
+        "light": 14700,
+        "moderate": 35000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 18000,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 50000,
+        "part-camera": 37600,
+        "part-battery": 22000,
+        "part-screen": 22000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12",
+      "model": "iPhone 12",
+      "family": "iPhone 12",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 114000,
+      "deductionsCents": {
+        "light": 15000,
+        "moderate": 35000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 18400,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 50000,
+        "part-camera": 44000,
+        "part-battery": 22800,
+        "part-screen": 22800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-pro",
+      "model": "iPhone 12 Pro",
+      "family": "iPhone 12",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 124000,
+      "deductionsCents": {
+        "light": 15700,
+        "moderate": 35000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 19400,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 60000,
+        "part-camera": 45600,
+        "part-battery": 24800,
+        "part-screen": 24800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-pro",
+      "model": "iPhone 12 Pro",
+      "family": "iPhone 12",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 144000,
+      "deductionsCents": {
+        "light": 17100,
+        "moderate": 35000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 21400,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 60000,
+        "part-camera": 49600,
+        "part-battery": 28800,
+        "part-screen": 28800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-pro",
+      "model": "iPhone 12 Pro",
+      "family": "iPhone 12",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 164000,
+      "deductionsCents": {
+        "light": 18500,
+        "moderate": 35000,
+        "battery": 25000,
+        "screen": 35000,
+        "back": 23400,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 60000,
+        "part-camera": 60700,
+        "part-battery": 32800,
+        "part-screen": 32800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-pro-max",
+      "model": "iPhone 12 Pro Max",
+      "family": "iPhone 12",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 164000,
+      "deductionsCents": {
+        "light": 18500,
+        "moderate": 35000,
+        "battery": 25000,
+        "screen": 50000,
+        "back": 23400,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 60000,
+        "part-camera": 57600,
+        "part-battery": 32800,
+        "part-screen": 32800
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-pro-max",
+      "model": "iPhone 12 Pro Max",
+      "family": "iPhone 12",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 179900,
+      "deductionsCents": {
+        "light": 19600,
+        "moderate": 35000,
+        "battery": 25000,
+        "screen": 50000,
+        "back": 25000,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 60000,
+        "part-camera": 65600,
+        "part-battery": 36000,
+        "part-screen": 36000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-12-pro-max",
+      "model": "iPhone 12 Pro Max",
+      "family": "iPhone 12",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 200000,
+      "deductionsCents": {
+        "light": 21000,
+        "moderate": 35000,
+        "battery": 25000,
+        "screen": 50000,
+        "back": 27000,
+        "faceid": 45000,
+        "charging": 20000,
+        "camera": 60000,
+        "part-camera": 74000,
+        "part-battery": 40000,
+        "part-screen": 40000
+      },
+      "missingFields": []
+    },
+    {
+      "modelId": "iphone-11",
+      "model": "iPhone 11",
+      "family": "iPhone 11",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 44000,
+      "deductionsCents": {
+        "light": 10100,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 30000,
+        "back": 11400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11",
+      "model": "iPhone 11",
+      "family": "iPhone 11",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 64000,
+      "deductionsCents": {
+        "light": 11500,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 30000,
+        "back": 13400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11",
+      "model": "iPhone 11",
+      "family": "iPhone 11",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 74000,
+      "deductionsCents": {
+        "light": 12200,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 30000,
+        "back": 14400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11-pro",
+      "model": "iPhone 11 Pro",
+      "family": "iPhone 11",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 44000,
+      "deductionsCents": {
+        "light": 10100,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 11400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 40000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11-pro",
+      "model": "iPhone 11 Pro",
+      "family": "iPhone 11",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 54000,
+      "deductionsCents": {
+        "light": 10800,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 12400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 40000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11-pro",
+      "model": "iPhone 11 Pro",
+      "family": "iPhone 11",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 64000,
+      "deductionsCents": {
+        "light": 11500,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 13400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 40000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11-pro-max",
+      "model": "iPhone 11 Pro Max",
+      "family": "iPhone 11",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 64000,
+      "deductionsCents": {
+        "light": 11500,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 13400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 40000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11-pro-max",
+      "model": "iPhone 11 Pro Max",
+      "family": "iPhone 11",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 74000,
+      "deductionsCents": {
+        "light": 12200,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 14400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 40000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-11-pro-max",
+      "model": "iPhone 11 Pro Max",
+      "family": "iPhone 11",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 84000,
+      "deductionsCents": {
+        "light": 12900,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 35000,
+        "back": 15400,
+        "faceid": 35000,
+        "charging": 15000,
+        "camera": 40000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": 30000
+      },
+      "missingFields": [
+        "part-camera"
+      ]
+    },
+    {
+      "modelId": "iphone-se-2020",
+      "model": "iPhone SE 2020",
+      "family": "iPhone SE",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 35000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 20000,
+        "screen": 20000,
+        "back": 10500,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-se-2020",
+      "model": "iPhone SE 2020",
+      "family": "iPhone SE",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 45000,
+      "deductionsCents": {
+        "light": 10200,
+        "moderate": 25000,
+        "battery": 20000,
+        "screen": 20000,
+        "back": 11500,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-se-2020",
+      "model": "iPhone SE 2020",
+      "family": "iPhone SE",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 50000,
+      "deductionsCents": {
+        "light": 10500,
+        "moderate": 25000,
+        "battery": 20000,
+        "screen": 20000,
+        "back": 12000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-se-2022",
+      "model": "iPhone SE 2022",
+      "family": "iPhone SE",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 60000,
+      "deductionsCents": {
+        "light": 11200,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 20000,
+        "back": 13000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-se-2022",
+      "model": "iPhone SE 2022",
+      "family": "iPhone SE",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 70000,
+      "deductionsCents": {
+        "light": 11900,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 20000,
+        "back": 14000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-se-2022",
+      "model": "iPhone SE 2022",
+      "family": "iPhone SE",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 80000,
+      "deductionsCents": {
+        "light": 12600,
+        "moderate": 30000,
+        "battery": 20000,
+        "screen": 20000,
+        "back": 15000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xs",
+      "model": "iPhone XS",
+      "family": "iPhone XS",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 30000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 30000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xs",
+      "model": "iPhone XS",
+      "family": "iPhone XS",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 40000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 30000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xs",
+      "model": "iPhone XS",
+      "family": "iPhone XS",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 50000,
+      "deductionsCents": {
+        "light": 10500,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 30000,
+        "back": 12000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xs-max",
+      "model": "iPhone XS Max",
+      "family": "iPhone XS",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 40000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 30000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xs-max",
+      "model": "iPhone XS Max",
+      "family": "iPhone XS",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 50000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 30000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xs-max",
+      "model": "iPhone XS Max",
+      "family": "iPhone XS",
+      "capacity": "512GB",
+      "storageGb": 512,
+      "baseCents": 60000,
+      "deductionsCents": {
+        "light": 11200,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 30000,
+        "back": 13000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xr",
+      "model": "iPhone XR",
+      "family": "iPhone XR",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 40000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xr",
+      "model": "iPhone XR",
+      "family": "iPhone XR",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 50000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-xr",
+      "model": "iPhone XR",
+      "family": "iPhone XR",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 60000,
+      "deductionsCents": {
+        "light": 11200,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 13000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": 20000,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-x",
+      "model": "iPhone X",
+      "family": "iPhone X",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 30000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": null,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-battery",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-x",
+      "model": "iPhone X",
+      "family": "iPhone X",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 40000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": null,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-battery",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-8-plus",
+      "model": "iPhone 8 Plus",
+      "family": "iPhone 8",
+      "capacity": "64GB",
+      "storageGb": 64,
+      "baseCents": 30000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": null,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-battery",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-8-plus",
+      "model": "iPhone 8 Plus",
+      "family": "iPhone 8",
+      "capacity": "128GB",
+      "storageGb": 128,
+      "baseCents": 35000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10500,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": null,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-battery",
+        "part-screen"
+      ]
+    },
+    {
+      "modelId": "iphone-8-plus",
+      "model": "iPhone 8 Plus",
+      "family": "iPhone 8",
+      "capacity": "256GB",
+      "storageGb": 256,
+      "baseCents": 40000,
+      "deductionsCents": {
+        "light": 10000,
+        "moderate": 25000,
+        "battery": 10000,
+        "screen": 20000,
+        "back": 10000,
+        "faceid": 20000,
+        "charging": 15000,
+        "camera": 30000,
+        "part-camera": null,
+        "part-battery": null,
+        "part-screen": null
+      },
+      "missingFields": [
+        "part-camera",
+        "part-battery",
+        "part-screen"
+      ]
+    }
+  ]
+}
