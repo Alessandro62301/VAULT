@@ -2,6 +2,7 @@ import '../styles/fonts.css';
 import './style.css';
 import catalog from './catalog.json';
 import { createProductPicker } from './product-picker.js';
+import { defaultProfit } from './profit-rules.js';
 import { DEFAULT_FACTORS, buildQuote, installment, money, parseMoney, productTitle, saleBreakdown, saleQuoteItem } from './quote.js';
 
 const $ = selector => document.querySelector(selector);
@@ -65,7 +66,19 @@ function field(item, key, text, placeholder, { decimal = false, list = false } =
     save(); update();
   });
   label.append(input);
-  if (list) pickers.push(createProductPicker(input, suggestions));
+  if (list) {
+    let previousProduct = item.name;
+    const applyPreset = () => {
+      if (item.name === previousProduct) return;
+      previousProduct = item.name;
+      item.profit = (defaultProfit(item.name) / 100).toFixed(2).replace('.', ',');
+      const profitInput = views.get(item.id)?.profitInput;
+      if (profitInput) { profitInput.value = item.profit; profitInput.removeAttribute('aria-invalid'); }
+      save(); update();
+    };
+    input.addEventListener('change', applyPreset);
+    pickers.push(createProductPicker(input, suggestions, applyPreset));
+  }
   return label;
 }
 function renderItems(focusLast = false) {
@@ -89,7 +102,7 @@ function renderItems(focusLast = false) {
     const cost = field(item, 'cost', 'Custo (R$)', 'Ex.: 7.900,00', { decimal: true });
     cost.append(el('small', 'Valor de compra do produto'));
     const profit = field(item, 'profit', 'Lucro desejado (R$)', 'Ex.: 1.000,00', { decimal: true });
-    profit.append(el('small', 'Valor somado ao custo'));
+    profit.append(el('small', 'Padrão do produto · você pode editar'));
     const logistics = field(item, 'logistics', 'Entrega / logística (R$)', '0,00', { decimal: true });
     logistics.append(el('small', 'Somado ao custo do produto'));
     const discount = field(item, 'discount', 'Desconto (R$)', '0,00', { decimal: true });
@@ -104,7 +117,7 @@ function renderItems(focusLast = false) {
     const costSummary = el('span'); const profitSummary = el('strong');
     breakdown.append(costSummary, profitSummary);
     const error = el('p', '', 'error-message'); error.hidden = true;
-    views.set(item.id, { cashValue, installments, error, costSummary, profitSummary });
+    views.set(item.id, { cashValue, installments, error, costSummary, profitSummary, profitInput: profit.querySelector('input') });
     card.append(heading, productFields, values, result, breakdown, error);
     return card;
   }));

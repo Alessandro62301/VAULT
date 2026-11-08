@@ -1,7 +1,7 @@
 const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 
 // Suggestions enhance a free-text field: dismissing never discards a typed product.
-export function createProductPicker(input, options) {
+export function createProductPicker(input, options, onSelect = () => {}) {
   const controller = new AbortController();
   const { signal } = controller;
   const root = document.createElement('div');
@@ -61,6 +61,7 @@ export function createProductPicker(input, options) {
   function choose(option) {
     input.value = option.name;
     input.dispatchEvent(new Event('input', { bubbles: true }));
+    onSelect(option);
     close(); input.focus({ preventScroll: true });
   }
   function open() {

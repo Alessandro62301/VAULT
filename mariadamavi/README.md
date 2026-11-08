@@ -19,6 +19,8 @@ npm run preview:production # validação local em http://127.0.0.1:4175
 
 ## Calculadora de venda interna
 
+Ao selecionar um novo produto ou confirmar um nome digitado, o lucro recebe o padrão de `src/catalog/profit-rules.js`: iPhone lacrado R$ 1.000, seminovo R$ 700; MacBook Air 13/15 com 16/512 R$ 1.000 ou 24/1 TB R$ 1.500; Neo R$ 700; Pro R$ 2.000; Pro Max R$ 2.500; iPad 11 R$ 500, Air R$ 1.200 e Pro R$ 2.000. O lucro permanece editável. Trocar de produto aplica o novo padrão; mudar custo, logística ou desconto preserva o lucro ajustado. Produtos sem regra começam em zero. Rascunhos já salvos mantêm seus valores.
+
 Entrega/logística e desconto são definidos por produto em reais, com valor inicial zero. O preço final é `custo + logística + lucro desejado − desconto`. O lucro após desconto é `lucro desejado − desconto`, podendo indicar prejuízo. O desconto deve deixar o preço final maior que zero. As parcelas e a mensagem usam esse preço final. Rascunhos anteriores recebem zero nos novos campos.
 
 Com `npm run dev`, abra `/catalogo-interno/`. Informe produto, cor opcional, custo total e lucro desejado em reais. Preço de venda = custo + logística + lucro − desconto. É possível adicionar vários produtos e copiar a mensagem com a formatação do WhatsApp. Custo e lucro não são incluídos na mensagem. Rascunhos ficam somente no `localStorage` deste navegador. Não há envio automático, analytics nem gravação de preços na loja.
