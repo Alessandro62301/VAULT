@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#fcfaf9" />
+    <title>Calculadora de venda | mariadamavi</title>
+    <link rel="icon" href="/optimized/icone-rosa-64-aa462eb8cb.webp" type="image/webp" />
+    <script type="module" src="/src/catalog/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#calculadora">Pular para a calculadora</a>
+    <header class="app-header"><a class="brand" href="/">mariadamavi<span>.</span></a><span class="internal-badge">USO INTERNO</span><nav aria-label="Ferramentas"><a class="active" href="/catalogo-interno/" aria-current="page">Calculadora de venda</a><a href="/simular-upgrade/">Simular upgrade ↗</a></nav></header>
+    <main>
+      <section class="intro"><div><p class="eyebrow">DO CUSTO À CONVERSA</p><h1>Calcule sua venda.<br /><em>Copie sua proposta.</em></h1><p>Inclua custo, logística, lucro e desconto. A mensagem fica pronta.</p></div><div class="source-note"><span class="source-dot"></span><div><strong>Custo + logística + lucro − desconto</strong><p>Custo e lucro ficam só na calculadora. A mensagem leva apenas o preço para o cliente.</p><span id="save-state">Rascunho salvo neste navegador.</span></div></div></section>
+      <div class="workspace sale-workspace">
+        <section class="catalog-panel" id="calculadora" aria-labelledby="sale-title"><div class="panel-heading"><div><p class="eyebrow">DEFINA SUA VENDA</p><h2 id="sale-title">Produtos <span id="sale-count">1</span></h2></div><button type="button" class="text-button" id="new-sale">Nova venda</button></div><div id="sale-items"></div><button type="button" class="add-product-button" id="add-product">+ Adicionar outro produto</button><div class="sale-totals"><div><span>Total de venda à vista</span><strong id="total-sale">—</strong></div><div><span>Entrega / logística total</span><strong id="total-logistics">—</strong></div><div><span>Desconto total</span><strong id="total-discount">—</strong></div><div><span>Lucro total após desconto</span><strong id="total-profit">—</strong></div><p id="totals-note">Preencha todos os produtos para concluir.</p></div></section>
+        <aside class="quote-panel" aria-labelledby="quote-title"><div class="panel-heading"><div><p class="eyebrow">PRONTO PARA O WHATSAPP</p><h2 id="quote-title">Mensagem de venda</h2></div></div><section class="message-panel" aria-labelledby="preview-title"><div class="preview-heading"><h3 id="preview-title">Prévia da mensagem</h3><span>WHATSAPP</span></div><label class="sr-only" for="quote-preview">Mensagem para copiar</label><textarea id="quote-preview" readonly placeholder="Preencha o produto, o custo e o lucro para gerar a mensagem." rows="8"></textarea><p id="quote-error" class="error-message" role="status" hidden></p><button type="button" class="copy-button" id="copy-quote" disabled><span aria-hidden="true">⧉</span> Copiar mensagem</button><p class="copy-hint">Pronta para colar na conversa, sem custo ou lucro.</p></section><details class="payment-settings"><summary>Parcelamento <span>12x e 18x</span></summary><p>Parcelas calculadas sobre o preço de venda. Os coeficientes iniciais vieram do seu exemplo e podem ser ajustados.</p><div class="factor-grid"><label>Coeficiente 12x<input id="factor12" type="text" inputmode="decimal" value="0,09528" /></label><label>Coeficiente 18x<input id="factor18" type="text" inputmode="decimal" value="0,06717" /></label></div><div class="payment-checks"><label><input type="checkbox" id="include12" checked /> Incluir 12x</label><label><input type="checkbox" id="include18" checked /> Incluir 18x</label></div></details></aside>
+      </div>
+    </main>
+    <div class="toast" id="toast" role="status" hidden></div>
+  </body>
+</html>

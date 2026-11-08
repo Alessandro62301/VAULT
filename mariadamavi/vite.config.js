@@ -7,7 +7,7 @@ const tunnelHosts = [".trycloudflare.com"];
 function upgradeRedirect(server) {
   server.middlewares.use((request, response, next) => {
     const url = new URL(request.url, 'http://localhost');
-    if (['/simular-upgrade', '/empresas'].includes(url.pathname)) {
+    if (['/simular-upgrade', '/empresas', '/catalogo-interno'].includes(url.pathname)) {
       response.writeHead(302, { Location: `${url.pathname}/${url.search}` });
       response.end();
       return;
