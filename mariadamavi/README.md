@@ -27,4 +27,4 @@ Com `npm run dev`, abra `/catalogo-interno/`. Informe produto, cor opcional, cus
 
 O campo produto aceita texto livre e sugestões de nomes de `src/catalog/catalog.json`. Nenhum preço JMS é usado como custo. Os coeficientes iniciais 12x `0,09528` e 18x `0,06717` foram inferidos dos exemplos de orçamento e podem ser alterados na tela. As parcelas são calculadas sobre o preço de venda final. Custo deve ser maior que zero e lucro pode ser zero. Campos ausentes ou inválidos bloqueiam a cópia.
 
-A página não faz parte do build público e não tem link na landing. Para uso hospedado com acesso restrito, será necessário definir autenticação e armazenamento. Não adicione a rota ao build público sem essa definição.
+A imagem Docker inclui `/catalogo-interno/` com autenticação no Nginx. Para liberar o acesso, monte no Easypanel o arquivo de senhas no caminho `/etc/nginx/catalogo-interno.htpasswd`, conforme o [guia de publicação](deployment/README.md). Os rascunhos são locais ao navegador usado para acessar a rota.

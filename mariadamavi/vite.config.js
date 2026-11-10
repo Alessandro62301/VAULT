@@ -25,6 +25,12 @@ export default defineConfig({
         v2: fileURLToPath(new URL("./v2/index.html", import.meta.url)),
         upgrade: fileURLToPath(new URL("./simular-upgrade/index.html", import.meta.url)),
         empresas: fileURLToPath(new URL("./empresas/index.html", import.meta.url)),
+        catalogoInterno: fileURLToPath(new URL("./catalogo-interno/index.html", import.meta.url)),
+      },
+      output: {
+        entryFileNames: ({ name }) => name === 'catalogoInterno'
+          ? 'catalogo-interno/assets/[name]-[hash].js'
+          : 'assets/[name]-[hash].js',
       },
     },
   },

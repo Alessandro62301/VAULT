@@ -5,7 +5,7 @@ import { gzipSync } from 'node:zlib';
 
 const hashes = new Set();
 const hash = data => `sha256-${createHash('sha256').update(data).digest('base64')}`;
-for (const page of ['dist/index.html', 'dist/v2/index.html', 'dist/simular-upgrade/index.html', 'dist/empresas/index.html']) {
+for (const page of ['dist/index.html', 'dist/v2/index.html', 'dist/simular-upgrade/index.html', 'dist/empresas/index.html', 'dist/catalogo-interno/index.html']) {
   // HTML parsers normalize CRLF before executing inline scripts. Hash that same text.
   let html = (await readFile(page, 'utf8')).replace(/\r\n?/g, '\n');
   for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)) {

@@ -10,6 +10,12 @@ Atualizado em 04/11/2026. O build com SEO, GA4 e simulador de upgrade está pron
 4. Execute Deploy. O build gera o site e os hashes da CSP juntos, copia ambos ao Nginx e executa `nginx -t` antes de concluir a imagem.
 5. Confira o log e valide o domínio público conforme a lista abaixo. O Docker local estava sem daemon ativo; a construção da imagem e `nginx -t` ainda precisam passar no servidor.
 
+## Acesso à calculadora interna
+
+No serviço da landing, monte um arquivo `htpasswd` somente para leitura em `/etc/nginx/catalogo-interno.htpasswd`. Gere o arquivo em local privado com `htpasswd -cB catalogo-interno.htpasswd usuario` e informe a senha quando solicitado. Use `-B` sem `-c` para acrescentar usuários a um arquivo existente. A imagem traz um arquivo vazio por padrão, então o acesso fica bloqueado até a configuração.
+
+Depois do deploy, abra `https://mariadamavi.com.br/catalogo-interno/` e autentique-se com o usuário criado. Confirme que uma janela anônima recebe o pedido de autenticação também ao acessar o JavaScript da calculadora diretamente. Os rascunhos continuam no navegador e são separados por domínio.
+
 ## Easypanel com Upload
 
 O pacote `../outputs/mariadamavi-upgrade-2026-11-04.zip` contém o build compilado, SEO, GA4, a página `/simular-upgrade/`, tabela pública de configuração, configuração do Nginx e Dockerfile estático. Use esse ZIP no serviço existente, builder Dockerfile e porta 80. O Dockerfile serve exatamente esse build e executa `nginx -t`. Detalhes do simulador e da futura integração administrativa estão em `upgrade.md`.
