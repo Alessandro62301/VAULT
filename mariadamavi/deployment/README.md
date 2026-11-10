@@ -12,9 +12,7 @@ Atualizado em 04/11/2026. O build com SEO, GA4 e simulador de upgrade está pron
 
 ## Acesso à calculadora interna
 
-No serviço da landing, monte um arquivo `htpasswd` somente para leitura em `/etc/nginx/catalogo-interno.htpasswd`. Gere o arquivo em local privado com `htpasswd -cB catalogo-interno.htpasswd usuario` e informe a senha quando solicitado. Use `-B` sem `-c` para acrescentar usuários a um arquivo existente. A imagem traz um arquivo vazio por padrão, então o acesso fica bloqueado até a configuração.
-
-Depois do deploy, abra `https://mariadamavi.com.br/catalogo-interno/` e autentique-se com o usuário criado. Confirme que uma janela anônima recebe o pedido de autenticação também ao acessar o JavaScript da calculadora diretamente. Os rascunhos continuam no navegador e são separados por domínio.
+Depois do deploy, abra `https://mariadamavi.com.br/catalogo-interno/` pelo link direto. Os rascunhos continuam no navegador e são separados por domínio.
 
 ## Easypanel com Upload
 
