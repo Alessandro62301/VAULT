@@ -13,7 +13,7 @@ add_action('plugins_loaded', function () {
         public function __construct() {
             $this->id = 'mavi_whatsapp';
             $this->method_title = 'Finalizar com a Maria pelo WhatsApp';
-            $this->method_description = 'Modo temporário: pedidos sem pagamento online. Desative este método ao ativar PIX/cartão.';
+            $this->method_description = 'Modo temporário para pedidos sem pagamento online. Quando o Checkout Pro estiver disponível, o Mercado Pago assume o pagamento.';
             $this->has_fields = false;
             $this->supports = ['products'];
             $this->form_fields = ['enabled'=>['title'=>'Ativar','type'=>'checkbox','label'=>'Finalizar pedidos exclusivamente pelo WhatsApp','default'=>'no']];
@@ -71,5 +71,9 @@ add_action('plugins_loaded', function () {
 }, 20);
 
 add_filter('woocommerce_available_payment_gateways', function ($gateways) {
+    if (isset($gateways['woo-mercado-pago-basic'])) {
+        unset($gateways['mavi_whatsapp']);
+        return $gateways;
+    }
     return isset($gateways['mavi_whatsapp']) ? ['mavi_whatsapp'=>$gateways['mavi_whatsapp']] : $gateways;
 }, 100);

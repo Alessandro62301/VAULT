@@ -1,0 +1,4 @@
+networks:
+  edge:
+    external: true
+    name: ${STORE_PROXY_NETWORK:?Informe o nome da rede Docker do Traefik}

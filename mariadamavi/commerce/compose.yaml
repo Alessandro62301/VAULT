@@ -1,0 +1,79 @@
+name: mariadamavi-store
+
+services:
+  wordpress:
+    image: wordpress:7.1-php8.3-apache
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: database:3306
+      WORDPRESS_DB_NAME: mavi_store
+      WORDPRESS_DB_USER: mavi_store
+      WORDPRESS_DB_PASSWORD: ${STORE_DB_PASSWORD:?Defina STORE_DB_PASSWORD no .env}
+      STORE_URL: https://${STORE_HOST:-store.mariadamavi.com.br}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', getenv_docker('STORE_URL', 'https://store.mariadamavi.com.br'));
+        define('WP_SITEURL', WP_HOME);
+        define('WP_ENVIRONMENT_TYPE', 'production');
+        define('FORCE_SSL_ADMIN', true);
+        define('DISALLOW_FILE_EDIT', true);
+    volumes:
+      - wordpress:/var/www/html
+      - type: bind
+        source: ./theme
+        target: /var/www/html/wp-content/themes/mariadamavi-store
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./plugins/mavi-whatsapp
+        target: /var/www/html/wp-content/plugins/mavi-whatsapp
+        read_only: true
+        bind:
+          create_host_path: false
+    networks:
+      - edge
+      - database
+    labels:
+      traefik.enable: 'true'
+      traefik.docker.network: ${STORE_PROXY_NETWORK:-mariadamavi-store-edge}
+      traefik.http.routers.mavi-store.rule: 'Host(`${STORE_HOST:-store.mariadamavi.com.br}`)'
+      traefik.http.routers.mavi-store.entrypoints: websecure
+      traefik.http.routers.mavi-store.tls.certresolver: letsencrypt
+      traefik.http.routers.mavi-store.service: mavi-store
+      traefik.http.routers.mavi-store.middlewares: mavi-store-access
+      traefik.http.middlewares.mavi-store-access.ipallowlist.sourcerange: ${STORE_ALLOWED_IPS:?Defina STORE_ALLOWED_IPS no .env}
+      traefik.http.services.mavi-store.loadbalancer.server.port: '80'
+
+  database:
+    image: mariadb:11.4
+    restart: unless-stopped
+    labels:
+      traefik.enable: 'false'
+    environment:
+      MARIADB_DATABASE: mavi_store
+      MARIADB_USER: mavi_store
+      MARIADB_PASSWORD: ${STORE_DB_PASSWORD:?Defina STORE_DB_PASSWORD no .env}
+      MARIADB_ROOT_PASSWORD: ${STORE_DB_ROOT_PASSWORD:?Defina STORE_DB_ROOT_PASSWORD no .env}
+    volumes:
+      - database:/var/lib/mysql
+    networks:
+      - database
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      start_period: 30s
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+networks:
+  edge:
+    name: ${STORE_PROXY_NETWORK:-mariadamavi-store-edge}
+  database:
+    internal: true
+
+volumes:
+  wordpress:
+  database:

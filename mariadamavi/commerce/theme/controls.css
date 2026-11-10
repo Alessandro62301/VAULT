@@ -1,9 +1,140 @@
-/* Product photography: complete silhouettes, consistent breathing room. */
-ul.products li.product .mavi-product-picture{position:relative;display:grid;place-items:center;aspect-ratio:1/1;background:#f8f5f7;border-radius:9px;margin-bottom:22px;overflow:hidden;padding:22px}
-ul.products li.product .mavi-product-picture img{height:100%;width:100%;max-height:215px;object-fit:contain;margin:0;mix-blend-mode:multiply;transition:transform .25s ease}
-.mavi-picture-hint{position:absolute;bottom:12px;right:12px;background:#fff;color:#4d3141;border:1px solid #eadfe5;padding:5px 9px;border-radius:20px;font-size:10px;opacity:0;transform:translateY(5px);transition:opacity .2s,transform .2s}
-li.product a:hover .mavi-picture-hint,li.product a:focus-visible .mavi-picture-hint{opacity:1;transform:none}
-li.product a:hover .mavi-product-picture img{transform:scale(1.035)}
+/* Product cards in the showcase, catalog and related products. */
+ul.products li.product {
+    position: relative;
+    border-radius: 16px;
+    padding: 14px;
+    border-color: #eee5ea;
+    transition: border-color .2s, box-shadow .2s;
+}
+ul.products li.product:hover,
+ul.products li.product:focus-within {
+    border-color: #d9bdcd;
+    box-shadow: 0 6px 20px #29111f0d;
+}
+ul.products li.product .mavi-product-picture {
+    position: relative;
+    aspect-ratio: 1.17;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+ul.products li.product .mavi-product-picture img {
+    position: absolute;
+    inset: 20% 12% 5%;
+    width: 76%;
+    height: 75%;
+    object-fit: contain;
+    margin: 0;
+    transition: transform .25s ease;
+}
+ul.products li.product a:hover .mavi-product-picture img {
+    transform: scale(1.035);
+}
+ul.products li.product .mavi-product-picture .onsale {
+    position: absolute;
+    z-index: 1;
+    inset: 5px auto auto 0;
+    margin: 0;
+    padding: 4px 9px;
+    border: 0;
+    border-radius: 20px;
+    background: #29111f;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1.3;
+}
+ul.products li.product .woocommerce-loop-product__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin: 0 0 5px;
+    min-height: 2.7em;
+    padding: 0;
+    font-weight: 550;
+    line-height: 1.35;
+    letter-spacing: -.02em;
+}
+ul.products li.product .price {
+    display: inline-block;
+    margin: 0 0 8px;
+    font-size: clamp(.875rem, 1.5vw, 1.125rem);
+    line-height: 1.35;
+}
+ul.products li.product .price del {
+    display: block;
+    color: var(--muted);
+    opacity: 1;
+    font-size: .72em;
+    font-weight: 500;
+}
+ul.products li.product .price ins {
+    margin: 0;
+    font-weight: inherit;
+}
+.mavi-card-discount,
+.mavi-card-stock {
+    border-radius: 12px;
+    padding: 3px 7px;
+    font-size: 11px;
+    font-weight: 750;
+    line-height: 1.2;
+}
+.mavi-card-discount {
+    display: inline-block;
+    margin: 0 0 8px 5px;
+    background: #eaf8ef;
+    color: #17653b;
+}
+.mavi-card-stock {
+    display: table;
+    margin: 0 0 4px auto;
+    background: #fcecf3;
+    color: #8c2052;
+}
+ul.products li.product .button {
+    min-height: 44px;
+    border-radius: 8px;
+    margin-bottom: 0;
+    background: #f9edf4;
+    color: #8c2052;
+}
+ul.products li.product .button:hover {
+    background: #f4dce9;
+    color: #691139;
+}
+ul.products li.product .product_type_simple.add_to_cart_button {
+    position: absolute;
+    z-index: 2;
+    inset: 7px 7px auto auto;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+}
+ul.products li.product .product_type_simple.add_to_cart_button:not(.loading)::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 4h3l2.5 11h11l2.5-8H6M13 8v5m-2.5-2.5h5'/%3E%3Ccircle cx='9' cy='19' r='1'/%3E%3Ccircle cx='18' cy='19' r='1'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+ul.products li.product .product_type_simple.add_to_cart_button.added:not(.loading)::after {
+    content: none;
+}
+@media (max-width: 550px) {
+    ul.products li.product { padding: 10px; }
+    ul.products li.product .mavi-product-picture { margin-bottom: 10px; }
+    ul.products li.product .price { font-size: .875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    ul.products li.product,
+    ul.products li.product .mavi-product-picture img { transition: none; }
+    ul.products li.product a:hover .mavi-product-picture img { transform: none; }
+}
 .single-product div.product .woocommerce-product-gallery{background:#f8f5f7;border:1px solid var(--line);border-radius:16px;padding:28px}
 .single-product div.product .woocommerce-product-gallery img{mix-blend-mode:multiply;width:100%;object-fit:contain}
 /* A single focus ring belongs to the complete search control. */
@@ -42,7 +173,6 @@ input.input-text:focus,textarea:focus{border-color:var(--pink);outline:0;box-sha
 .select2-container--default .select2-selection--single .select2-selection__arrow{height:46px;right:10px}
 .select2-dropdown{border-color:#dfd1d9;border-radius:9px;box-shadow:0 10px 30px #29111f12}
 .select2-container--default .select2-results__option--highlighted[aria-selected]{background:var(--pink)}
-@media(max-width:550px){ul.products li.product .mavi-product-picture{padding:14px;margin-bottom:16px}ul.products li.product .mavi-product-picture img{height:120px}.single-product div.product .woocommerce-product-gallery{padding:20px}.mavi-search button{padding:12px}.mavi-options .mavi-option{min-width:100px}}
-@media(prefers-reduced-motion:reduce){.mavi-product-picture img,.mavi-picture-hint{transition:none!important}}
+@media(max-width:550px){.single-product div.product .woocommerce-product-gallery{padding:20px}.mavi-search button{padding:12px}.mavi-options .mavi-option{min-width:100px}}
 .single-product div.product form.cart .single_add_to_cart_button:not(:disabled){background:var(--pink);color:#fff}.woocommerce-message a.button{color:var(--ink)!important}
 .mavi-options .mavi-option:focus{outline:none}.mavi-options .mavi-option:focus-visible{outline:2px solid var(--pink);outline-offset:3px}.single-product div.product form.cart .button.single_add_to_cart_button{background-color:var(--pink)!important;color:#fff!important}.single-product div.product form.cart .button.single_add_to_cart_button:hover{background-color:#be1267!important}

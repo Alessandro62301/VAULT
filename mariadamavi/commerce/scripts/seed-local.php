@@ -26,6 +26,12 @@ foreach($catalog as $order=>$item){
  $p->set_short_description('<p><strong>Demonstração — não disponível para compra real.</strong> Preço e configuração ilustrativos. Teste a sacola sem realizar pagamentos.</p>');
  $p->set_weight('1');$p->set_manage_stock(false);
  if($slug==='iphone'){$a=new WC_Product_Attribute();$a->set_name('Capacidade');$a->set_options(['256 GB','512 GB']);$a->set_visible(true);$a->set_variation(true);$p->set_attributes([$a]);}else{$p->set_regular_price((string)$price);}
+ if ($slug === 'macbook') {
+     $p->set_sale_price('8490');
+     $p->set_manage_stock(true);
+     $p->set_stock_quantity(2);
+     $p->set_low_stock_amount(2);
+ }
  $id=$p->save();
  $source=dirname(__DIR__).'/theme/assets/'.$slug.'.webp';$tmp=wp_tempnam($source);copy($source,$tmp);$image=media_handle_sideload(['name'=>$slug.'.webp','tmp_name'=>$tmp],0,'Imagem ilustrativa de '.$name);
  if(!is_wp_error($image)){$p->set_image_id($image);update_post_meta($image,'_wp_attachment_image_alt',$name.' — imagem ilustrativa');$p->save();}
