@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 108 192">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#211733"/>
+      <stop offset="1" stop-color="#76446b"/>
+    </linearGradient>
+    <g id="apple" shape-rendering="crispEdges">
+      <path fill="#8cb455" d="M7 0h3v2H7zM6 1h2v2H6z"/>
+      <path fill="#ffd36a" d="M5 2h1v2H5z"/>
+      <path fill="#ff5aa5" d="M2 3h3v1h2V3h3v1h1v5h-1v2H7v-1H5v1H2V9H1V4h1z"/>
+      <path fill="#ffd1e5" d="M3 5h2v1H4v2H3z"/>
+      <path fill="#bd346e" d="M10 5h1v4h-1v2H7v-1h2V8h1z"/>
+    </g>
+    <path id="star" fill="#ffdd8a" d="M1 0h1v1h1v1H2v1H1V2H0V1h1z"/>
+  </defs>
+  <rect width="108" height="192" fill="url(#sky)"/>
+  <g shape-rendering="crispEdges">
+    <path fill="#78466e" d="M0 103h9v-5h12v-5h11v5h11v7h11v7h11v-6h11v-8h12v-5h11v5h9v94H0z"/>
+    <path fill="#52304f" d="M0 129h8v-5h10v-4h11v5h9v6h12v5h11v-4h11v-8h13v-5h13v4h10v69H0z"/>
+    <path fill="#34223d" d="M0 155h14v-5h12v-5h13v5h13v7h16v-6h14v-6h13v4h13v43H0z"/>
+    <g opacity=".8">
+      <use href="#star" x="14" y="48"/><use href="#star" x="88" y="62"/>
+      <use href="#star" x="30" y="69"/><use href="#star" x="74" y="79"/>
+      <use href="#star" x="81" y="35"/><use href="#star" x="22" y="29"/>
+      <use href="#star" x="14" y="114"/><use href="#star" x="93" y="110"/>
+    </g>
+    <use href="#apple" transform="translate(36 72) scale(3)"/>
+    <g opacity=".96">
+      <use href="#apple" transform="translate(25 131) scale(.8)"/>
+      <use href="#apple" transform="translate(37 131) scale(.8)"/>
+      <use href="#apple" transform="translate(49 131) scale(.8)"/>
+      <use href="#apple" transform="translate(61 131) scale(.8)"/>
+      <use href="#apple" transform="translate(73 131) scale(.8)"/>
+    </g>
+  </g>
+  <g text-anchor="middle" font-family="monospace" font-weight="700">
+    <text x="54" y="55" fill="#ffe3a1" font-size="4" letter-spacing=".8">MISSÃO COMPLETA</text>
+    <text x="54" y="119" fill="#fff0ce" font-size="4.4">AS MAÇÃS PERDIDAS</text>
+    <text x="54" y="172" fill="#ffb2d5" font-size="3.7" letter-spacing=".65">MARIADAMAVI</text>
+  </g>
+</svg>

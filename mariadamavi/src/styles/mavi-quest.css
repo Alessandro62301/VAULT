@@ -1,0 +1,211 @@
+.mavi-quest,
+.mavi-quest__treasure {
+  --quest-ink: #30182f;
+  --quest-plum: #49223f;
+  --quest-paper: #fff0ce;
+  --quest-pink: #ffb2d5;
+  --quest-gold: #ffd36a;
+  --quest-font: "Silkscreen", ui-monospace, monospace;
+}
+
+.mavi-quest {
+  position: fixed;
+  z-index: calc(var(--z-float) + 1);
+  inset-inline-start: max(16px, env(safe-area-inset-left));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  color: var(--quest-paper);
+}
+
+.mavi-quest [hidden],
+.mavi-quest__treasure [hidden],
+.mavi-quest-apple[hidden] { display: none; }
+
+.mavi-quest__launcher,
+.mavi-quest__panel {
+  border: 2px solid var(--quest-pink);
+  background: var(--quest-ink);
+  box-shadow: 4px 4px 0 #291228, 0 10px 28px #29122840;
+}
+
+.mavi-quest__launcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 5px;
+  min-height: 54px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.mavi-quest__launcher:hover { background: var(--quest-plum); }
+.mavi-quest__label { display: grid; gap: 2px; font-size: .76rem; line-height: 1.2; }
+.mavi-quest__name { color: var(--quest-pink); font: .65rem var(--quest-font); }
+.mavi-quest__portrait {
+  display: block;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 44px;
+  background: var(--mavi-portrait) center / auto 38px no-repeat, #713755;
+  image-rendering: pixelated;
+}
+
+.mavi-quest__panel {
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: calc(100% + 12px);
+  width: min(340px, calc(100vw - 40px));
+  max-height: calc(100dvh - 104px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.mavi-quest__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--quest-pink);
+  background: var(--quest-plum);
+}
+
+.mavi-quest__head strong { display: block; color: var(--quest-pink); font: .86rem var(--quest-font); }
+.mavi-quest__head div > span { color: #f5d5e6; font-size: .75rem; }
+.mavi-quest__close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-inline-start: auto;
+  border: 1px solid #ffb2d569;
+  background: var(--quest-ink);
+  color: var(--quest-paper);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mavi-quest__body { display: grid; gap: 12px; padding: 16px; }
+.mavi-quest__tag { color: var(--quest-gold); font: .73rem/1.5 var(--quest-font); }
+.mavi-quest h2,
+.mavi-quest__treasure h2 { font: 700 1.12rem/1.35 var(--quest-font); letter-spacing: -.06em; }
+.mavi-quest__body [data-quest-dialogue] { font-size: .9rem; }
+.mavi-quest__meter { display: flex; gap: 7px; }
+.mavi-quest__meter span {
+  width: 27px;
+  height: 27px;
+  border: 1px solid #ffb2d553;
+  background: var(--mavi-apple) center / 17px auto no-repeat;
+  image-rendering: pixelated;
+  opacity: .45;
+  filter: grayscale(1);
+}
+
+.mavi-quest__meter .is-found { opacity: 1; filter: none; }
+.mavi-quest__clues { border-top: 1px dashed #ffb2d569; padding-top: 10px; font-size: .85rem; }
+.mavi-quest__clues summary { cursor: pointer; color: var(--quest-gold); }
+.mavi-quest__clues ul { margin: 8px 0 0; padding-inline-start: 20px; }
+.mavi-quest__clues .is-found { color: var(--quest-pink); }
+.mavi-quest__action {
+  display: inline-grid;
+  place-items: center;
+  min-height: 44px;
+  padding: 9px 13px;
+  border: 2px solid var(--quest-gold);
+  background: var(--quest-gold);
+  color: var(--quest-ink);
+  font: .74rem/1.4 var(--quest-font);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mavi-quest__action:hover { background: #ffe4a4; }
+.mavi-quest :focus-visible,
+.mavi-quest__treasure :focus-visible { outline: 2px solid var(--quest-pink); border-radius: 0; }
+
+.mavi-quest-apple {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-inline-start: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  scroll-margin-bottom: 84px;
+}
+
+.mavi-quest-apple::before {
+  content: "";
+  width: 26px;
+  height: 24px;
+  background: var(--mavi-apple) center / contain no-repeat;
+  filter: drop-shadow(1px 2px 0 #30182f80);
+  image-rendering: pixelated;
+  transition: transform 160ms ease;
+}
+
+.mavi-quest-apple:hover::before,
+.mavi-quest-apple:focus-visible::before { transform: translateY(-3px) scale(1.12); }
+
+html:has(.mavi-quest__treasure[open]) { overflow: hidden; }
+.mavi-quest__treasure {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 64px 20px 36px;
+  border: 0;
+  color: var(--quest-paper);
+  background: radial-gradient(ellipse at 50% 45%, #6f304e 0, #30182f 56%, #1d1125 100%);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.mavi-quest__treasure[open] { display: grid; place-items: center; }
+.mavi-quest__treasure-inner {
+  width: min(100%, 560px);
+  display: grid;
+  justify-items: center;
+  gap: clamp(12px, 3dvh, 26px);
+  padding: clamp(18px, 5vw, 38px);
+  border: 2px solid var(--quest-pink);
+  outline: 2px solid #ffb2d533;
+  outline-offset: 6px;
+  background: #30182fe8;
+  text-align: center;
+}
+
+.mavi-quest__treasure h2 { color: var(--quest-pink); font-size: clamp(1.5rem, 5vw, 2.75rem); }
+.mavi-quest__treasure p:not(.mavi-quest__tag) { max-width: 32ch; font-size: .95rem; }
+.mavi-quest__treasure-close {
+  position: absolute;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+}
+
+.mavi-quest__chest {
+  width: clamp(124px, 33vw, 218px);
+  aspect-ratio: 20 / 16;
+  background: var(--mavi-chest) center / contain no-repeat;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 18px #ffd36a66);
+  animation: mavi-chest-arrive 420ms ease-out both;
+}
+
+.mavi-quest__reward { width: auto; height: min(32dvh, 272px); object-fit: contain; border: 2px solid var(--quest-gold); }
+.mavi-quest__treasure.is-opened .mavi-quest__chest { display: none; }
+@keyframes mavi-chest-arrive {
+  from { transform: translateY(14px) scale(.9); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mavi-quest__chest { animation: none; }
+  .mavi-quest-apple::before { transition: none; }
+}

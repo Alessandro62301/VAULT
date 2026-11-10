@@ -16,6 +16,7 @@ import "./styles/privacy.css";
 import "./styles/closing.css";
 import "./styles/collection.css";
 import "./styles/business-link.css";
+import "./styles/feedback-wall.css";
 
 import { initNav } from "./js/nav.js";
 import { initTheme } from "./js/theme.js";
@@ -23,7 +24,9 @@ import { initHero } from "./js/hero.js";
 import { initProducts } from "./js/products.js";
 import { initMeasurement } from "./js/measurement.js";
 import { initCollection } from "./js/collection.js";
+import { initFeedbackWall } from "./js/feedback-wall.js";
 import { initWhatsappLinks, initWhatsappFloat } from "./js/whatsapp.js";
+import { initMaviQuest } from "./js/mavi-quest.js";
 
 initTheme();
 initMeasurement();
@@ -31,6 +34,7 @@ initWhatsappLinks();
 initWhatsappFloat();
 initHero();
 initProducts();
+initMaviQuest();
 // Read initial scroll geometry only after the product panels have been hidden.
 initNav();
 // Load below-the-fold effects only when their section approaches the viewport.
@@ -55,6 +59,7 @@ whenNear('.about', () => import('./js/board.js').then(module => module.initBoard
 whenNear('.mavibag', () => import('./js/mavibag.js').then(module => module.initMavibag()), true);
 whenNear('.journey', () => import('./js/journey.js').then(module => module.initJourney()), true);
 whenNear('.collection', async () => initCollection());
+whenNear('.feedback-wall', async () => initFeedbackWall());
 
 // O MARIADAMAVI do rodapé ocupa a largura exata, como a impressão da bag
 const wordmark = document.querySelector(".footer__wordmark");

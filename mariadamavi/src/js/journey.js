@@ -2,47 +2,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { JOURNEYS, journeyMap } from "./journey-modes.js";
 import { whatsappLink } from "./whatsapp.js";
+import { MARIA_SPRITE, spriteURL } from "./pixel-sprites.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Sprites em pixel art, desenhados a partir de grades de caracteres
-const PALETTE = {
-  h: "#613024", // cabelo castanho
-  f: "#eeb58e", // pele
-  k: "#2a1020", // contorno
-  W: "#fde9f2", // plástico fosco
-  p: "#ff5aa5", // cheetos rosa
-  P: "#e8197f", // impressão MARIADAMAVI
-  s: "rgba(10,2,8,.28)", // sombra
-  R: "#d8343c", // casco do barco
-  w: "#ffffff",
-  b: "#8fd3ff", // espuma
-  y: "#ffd23f",
-};
 const SPRITES = {
-  maria: [
-    "....y..y..y.....",
-    "....yyyyyyy.....",
-    "....kkPPkkk.....",
-    "...khhhhhhhk....",
-    "...khfffffhk....",
-    "...khfkfkfhk....",
-    "...khfffffhk....",
-    "...khhfPffhhk...",
-    "...khhfffhhk....",
-    "....kkPPPkk.....",
-    "...kfPPWPPfk....",
-    "..kffPPWPPffk...",
-    "..kfPPPWPPPfk...",
-    "...kPPPWPPPk....",
-    "...kPPWWWPPk....",
-    "..kPPPWWWPPPk...",
-    "..kPPWWWWWPPk...",
-    ".kPPPWWWWWPPPk..",
-    ".kkkkkkkkkkkkk..",
-    ".....kk.kk......",
-    "....sssssss.....",
-  ],
   bag: [
     "..kkkkkkkk..",
     ".kWWWWWWWWk.",
@@ -80,19 +45,6 @@ const SPRITES = {
     ".....kkkkkk.....",
   ],
 };
-
-function spriteURL(rows) {
-  const w = rows[0].length;
-  const h = rows.length;
-  let rects = "";
-  rows.forEach((row, y) =>
-    [...row].forEach((ch, x) => {
-      if (PALETTE[ch]) rects += `<rect x="${x}" y="${y}" width="1" height="1" fill="${PALETTE[ch]}"/>`;
-    })
-  );
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges">${rects}</svg>`;
-  return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
-}
 
 // Caminho completo em ordem, com o comprimento acumulado e onde fica cada fase
 function buildRoute(data, phases) {
@@ -140,7 +92,7 @@ export function initJourney() {
   const routesSvg = section.querySelector(".journey__routes");
   const hero = section.querySelector(".journey__hero");
   const maria = section.querySelector(".journey__maria");
-  maria.style.backgroundImage = spriteURL(SPRITES.maria);
+  maria.style.backgroundImage = spriteURL(MARIA_SPRITE);
   let nodes = [...section.querySelectorAll(".journey__node")];
   let mode = 'encomenda';
   let phases = JOURNEYS[mode].phases;

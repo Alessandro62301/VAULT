@@ -16,6 +16,7 @@
 .social__post { min-width: 0; text-decoration: none; }
 .social__preview { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: #1d0c15; }
 .social__preview img { width: 100%; height: 100%; object-fit: contain; transition: transform 350ms var(--ease-land); }
+.social__post--bastidores img { object-fit: cover; }
 .social__post:hover img { transform: scale(1.025); }
 .social__post:focus-visible { border-radius: 4px; }
 .social__format { position: absolute; top: 0.75rem; right: 0.75rem; padding: 0.3rem 0.65rem; background: #fcfaf9; color: #1d0c15; border-radius: 999px; font-size: 0.7rem; }
